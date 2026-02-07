@@ -1,6 +1,87 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Reduce oversized UI boxes/cards for a more professional look",
-  "requirements": []
+  "title": "Appointment form that opens WhatsApp with pre-filled booking details",
+  "requirements": [
+    {
+      "id": "REQ-85",
+      "summary": "Add an Appointment form section on the landing page that opens WhatsApp (wa.me) with all entered booking details pre-filled (no backend storage).",
+      "acceptanceCriteria": [
+        "A new, clearly labeled section is available on the page for booking (English-only user-facing text).",
+        "The form includes at minimum: Customer Name, Phone Number, Service (select from existing services), Area/Location, Preferred Date, Preferred Time, and Notes/Message.",
+        "Submitting the form opens WhatsApp to https://wa.me/918000262644 with a URL-encoded pre-filled message that includes all entered fields in a readable format.",
+        "The feature works on mobile and desktop (on desktop it opens web.whatsapp.com via the wa.me link as supported by the platform/browser).",
+        "No data is persisted to the backend; no Motoko changes are required for this feature."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "operation": "create",
+          "description": "Create a new landing-page section (id=\"appointment\") containing the Appointment form UI and submit behavior that builds a URL-encoded message and opens the wa.me link in a new tab/window. Use the shadcn-ui component library (e.g., Card patterns already used in the app) to keep styling consistent. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/lib/whatsappBooking.ts",
+          "operation": "create",
+          "description": "Add a small utility that formats the booking details into a readable message string and returns a fully assembled https://wa.me/918000262644 URL with URL-encoded text (encodeURIComponent)."
+        },
+        {
+          "path": "frontend/src/components/landing/Services.tsx",
+          "operation": "modify",
+          "description": "Export a stable list of service options derived from the existing services shown on the page (for reuse in the Appointment form 'Service' select) without changing the existing Services UI output."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the new <AppointmentFormSection /> into the existing landing page flow so it is reachable via scrolling (and not an orphan component)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-86",
+      "summary": "Add client-side validation to the Appointment form with concise English inline errors for missing/invalid fields.",
+      "acceptanceCriteria": [
+        "Required fields cannot be submitted while invalid; validation messages are shown near the corresponding inputs.",
+        "Validation does not block the rest of the page or break existing CTAs/links.",
+        "Error messages are English-only and concise."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "operation": "modify",
+          "description": "Implement client-side validation (required fields, phone number format) and inline, non-intrusive English error messages per field; prevent submit until valid while keeping the rest of the page interactive. Use shadcn-ui styling conventions where applicable for error states. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/lib/whatsappBooking.ts",
+          "operation": "modify",
+          "description": "Ensure the message formatter safely handles optional fields (e.g., Notes) and uses consistent labeling/order so the WhatsApp pre-filled message remains readable."
+        }
+      ]
+    },
+    {
+      "id": "REQ-87",
+      "summary": "Add a prominent, visible access point from the current landing flow that scrolls to the Appointment form without changing any existing CTA destinations.",
+      "acceptanceCriteria": [
+        "Existing CTAs and their destinations remain unchanged (tel:+918000262644, https://wa.me/918000262644, Instagram link, and Google Business Profile link).",
+        "A new link/button scrolls to (or otherwise reveals) the appointment form section and is visible on both mobile and desktop.",
+        "All new visible text remains English-only."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/Hero.tsx",
+          "operation": "modify",
+          "description": "Add an additional prominent link/button (English-only label) that scrolls to the Appointment section (href=\"#appointment\") while leaving existing CTA destinations exactly unchanged."
+        },
+        {
+          "path": "frontend/src/components/landing/Header.tsx",
+          "operation": "modify",
+          "description": "Add a navigation link (visible on desktop nav) to the Appointment form section (href=\"#appointment\") without altering the existing Call/WhatsApp/Instagram CTA destinations."
+        },
+        {
+          "path": "frontend/src/components/landing/Footer.tsx",
+          "operation": "modify",
+          "description": "Optionally add a quick link to the Appointment section (href=\"#appointment\") in existing footer navigation areas for additional discoverability, without changing any existing CTA destinations."
+        }
+      ]
+    }
+  ]
 }

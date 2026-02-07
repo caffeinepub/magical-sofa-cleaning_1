@@ -1,4 +1,4 @@
-import { Phone, Sparkles, Clock } from 'lucide-react';
+import { Phone, Sparkles, Clock, Calendar } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-base font-medium text-white/95 drop-shadow-lg sm:text-lg md:text-xl lg:text-2xl">
-            Expert Sofa Cleaning Services in Ahmedabad at ₹90/ft. Serving all areas across Ahmedabad & Gandhinagar with same-day service and affordable rates.
+            Expert Sofa Cleaning Services in Ahmedabad at ₹90/ft. Serving all areas across Ahmedabad & Gandhinagar including Nikol, Naroda, Satellite, SG Highway with same-day service and affordable rates.
           </p>
           
           {/* Hygiene & Quick Dry Highlights */}
@@ -44,6 +44,13 @@ export default function Hero() {
           </div>
           
           <div className="flex flex-col items-center justify-center gap-4 pt-6 sm:flex-row">
+            <a
+              href="#appointment"
+              className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-accent via-accent to-accent/90 px-10 py-5 text-sm font-bold text-accent-foreground shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] ring-2 ring-accent/50 ring-offset-2 ring-offset-black/50 transition-all hover:scale-105 hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] sm:w-auto lg:px-12 lg:py-6 lg:text-base"
+            >
+              <Calendar className="h-4 w-4 stroke-[3] lg:h-5 lg:w-5" />
+              <span>Book Appointment</span>
+            </a>
             <a
               href="tel:+918000262644"
               className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-primary via-primary to-primary/90 px-10 py-5 text-sm font-bold text-primary-foreground shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] transition-all hover:scale-105 hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.7)] sm:w-auto lg:px-12 lg:py-6 lg:text-base"

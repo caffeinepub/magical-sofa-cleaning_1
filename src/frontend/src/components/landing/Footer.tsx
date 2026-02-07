@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
-              Your trusted partner for professional sofa cleaning, carpet cleaning, chair cleaning, mattress cleaning, and complete AC services in Ahmedabad & Gandhinagar. Affordable rates with same-day service.
+              Your trusted partner for professional sofa cleaning services in Ahmedabad, carpet cleaning, chair cleaning, mattress cleaning, and complete AC services in Ahmedabad & Gandhinagar. Affordable rates with same-day service.
             </p>
           </div>
 
@@ -35,6 +35,11 @@ export default function Footer() {
               <li>
                 <a href="#services" className="font-medium text-muted-foreground transition-colors hover:text-primary">
                   Services
+                </a>
+              </li>
+              <li>
+                <a href="#appointment" className="font-medium text-muted-foreground transition-colors hover:text-primary">
+                  Book Appointment
                 </a>
               </li>
               <li>
@@ -146,6 +151,9 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-foreground lg:text-base">
               <a href="#services" className="font-medium transition-colors hover:text-primary">
                 Services
+              </a>
+              <a href="#appointment" className="font-medium transition-colors hover:text-primary">
+                Book Now
               </a>
               <a href="#areas" className="font-medium transition-colors hover:text-primary">
                 Areas

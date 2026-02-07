@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 47,
+  "projectStateVersion": 77,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
@@ -544,15 +544,168 @@
       "id": "feature-update-the-website-to-use-the-newly-generated-logo-asset-everywhere-the-brand-logo-is-referenced-including-header-logo-image-footer-logo-image-and-frontend-index-html-metadata-image-references-favicon-open-graph-twitter-and-json-ld-image",
       "title": "Update the website to use the newly generated logo asset everywhere the brand logo is referenced, including: Header logo image, Footer logo image, and frontend/index.html metadata image references (favicon, Open Graph, Twitter, and JSON-LD image).",
       "reqIds": [
-        "REQ-65"
+        "REQ-65",
+        "REQ-68"
       ],
-      "version": 1
+      "version": 2
     },
     {
       "id": "feature-improve-local-seo-targeting-for-ahmedabad-by-updating-on-page-copy-and-metadata-to-clearly-communicate-that-services-are-available-across-all-areas-of-ahmedabad-without-keyword-stuffing-while-keeping-all-existing-cta-destinations-call-whatsapp-instagram-google-business-profile-links-unchanged",
       "title": "Improve local SEO targeting for Ahmedabad by updating on-page copy and metadata to clearly communicate that services are available across all areas of Ahmedabad (without keyword stuffing), while keeping all existing CTA destinations (Call/WhatsApp/Instagram/Google Business Profile links) unchanged.",
       "reqIds": [
         "REQ-66"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cleaned-cropped-square-logo-asset-from-the-user-uploaded-image-img-20260207-wa0011-2-jpg-and-save-it-as-a-locally-served-static-file-under-frontend-public-assets-generated",
+      "title": "Create a cleaned, cropped, square logo asset from the user-uploaded image IMG-20260207-WA0011-2.jpg and save it as a locally served static file under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-67"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-locally-served-gallery-ready-image-asset-from-the-uploaded-file-img-20260207-wa0011-4-jpg-crop-clean-for-a-4-3-photo-card-presentation-and-save-it-under-frontend-public-assets-generated",
+      "title": "Create a locally served gallery-ready image asset from the uploaded file IMG-20260207-WA0011-4.jpg (crop/clean for a 4:3 photo-card presentation) and save it under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-69"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-live-photos-section-to-include-the-newly-generated-logo-image-as-an-additional-gallery-item-using-english-only-label-alt-text",
+      "title": "Update the Live Photos section to include the newly generated logo image as an additional gallery item, using English-only label/alt text.",
+      "reqIds": [
+        "REQ-70"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-revert-the-brand-logo-item-in-the-live-photos-section-to-the-previous-appearance-keep-it-as-it-was-before-the-most-recent-logo-appearance-change-in-the-gallery-at-minimum-remove-any-special-labeling-badge-treatment-applied-specifically-to-the-logo-card-so-it-visually-matches-the-other-unlabelled-photo-cards",
+      "title": "Revert the Brand Logo item in the Live Photos section to the previous appearance (keep it as it was before the most recent logo-appearance change in the gallery). At minimum, remove any special labeling/badge treatment applied specifically to the logo card so it visually matches the other unlabelled photo cards.",
+      "reqIds": [
+        "REQ-71"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-last-photo-item-currently-shown-in-the-live-photos-section-by-deleting-the-final-entry-in-the-livephotos-gallery-data-array-the-last-element-of-the-livephotos-array-so-it-no-longer-renders-in-the-live-work-photos-grid",
+      "title": "Remove the last photo item currently shown in the Live Photos section by deleting the final entry in the LivePhotos gallery data array (the last element of the `livePhotos` array) so it no longer renders in the Live Work Photos grid.",
+      "reqIds": [
+        "REQ-72"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-services-section-so-each-service-card-sofa-cleaning-carpet-cleaning-office-chair-cleaning-mattress-cleaning-ac-water-jet-service-has-its-own-distinct-attractive-color-theme-inside-the-card-e-g-different-border-gradient-tint-and-matching-icon-badge-price-block-styling-while-keeping-all-existing-english-service-titles-descriptions-pricing-ordering-and-content-unchanged",
+      "title": "Update the Services section so each service card (Sofa Cleaning, Carpet Cleaning, Office Chair Cleaning, Mattress Cleaning, AC Water Jet Service) has its own distinct, attractive color theme inside the card (e.g., different border/gradient/tint and matching icon badge + price block styling), while keeping all existing English service titles, descriptions, pricing, ordering, and content unchanged.",
+      "reqIds": [
+        "REQ-73"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-sofa-cleaning-price-calculator-ui-styling-to-match-the-previously-preferred-less-colorful-appearance-by-removing-or-significantly-reducing-the-multi-color-gradient-tint-treatments-in-the-calculator-card-and-total-cost-panel-while-keeping-all-calculator-functionality-layout-pricing-logic-90-per-foot-and-contact-links-tel-918000262644-and-https-wa-me-918000262644-unchanged",
+      "title": "Update the Sofa Cleaning Price Calculator UI styling to match the previously preferred (less colorful) appearance by removing or significantly reducing the multi-color gradient/tint treatments in the calculator card and total-cost panel, while keeping all calculator functionality, layout, pricing logic (₹90 per foot), and contact links (tel:+918000262644 and https://wa.me/918000262644) unchanged.",
+      "reqIds": [
+        "REQ-74"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-clearly-visible-book-now-call-to-action-button-on-the-landing-page-at-minimum-in-the-hero-section-cta-button-row-without-removing-or-altering-any-existing-ctas-the-book-now-button-must-use-english-text-must-be-styled-to-stand-out-as-a-primary-accent-action-and-must-link-to-the-existing-whatsapp-booking-contact-destination-https-wa-me-918000262644",
+      "title": "Add a new, clearly visible \"Book Now\" call-to-action button on the landing page (at minimum in the Hero section CTA button row) without removing or altering any existing CTAs. The \"Book Now\" button must use English text, must be styled to stand out as a primary/accent action, and must link to the existing WhatsApp booking/contact destination: https://wa.me/918000262644.",
+      "reqIds": [
+        "REQ-75"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-on-page-marketing-copy-to-naturally-incorporate-the-user-provided-english-seo-query-phrases-sofa-cleaning-near-me-best-sofa-cleaners-in-nikol-naroda-and-sofa-washing-service-in-ahmedabad-without-keyword-stuffing-and-without-changing-any-existing-cta-destinations-call-whatsapp-instagram-google-business-profile-links",
+      "title": "Update on-page marketing copy to naturally incorporate the user-provided English SEO query phrases: “Sofa cleaning near me”, “Best sofa cleaners in Nikol, Naroda”, and “Sofa washing service in Ahmedabad”, without keyword stuffing and without changing any existing CTA destinations (Call/WhatsApp/Instagram/Google Business Profile links).",
+      "reqIds": [
+        "REQ-76"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-strengthen-seo-metadata-in-frontend-index-html-by-adding-gujarati-keyword-phrases-alongside-existing-english-keywords-to-improve-local-gujarati-seo-while-keeping-the-current-title-description-intent-and-avoiding-keyword-stuffing",
+      "title": "Strengthen SEO metadata in frontend/index.html by adding Gujarati keyword phrases alongside existing English keywords to improve local Gujarati SEO, while keeping the current title/description intent and avoiding keyword stuffing.",
+      "reqIds": [
+        "REQ-77"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-structured-data-json-ld-localbusiness-in-frontend-index-html-to-include-gujarati-language-variants-in-non-visual-descriptive-fields-e-g-description-or-additional-service-descriptors-while-keeping-the-existing-schema-valid-and-consistent-with-the-services-offered",
+      "title": "Update structured data (JSON-LD LocalBusiness) in frontend/index.html to include Gujarati language variants in non-visual descriptive fields (e.g., description or additional service descriptors) while keeping the existing schema valid and consistent with the services offered.",
+      "reqIds": [
+        "REQ-78"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-investigate-and-resolve-the-current-deployment-failure-by-reproducing-the-error-and-applying-the-minimal-code-config-changes-required-so-the-project-builds-and-deploys-successfully-without-changing-existing-site-content-layout-or-any-cta-destinations",
+      "title": "Investigate and resolve the current deployment failure by reproducing the error and applying the minimal code/config changes required so the project builds and deploys successfully without changing existing site content, layout, or any CTA destinations.",
+      "reqIds": [
+        "REQ-79"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cleaned-tightly-cropped-banner-image-asset-from-the-newly-uploaded-image-img-20260207-wa0013-jpg-preserving-the-gujarati-writing-exactly-as-shown-and-save-it-under-frontend-public-assets-generated-for-local-serving",
+      "title": "Create a cleaned, tightly-cropped banner image asset from the newly uploaded image IMG-20260207-WA0013.jpg (preserving the Gujarati writing exactly as shown) and save it under frontend/public/assets/generated for local serving.",
+      "reqIds": [
+        "REQ-80"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-new-banner-image-to-the-landing-page-as-a-compact-responsive-service-coverage-doorstep-service-information-block-image-based-placed-in-a-logical-high-visibility-location-either-directly-below-the-hero-ctas-or-near-the-top-of-the-areas-served-section-without-changing-any-existing-cta-destinations-call-whatsapp-instagram-google-business-profile-or-removing-any-existing-sections",
+      "title": "Add the new banner image to the landing page as a compact, responsive ‘service coverage / doorstep service’ information block (image-based), placed in a logical high-visibility location (either directly below the Hero CTAs or near the top of the Areas Served section) without changing any existing CTA destinations (Call/WhatsApp/Instagram/Google Business Profile) or removing any existing sections.",
+      "reqIds": [
+        "REQ-81"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-newly-uploaded-image-file-img-20260207-223107-jpg-from-the-codebase-assets-and-ensure-it-is-not-referenced-or-rendered-anywhere-in-the-website-including-the-live-photos-gallery-service-coverage-banner-hero-header-footer-seo-metadata-or-any-other-component",
+      "title": "Remove the newly uploaded image file (IMG_20260207_223107.jpg) from the codebase/assets and ensure it is not referenced or rendered anywhere in the website (including the Live Photos gallery, Service Coverage banner, Hero, Header, Footer, SEO metadata, or any other component).",
+      "reqIds": [
+        "REQ-83"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-gujarati-language-content-from-the-website-so-that-all-user-visible-content-is-english-only-including-replacing-any-image-assets-that-contain-gujarati-writing-e-g-the-service-coverage-banner-image-while-keeping-the-existing-page-structure-and-all-cta-destinations-tel-918000262644-https-wa-me-918000262644-instagram-link-and-google-business-profile-link-unchanged",
+      "title": "Remove Gujarati-language content from the website so that all user-visible content is English-only, including replacing any image assets that contain Gujarati writing (e.g., the Service Coverage banner image) while keeping the existing page structure and all CTA destinations (tel:+918000262644, https://wa.me/918000262644, Instagram link, and Google Business Profile link) unchanged.",
+      "reqIds": [
+        "REQ-84"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-appointment-booking-form-ui-on-the-landing-page-that-collects-basic-booking-details-and-on-submit-opens-a-whatsapp-chat-to-https-wa-me-918000262644-with-the-form-details-pre-filled-in-the-message-text-no-backend-storage",
+      "title": "Add a new \"Appointment\" (booking) form UI on the landing page that collects basic booking details and, on submit, opens a WhatsApp chat to https://wa.me/918000262644 with the form details pre-filled in the message text (no backend storage).",
+      "reqIds": [
+        "REQ-85"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-client-side-validation-for-the-appointment-form-and-show-inline-non-intrusive-error-messages-in-english-when-required-fields-are-missing-or-invalid-e-g-empty-name-invalid-phone-number",
+      "title": "Add basic client-side validation for the appointment form and show inline, non-intrusive error messages in English when required fields are missing or invalid (e.g., empty name, invalid phone number).",
+      "reqIds": [
+        "REQ-86"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prominent-way-to-access-the-appointment-form-from-the-existing-landing-page-flow-e-g-an-additional-button-link-near-the-hero-ctas-or-a-navigation-link-without-removing-or-changing-any-existing-call-whatsapp-instagram-google-business-profile-cta-destinations",
+      "title": "Add a prominent way to access the appointment form from the existing landing page flow (e.g., an additional button/link near the Hero CTAs or a navigation link) without removing or changing any existing Call/WhatsApp/Instagram/Google Business Profile CTA destinations.",
+      "reqIds": [
+        "REQ-87"
       ],
       "version": 1
     }
@@ -753,6 +906,62 @@
     {
       "id": "AR-35",
       "summary": "Improve local SEO targeting Ahmedabad (all areas) for sofa cleaning keywords across on-page copy and metadata.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-36",
+      "summary": "Add the business logo image to the Live Photos section/gallery (display the logo within the Live Photos area).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-37",
+      "summary": "Revert/restore the logo appearance in the Live Photos section to how it was previously (\"Hatu emnam\").",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-38",
+      "summary": "Delete/remove the last photo item currently shown in the Live Photos section/gallery.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-39",
+      "summary": "Make each Services card/box (Sofa, Carpet, Office Chair, Mattress, AC Service) use different attractive colors inside the box for clearer visual distinction.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-40",
+      "summary": "Revert the site’s colors/theme to the previous look (user says the earlier colors were good and wants it kept the same).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-41",
+      "summary": "Add a “Book Now” button CTA on the website (ensure it is present/visible).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-42",
+      "summary": "Add some Gujarati-language SEO-focused keywords/phrases alongside English keywords in on-page copy to strengthen local SEO (e.g., Ahmedabad/Nikol/Naroda queries).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-43",
+      "summary": "Do not make any further changes to the project; keep the website exactly as it is currently implemented and deployed (no changes to UI, copy, sections, images, styling, SEO metadata, links, or functionality).",
+      "reqIds": [
+        "REQ-82"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-44",
+      "summary": "Add an Appointment/Booking form that submits directly to the business WhatsApp number (opens WhatsApp chat with the form details pre-filled).",
       "reqIds": [],
       "status": "pending"
     }

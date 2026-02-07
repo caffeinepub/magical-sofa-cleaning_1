@@ -1,60 +1,66 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T14:10:57.943Z",
-  "summary": "BuildRequest has no explicit requirements beyond layout sizing/spacing adjustments and several constraints. The diff appears to make broad visual/theme and content/SEO-related changes that go beyond simply reducing oversized UI boxes/cards, and it also references a chat widget change/removal not requested.",
+  "generatedAt": "2026-02-07T17:18:06.985Z",
+  "summary": "The diff adds a new Appointment form section on the landing page, client-side validation, and multiple navigation/CTA entry points that scroll to the form. It also introduces a WhatsApp deep-link generator using a wa.me URL with URL-encoded text. However, the diff includes multiple unrelated styling/SEO/UI changes not requested in the BuildRequest, and the WhatsApp prefill message includes emoji/formatting beyond the stated English-only text constraint.",
   "missing_requirements": [],
   "hallucinated_features": [
     {
-      "description": "Added/modified comprehensive SEO metadata and JSON-LD structured data in the HTML entry point.",
-      "reason": "Non-goal/constraint indicates this request should not change SEO content; requested scope was only adjusting sizing/spacing of existing UI elements.",
+      "description": "Unrequested broad SEO/content changes across the site (metadata, JSON-LD, expanded Ahmedabad keyword targeting, and copy edits beyond adding the appointment feature).",
+      "reason": "The BuildRequest only asks to add an appointment form + validation + an access link/button, and explicitly focuses on WhatsApp deep-linking without broader marketing/SEO rewrites.",
       "evidence": [
-        "frontend-file-summaries.txt (\"frontend/index.html\": \"comprehensive SEO metadata... and JSON-LD LocalBusiness structured data\")"
+        "frontend/index.html",
+        "frontend/src/components/landing/Hero.tsx",
+        "frontend/src/components/landing/Services.tsx",
+        "frontend/src/components/landing/AreasServed.tsx",
+        "frontend/src/components/landing/Footer.tsx",
+        "frontend-file-summaries.txt"
       ]
     },
     {
-      "description": "Primary color palette/theme changes (including references to professional blue primary palette and OKLCH palette changes).",
-      "reason": "BuildRequest only asked to reduce oversized UI boxes/cards; large-scale theme/palette changes are beyond the stated scope (and potentially conflict with existing theme constraints depending on prior context).",
+      "description": "Unrequested global theme/styling system changes (primary palette swaps, new service-specific color tokens, new shadow/radius utilities, and other design-system adjustments).",
+      "reason": "Not requested by REQ-85/86/87; the request is feature-focused and does not ask for a redesign.",
       "evidence": [
-        "frontend-file-summaries.txt (\"frontend/src/index.css\": \"enhanced professional blue primary color palette\")",
-        "frontend-file-summaries.txt (\"frontend/index.css\": \"Global styles with fresh green primary palette...\")"
+        "frontend/index.css",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js",
+        "frontend-file-summaries.txt"
       ]
     },
     {
-      "description": "Support chat widget changes/removal from the app composition and separate styling updates to SupportChatWidget.",
-      "reason": "BuildRequest explicitly lists non-goal: no new sections or features beyond layout sizing/spacing; changing/removing/altering a chat widget is a functional/feature-level change not requested.",
+      "description": "Changes to floating contact button sizing/spacing.",
+      "reason": "Not requested by REQ-85/86/87 and could be considered outside the appointment feature scope.",
       "evidence": [
-        "frontend-file-summaries.txt (\"frontend/src/App.tsx\": \"...FloatingContactButtons overlay (SupportChatWidget removed)\")",
-        "frontend-file-summaries.txt (\"frontend/src/components/chat/SupportChatWidget.tsx\": \"Support chat widget with polished visuals...\")"
+        "frontend/src/components/floating/FloatingContactButtons.tsx",
+        "frontend-file-summaries.txt"
       ]
     },
     {
-      "description": "Introduced a new reusable logo component and references to a newly uploaded logo (v2) for favicon/social images.",
-      "reason": "Not requested; scope was to reduce oversized UI boxes/cards. Also touches brand assets/metadata rather than purely sizing/spacing.",
+      "description": "Support chat widget visual/polish updates.",
+      "reason": "The BuildRequest non-goals explicitly exclude adding chat/automation behavior to the appointment flow; while this is “polish”, it is unrelated and unrequested work.",
       "evidence": [
-        "frontend-file-summaries.txt (\"frontend/src/components/common/LogoWithBacking.tsx\": \"Reusable component...\")",
-        "frontend-file-summaries.txt (\"frontend/index.html\": \"...referencing the new uploaded logo (v2) for favicon and social media images\")"
+        "frontend/src/components/chat/SupportChatWidget.tsx",
+        "frontend-file-summaries.txt"
       ]
     },
     {
-      "description": "Added a new interactive 'Sofa Cleaning Price Calculator' UI element (or materially expanded it) including slider-based calculation.",
-      "reason": "Not requested in this change request; it is a feature/UI addition beyond resizing/spacing adjustments.",
+      "description": "WhatsApp pre-filled booking message includes emojis and WhatsApp-style bold markdown (e.g., “🧹 *New Appointment Request*”).",
+      "reason": "The requirement says user-facing text should be English-only; emojis/extra formatting were not requested as part of the message format.",
       "evidence": [
-        "frontend/src/components/landing/Services.tsx (imports SofaPriceCalculator and includes it)",
-        "frontend/src/components/landing/SofaPriceCalculator.tsx (full interactive calculator component)"
+        "frontend/src/lib/whatsappBooking.ts"
       ]
     }
   ],
-  "confidence": 0.62,
+  "confidence": 0.72,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/floating/FloatingContactButtons.tsx",
-    "frontend/src/components/landing/AreasServed.tsx",
-    "frontend/src/components/landing/GoogleReviewsSection.tsx",
+    "frontend/src/App.tsx",
+    "frontend/src/components/landing/AppointmentFormSection.tsx",
+    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/landing/Header.tsx",
     "frontend/src/components/landing/Hero.tsx",
-    "frontend/src/components/landing/LivePhotos.tsx",
     "frontend/src/components/landing/Services.tsx",
-    "frontend/src/components/landing/SofaPriceCalculator.tsx",
+    "frontend/src/lib/whatsappBooking.ts",
     "project_state.json"
   ]
 }

@@ -1,22 +1,88 @@
 {
   "kind": "build_request",
-  "title": "Reduce oversized UI boxes/cards for a more professional look",
+  "title": "Add an appointment form that opens WhatsApp with pre-filled booking details",
   "priority": "normal",
-  "requirements": [],
+  "requirements": [
+    {
+      "id": "REQ-85",
+      "text": "Add a new \"Appointment\" (booking) form UI on the landing page that collects basic booking details and, on submit, opens a WhatsApp chat to https://wa.me/918000262644 with the form details pre-filled in the message text (no backend storage).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Appointment form banavva nu che je dairect mara WhatsApp numbar ma khule"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new, clearly labeled section is available on the page for booking (English-only user-facing text).",
+        "The form includes at minimum: Customer Name, Phone Number, Service (select from existing services), Area/Location, Preferred Date, Preferred Time, and Notes/Message.",
+        "Submitting the form opens WhatsApp to https://wa.me/918000262644 with a URL-encoded pre-filled message that includes all entered fields in a readable format.",
+        "The feature works on mobile and desktop (on desktop it opens web.whatsapp.com via the wa.me link as supported by the platform/browser).",
+        "No data is persisted to the backend; no Motoko changes are required for this feature."
+      ]
+    },
+    {
+      "id": "REQ-86",
+      "text": "Add basic client-side validation for the appointment form and show inline, non-intrusive error messages in English when required fields are missing or invalid (e.g., empty name, invalid phone number).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Appointment form banavva nu che je dairect mara WhatsApp numbar ma khule"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Required fields cannot be submitted while invalid; validation messages are shown near the corresponding inputs.",
+        "Validation does not block the rest of the page or break existing CTAs/links.",
+        "Error messages are English-only and concise."
+      ]
+    },
+    {
+      "id": "REQ-87",
+      "text": "Add a prominent way to access the appointment form from the existing landing page flow (e.g., an additional button/link near the Hero CTAs or a navigation link) without removing or changing any existing Call/WhatsApp/Instagram/Google Business Profile CTA destinations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Appointment form banavva nu che je dairect mara WhatsApp numbar ma khule"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Existing CTAs and their destinations remain unchanged (tel:+918000262644, https://wa.me/918000262644, Instagram link, and Google Business Profile link).",
+        "A new link/button scrolls to (or otherwise reveals) the appointment form section and is visible on both mobile and desktop.",
+        "All new visible text remains English-only."
+      ]
+    }
+  ],
   "constraints": [
-    "Do not change any CTA destinations or contact links (Call: tel:+918000262644, WhatsApp: https://wa.me/918000262644, Instagram, Google Business Profile).",
-    "Do not add any AI-based features or describe anything as AI.",
-    "Keep all user-facing text in English.",
-    "Frontend immutable paths must not be edited (compose existing UI components instead).",
-    "Do not add external image URLs; continue serving images from local static assets under frontend/public/assets/generated."
+    "Do not change any existing CTA destinations: tel:+918000262644, https://wa.me/918000262644, https://www.instagram.com/magical_sofa_cleaning?igsh=MW42bHIweG9oZDV0bQ==, https://share.google/Nex4Ll5OOIXAVyXjZ.",
+    "Do not add any backend persistence or external APIs for the appointment feature; WhatsApp deep-linking must be done purely via a wa.me URL with URL-encoded text.",
+    "Use English for all user-facing text.",
+    "Do not modify any files under frontend/src/components/ui or any immutable paths listed in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Adding new sections or features beyond adjusting existing layout sizing/spacing.",
-    "Changing the services list, pricing, areas served list, or SEO content as part of this request.",
-    "Backend changes (Motoko actor/state) are out of scope."
+    "Building an admin panel or storing appointments in a database/canister.",
+    "Sending emails/SMS notifications.",
+    "Adding any AI/chat/automation behavior to the appointment flow."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

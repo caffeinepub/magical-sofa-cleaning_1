@@ -23,6 +23,9 @@ export default function Header() {
           <a href="#services" className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary lg:text-base">
             Services
           </a>
+          <a href="#appointment" className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary lg:text-base">
+            Book Now
+          </a>
           <a href="#areas" className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary lg:text-base">
             Areas
           </a>

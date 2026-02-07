@@ -30,6 +30,18 @@
         --chart-3: 0.68 0.20 45;
         --chart-4: 0.60 0.20 255;
         --chart-5: 0.70 0.16 70;
+        
+        /* Service-specific color themes */
+        --service-sofa: 0.55 0.22 250;
+        --service-sofa-foreground: 0.99 0.005 240;
+        --service-carpet: 0.65 0.20 35;
+        --service-carpet-foreground: 0.99 0.005 35;
+        --service-chair: 0.58 0.21 285;
+        --service-chair-foreground: 0.99 0.005 285;
+        --service-mattress: 0.60 0.20 195;
+        --service-mattress-foreground: 0.99 0.005 195;
+        --service-ac: 0.62 0.21 155;
+        --service-ac-foreground: 0.99 0.005 155;
     }
 
     .dark {
@@ -57,6 +69,18 @@
         --chart-3: 0.65 0.19 45;
         --chart-4: 0.58 0.20 255;
         --chart-5: 0.68 0.15 70;
+        
+        /* Service-specific color themes - dark mode */
+        --service-sofa: 0.60 0.23 250;
+        --service-sofa-foreground: 0.15 0.018 240;
+        --service-carpet: 0.68 0.19 35;
+        --service-carpet-foreground: 0.15 0.018 35;
+        --service-chair: 0.62 0.20 285;
+        --service-chair-foreground: 0.15 0.018 285;
+        --service-mattress: 0.63 0.19 195;
+        --service-mattress-foreground: 0.15 0.018 195;
+        --service-ac: 0.65 0.20 155;
+        --service-ac-foreground: 0.15 0.018 155;
     }
 
     * {
@@ -70,13 +94,6 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-    }
-}
-
-@layer components {
-    /* Logo backing component styling */
-    .logo-backing {
-        @apply rounded-full bg-white dark:bg-gray-900 border-2 border-primary/20 shadow-sm transition-all;
     }
 }
 

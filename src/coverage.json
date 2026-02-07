@@ -1,28 +1,74 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T14:10:57.945Z",
+  "generatedAt": "2026-02-07T17:18:06.990Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 0,
-    "implemented": 0,
-    "items": []
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-85",
+        "summary": "Add a new \"Appointment\" (booking) form UI on the landing page that collects basic booking details and, on submit, opens a WhatsApp chat to https://wa.me/918000262644 with the form details pre-filled in the message text (no backend storage).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "frontend/src/lib/whatsappBooking.ts",
+          "frontend/src/components/landing/Services.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "frontend/src/lib/whatsappBooking.ts",
+          "frontend/src/components/landing/Services.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-86",
+        "summary": "Add basic client-side validation for the appointment form and show inline, non-intrusive error messages in English when required fields are missing or invalid (e.g., empty name, invalid phone number).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "frontend/src/lib/whatsappBooking.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "frontend/src/lib/whatsappBooking.ts"
+        ]
+      },
+      {
+        "id": "REQ-87",
+        "summary": "Add a prominent way to access the appointment form from the existing landing page flow (e.g., an additional button/link near the Hero CTAs or a navigation link) without removing or changing any existing Call/WhatsApp/Instagram/Google Business Profile CTA destinations.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/Hero.tsx",
+          "frontend/src/components/landing/Header.tsx",
+          "frontend/src/components/landing/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/Hero.tsx",
+          "frontend/src/components/landing/Header.tsx",
+          "frontend/src/components/landing/Footer.tsx"
+        ]
+      }
+    ]
   },
   "changedFiles": [
     "build-request.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/floating/FloatingContactButtons.tsx",
-    "frontend/src/components/landing/AreasServed.tsx",
-    "frontend/src/components/landing/GoogleReviewsSection.tsx",
+    "frontend/src/App.tsx",
+    "frontend/src/components/landing/AppointmentFormSection.tsx",
+    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/landing/Header.tsx",
     "frontend/src/components/landing/Hero.tsx",
-    "frontend/src/components/landing/LivePhotos.tsx",
     "frontend/src/components/landing/Services.tsx",
-    "frontend/src/components/landing/SofaPriceCalculator.tsx",
+    "frontend/src/lib/whatsappBooking.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

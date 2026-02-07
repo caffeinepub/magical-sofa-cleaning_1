@@ -11,7 +11,7 @@ export default function SofaPriceCalculator() {
   const total = feet * pricePerFoot;
 
   return (
-    <Card className="mx-auto max-w-2xl border-primary/30 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 shadow-premium">
+    <Card className="mx-auto max-w-2xl border-border bg-card shadow-lg">
       <CardHeader className="space-y-3 pb-4 text-center">
         <div className="mx-auto">
           <IconBadge icon={Calculator} size="sm" variant="primary" />
@@ -43,9 +43,9 @@ export default function SofaPriceCalculator() {
           </div>
         </div>
 
-        <div className="space-y-3 rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-5 text-center">
+        <div className="space-y-3 rounded-xl border-2 border-muted bg-muted/30 p-5 text-center shadow-sm">
           <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground lg:text-sm">
-            <Sparkles className="h-3.5 w-3.5 text-secondary" />
+            <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span>Estimated Total Cost</span>
           </div>
           <div className="flex items-center justify-center gap-2">

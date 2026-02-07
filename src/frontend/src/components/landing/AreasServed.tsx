@@ -78,10 +78,10 @@ export default function AreasServed() {
             <IconBadge icon={MapPin} size="sm" variant="accent" />
           </div>
           <h2 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
-            Areas We Serve
+            Areas We Serve in Ahmedabad
           </h2>
           <p className="mb-8 text-sm text-muted-foreground md:text-base lg:text-lg">
-            Professional sofa, carpet, mattress, chair cleaning and AC services across all major areas
+            Professional sofa cleaning services in Ahmedabad, carpet, mattress, chair cleaning and AC services across all major areas in Ahmedabad & Gandhinagar
           </p>
         </div>
 
@@ -127,11 +127,11 @@ export default function AreasServed() {
 
         <div className="mt-10 text-center">
           <p className="text-xs text-muted-foreground md:text-sm">
-            Don't see your area? Call us at{' '}
+            Don't see your area in Ahmedabad? Call us at{' '}
             <a href="tel:+918000262644" className="font-semibold text-primary transition-colors hover:text-primary/80 hover:underline">
               8000262644
             </a>{' '}
-            to check availability
+            to check availability for sofa cleaning services in your location
           </p>
         </div>
       </div>

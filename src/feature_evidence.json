@@ -1,4 +1,65 @@
 {
   "kind": "feature_evidence_report",
-  "features": []
+  "features": [
+    {
+      "featureId": "feature-add-a-new-appointment-booking-form-ui-on-the-landing-page-that-collects-basic-booking-details-and-on-submit-opens-a-whatsapp-chat-to-https-wa-me-918000262644-with-the-form-details-pre-filled-in-the-message-text-no-backend-storage",
+      "featureTitle": "Add a new \"Appointment\" (booking) form UI on the landing page that collects basic booking details and, on submit, opens a WhatsApp chat to https://wa.me/918000262644 with the form details pre-filled in the message text (no backend storage).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/landing/AppointmentFormSection.tsx",
+        "frontend/src/components/landing/Services.tsx",
+        "frontend/src/lib/whatsappBooking.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-85"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-basic-client-side-validation-for-the-appointment-form-and-show-inline-non-intrusive-error-messages-in-english-when-required-fields-are-missing-or-invalid-e-g-empty-name-invalid-phone-number",
+      "featureTitle": "Add basic client-side validation for the appointment form and show inline, non-intrusive error messages in English when required fields are missing or invalid (e.g., empty name, invalid phone number).",
+      "files": [
+        "frontend/src/components/landing/AppointmentFormSection.tsx",
+        "frontend/src/lib/whatsappBooking.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-86"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-prominent-way-to-access-the-appointment-form-from-the-existing-landing-page-flow-e-g-an-additional-button-link-near-the-hero-ctas-or-a-navigation-link-without-removing-or-changing-any-existing-call-whatsapp-instagram-google-business-profile-cta-destinations",
+      "featureTitle": "Add a prominent way to access the appointment form from the existing landing page flow (e.g., an additional button/link near the Hero CTAs or a navigation link) without removing or changing any existing Call/WhatsApp/Instagram/Google Business Profile CTA destinations.",
+      "files": [
+        "frontend/src/components/landing/Footer.tsx",
+        "frontend/src/components/landing/Header.tsx",
+        "frontend/src/components/landing/Hero.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-87"
+      ],
+      "confidence": "high"
+    }
+  ]
 }

@@ -19,7 +19,7 @@ export default function LogoWithBacking({ size = 'md', className = '' }: LogoWit
   return (
     <div className={`logo-backing ${containerSizeClasses[size]} ${className}`}>
       <img 
-        src="/assets/generated/magical-service-logo-uploaded-v2.dim_512x512.png" 
+        src="/assets/generated/magical-service-logo-uploaded-v3.dim_512x512.png" 
         alt="Magical Service Professional Cleaning" 
         className={`${sizeClasses[size]} object-contain`}
       />

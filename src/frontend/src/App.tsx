@@ -1,6 +1,8 @@
 import Header from './components/landing/Header';
 import Hero from './components/landing/Hero';
+import ServiceCoverageBanner from './components/landing/ServiceCoverageBanner';
 import Services from './components/landing/Services';
+import AppointmentFormSection from './components/landing/AppointmentFormSection';
 import AreasServed from './components/landing/AreasServed';
 import GoogleReviewsSection from './components/landing/GoogleReviewsSection';
 import LivePhotos from './components/landing/LivePhotos';
@@ -12,7 +14,9 @@ function App() {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <ServiceCoverageBanner />
       <Services />
+      <AppointmentFormSection />
       <LivePhotos />
       <AreasServed />
       <GoogleReviewsSection />
