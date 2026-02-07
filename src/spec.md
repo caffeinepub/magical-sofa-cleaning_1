@@ -1,13 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Services section offerings by removing Home Cleaning, adding Chair Cleaning, and renaming AC Service to AC Water Jet Service, while keeping the existing bilingual style and excluding any AI features.
+**Goal:** Make the UI look more professional by reducing oversized boxes/cards and tightening layout spacing, without changing content or link destinations.
 
 **Planned changes:**
-- Remove the “Full Home Cleaning” service card from the Services grid.
-- Ensure the Services section contains exactly 5 cards: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service.
-- Split any combined “Carpet & Mattress” offering into separate Carpet Cleaning and Mattress Cleaning cards.
-- Update the existing “AC Service” card text to “AC Water Jet Service” with corresponding Gujarati title/description updates, while keeping existing phone/WhatsApp CTAs unchanged.
-- Do not add any AI-related UI, copy, components, or backend endpoints (including placeholders).
+- Reduce padding, margins, and overall sizing of existing cards/boxes across key sections to avoid an oversized look.
+- Normalize typography scale and line-heights within cards (headings, body text, and button sizing) to better match the tighter layout.
+- Adjust grid/flex breakpoints and max-widths so card layouts feel balanced on mobile and desktop while keeping all existing sections/content intact.
+- Keep all CTA destinations and contact links exactly the same and avoid any new external assets/URLs.
 
-**User-visible outcome:** Visitors see an updated Services section with the correct five bilingual service cards (no Home Cleaning), including Chair Cleaning and AC Water Jet Service, with the site otherwise unchanged (including call/WhatsApp links).
+**User-visible outcome:** The site displays the same sections and information, but cards/boxes appear slimmer and better spaced for a cleaner, more polished layout on all screen sizes.

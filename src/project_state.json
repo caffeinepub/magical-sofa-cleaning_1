@@ -1,14 +1,30 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 47,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
     "Services scope update: remove Home Cleaning; offer Sofa, Carpet, Chair, Mattress cleaning + AC Water Jet service.",
-    "Explicit scope constraint: no AI features should be added (now or future)."
+    "Explicit scope constraint: no AI features should be added (now or future).",
+    "User requested adding AI-based future features, which conflicts with the existing explicit scope constraint of no AI features.",
+    "User-provided UI snippet introduces an on-page 'AI assistant' chat widget and a pay-by-QR section (Google Pay) toggled by chat keywords.",
+    "User-provided snippet hides an older/larger QR image via CSS selectors and replaces it with a smaller QR inside the chat widget.",
+    "Snippet references an externally hosted QR image URL (caffeine.xyz) for the payment QR.",
+    "Areas Served UI change requested: group locations under separate Ahmedabad and Gandhinagar headings and make the list more compact.",
+    "QR code display requirement updated: show QR in a smaller/compact size.",
+    "Add social link support: include an Instagram icon that links to the Magical Sofa Cleaning Instagram profile."
   ],
   "known_issues": [
-    "Potential conflict: existing scope requires all user-facing text in English, but latest requirement is English + Gujarati mix."
+    "Potential conflict: existing scope requires all user-facing text in English, but latest requirement is English + Gujarati mix.",
+    "Scope conflict: user asked to add AI-based future features, but project scope explicitly forbids AI features.",
+    "Scope conflict risk: user-provided 'AI assistant' chat widget contradicts the explicit project constraint of no AI features anywhere on the website.",
+    "Potential asset policy conflict: chat widget uses an externally hosted QR image URL (caffeine.xyz), which may conflict with the 'no external imagery' approach used elsewhere.",
+    "Scope conflict risk: existing requirement is mixed English+Gujarati copy, but user now requests converting content to English-only.",
+    "Expectation risk: user wants the site to rank #1 across all Ahmedabad; SEO improvements can be made but top ranking cannot be guaranteed.",
+    "Potential palette constraint conflict: existing direction avoids blue/purple as primary, but user requested using blue (along with yellow/orange).",
+    "Potential compliance/credibility risk: adding '210+ reviews and comments' must reflect real Google reviews; avoid fabricated testimonials and ensure proper attribution/permissions if embedding/displaying.",
+    "User indicates the hero/before-after image was changed; needs to be reverted to the previously used photo.",
+    "Asset dependency: “live photos” (real service photos) are requested but not yet provided; needs image assets and confirmation of usage rights."
   ],
   "isFixRequest": false,
   "existing_features": [
@@ -99,6 +115,446 @@
         "REQ-11"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-expand-the-areas-we-serve-section-to-include-a-comprehensive-list-of-both-new-and-old-areas-of-ahmedabad-and-gandhinagar-while-keeping-the-existing-bilingual-english-gujarati-presentation-and-existing-call-whatsapp-contact-links-unchanged",
+      "title": "Expand the “Areas We Serve” section to include a comprehensive list of both “new” and “old” areas of Ahmedabad and Gandhinagar, while keeping the existing bilingual (English + Gujarati) presentation and existing Call/WhatsApp contact links unchanged.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-services-section-to-display-the-exact-pricing-provided-by-the-user-for-each-relevant-service-and-expand-the-ac-offering-details-to-include-the-additional-ac-services-and-their-prices-without-adding-any-ai-related-features",
+      "title": "Update the Services section to display the exact pricing provided by the user for each relevant service, and expand the AC offering details to include the additional AC services and their prices (without adding any AI-related features).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refresh-on-page-marketing-copy-to-be-more-professional-and-seo-oriented-for-the-ahmedabad-gandhinagar-cleaning-market-while-keeping-the-existing-page-structure-header-hero-services-areas-served-footer-and-all-existing-contact-ctas-links-unchanged",
+      "title": "Refresh on-page marketing copy to be more professional and SEO-oriented for the Ahmedabad & Gandhinagar cleaning market, while keeping the existing page structure (Header, Hero, Services, Areas Served, Footer) and all existing contact CTAs/links unchanged.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-site-s-visual-presentation-to-a-more-modern-professional-latest-digital-design-while-preserving-the-current-brand-assets-maintaining-responsiveness-and-continuing-to-avoid-a-blue-purple-primary-palette",
+      "title": "Improve the site’s visual presentation to a more modern, professional “latest digital design” while preserving the current brand assets, maintaining responsiveness, and continuing to avoid a blue/purple primary palette.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-metadata-in-the-html-head-title-description-aligned-with-the-updated-services-and-target-locations-ahmedabad-gandhinagar",
+      "title": "Add basic SEO metadata in the HTML head (title/description) aligned with the updated services and target locations (Ahmedabad & Gandhinagar).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-floating-contact-button-group-that-is-fixed-on-the-viewport-and-always-visible-containing-exactly-two-actions-whatsapp-https-wa-me-918000262644-and-call-tel-918000262644-the-buttons-must-not-replace-or-alter-any-existing-ctas-in-header-hero-or-footer",
+      "title": "Add a floating contact button group that is fixed on the viewport and always visible, containing exactly two actions: WhatsApp (https://wa.me/918000262644) and Call (tel:+918000262644). The buttons must not replace or alter any existing CTAs in Header, Hero, or Footer.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-on-page-chat-style-widget-ui-only-anchored-to-the-bottom-right-of-the-viewport-that-can-be-toggled-open-closed-the-widget-must-be-implemented-as-react-components-no-inline-script-must-not-be-described-as-ai-and-must-not-claim-ai-behavior-it-should-be-presented-as-a-simple-help-support-or-quick-assistant-widget-with-deterministic-scripted-replies",
+      "title": "Implement an on-page chat-style widget (UI only) anchored to the bottom-right of the viewport that can be toggled open/closed. The widget must be implemented as React components (no inline <script>), must not be described as “AI”, and must not claim AI behavior; it should be presented as a simple “Help/Support” or “Quick Assistant” widget with deterministic scripted replies.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-inside-the-chat-widget-support-a-simple-input-box-that-appends-the-user-s-message-to-the-chat-history-and-returns-a-scripted-response-if-the-user-message-includes-discount-payment-related-keywords-e-g-discount-offer-off-pay-price-show-an-in-widget-payment-prompt-section-containing-a-google-pay-qr-image-and-a-whatsapp-link-to-https-wa-me-918000262644-for-all-other-messages-respond-with-a-general-service-coverage-reply",
+      "title": "Inside the chat widget, support a simple input box that appends the user’s message to the chat history and returns a scripted response. If the user message includes discount/payment-related keywords (e.g., “discount”, “offer”, “off”, “pay”, “price”), show an in-widget payment prompt section containing a Google Pay QR image and a WhatsApp link to https://wa.me/918000262644. For all other messages, respond with a general service/coverage reply.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-externally-hosted-qr-image-url-used-in-the-provided-snippet-with-a-local-static-image-stored-under-frontend-public-assets-generated-and-render-that-local-image-inside-the-widget-payment-prompt-do-not-load-the-qr-image-from-any-external-url",
+      "title": "Replace the externally hosted QR image URL used in the provided snippet with a local static image stored under frontend/public/assets/generated, and render that local image inside the widget payment prompt (do not load the QR image from any external URL).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-areas-served-section-to-split-locations-into-two-clearly-labeled-groups-ahmedabad-areas-and-gandhinagar-areas-keep-the-section-compact-denser-layout-than-the-current-single-combined-grid-while-preserving-the-existing-bilingual-english-gujarati-presentation-style-used-for-each-area-item",
+      "title": "Update the Areas Served section to split locations into two clearly labeled groups: Ahmedabad areas and Gandhinagar areas. Keep the section compact (denser layout than the current single combined grid) while preserving the existing bilingual (English + Gujarati) presentation style used for each area item.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-areas-served-groups-include-these-ahmedabad-areas-and-place-them-at-the-top-of-the-ahmedabad-list-nikol-naroda-bapunagar-hanspura-nana-chiloda-odhav-kuber-nagar-kathwada-add-any-missing-ones-to-the-data-source-and-do-not-remove-existing-areas-already-listed-unless-required-for-duplicates",
+      "title": "Ensure the Areas Served groups include these Ahmedabad areas and place them at the top of the Ahmedabad list: Nikol, Naroda, Bapunagar, Hanspura, Nana Chiloda, Odhav, Kuber Nagar, Kathwada. Add any missing ones to the data source and do not remove existing areas already listed unless required for duplicates.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-small-upi-payment-qr-code-image-to-the-site-using-the-user-uploaded-qr-image-as-the-source-store-the-final-qr-image-as-a-local-static-asset-under-frontend-public-assets-generated-and-display-it-in-a-compact-size-in-the-support-chat-widget-payment-prompt-smaller-than-the-current-128x128-display",
+      "title": "Add a small UPI payment QR code image to the site using the user-uploaded QR image as the source. Store the final QR image as a local static asset under frontend/public/assets/generated and display it in a compact size in the Support Chat Widget payment prompt (smaller than the current 128x128 display).",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-small-scan-to-pay-qr-block-in-the-footer-using-the-same-local-qr-image-asset-displayed-in-a-compact-size-and-styled-consistently-with-the-current-footer-design-without-changing-existing-footer-ctas-or-contact-links",
+      "title": "Add a small 'Scan to Pay' QR block in the Footer using the same local QR image asset, displayed in a compact size and styled consistently with the current footer design without changing existing footer CTAs or contact links.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-instagram-icon-symbol-that-links-to-https-www-instagram-com-magical-sofa-cleaning-igsh-mw42bhiweg9ozdv0bq-styled-consistently-with-the-existing-contact-cta-ui-without-removing-or-changing-the-existing-call-and-whatsapp-ctas",
+      "title": "Add an Instagram icon/symbol that links to https://www.instagram.com/magical_sofa_cleaning?igsh=MW42bHIweG9oZDV0bQ==, styled consistently with the existing contact/CTA UI, without removing or changing the existing Call and WhatsApp CTAs.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-convert-all-user-facing-bilingual-english-gujarati-copy-across-the-landing-page-to-english-only-while-keeping-the-current-page-structure-layout-and-all-existing-contact-ctas-links-unchanged",
+      "title": "Convert all user-facing bilingual (English + Gujarati) copy across the landing page to English-only while keeping the current page structure, layout, and all existing contact CTAs/links unchanged.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-ahmedabad-focused-seo-keywords-to-on-page-marketing-copy-without-keyword-stuffing-and-ensure-seo-metadata-in-frontend-index-html-includes-ahmedabad-keyword-phrases-such-as-sofa-cleaning-ahmedabad-aligned-with-the-existing-services",
+      "title": "Add Ahmedabad-focused SEO keywords to on-page marketing copy (without keyword stuffing) and ensure SEO metadata in frontend/index.html includes Ahmedabad keyword phrases such as \"sofa cleaning Ahmedabad\" aligned with the existing services.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-interactive-sofa-cleaning-price-calculator-form-for-90-per-foot-that-lets-customers-scroll-select-the-number-of-feet-and-instantly-see-the-estimated-total-bill-and-display-a-clear-note-stating-no-extra-charges",
+      "title": "Add an interactive Sofa Cleaning price calculator form for ₹90 per foot that lets customers scroll/select the number of feet and instantly see the estimated total bill, and display a clear note stating \"No extra charges\".",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-s-iconography-presentation-to-a-more-latest-modern-look-by-introducing-or-refining-relevant-icons-for-key-sections-e-g-calculator-pricing-service-highlights-while-keeping-the-existing-call-whatsapp-instagram-icons-and-links-intact",
+      "title": "Update the site’s iconography/presentation to a more \"latest\" modern look by introducing or refining relevant icons for key sections (e.g., calculator/pricing, service highlights) while keeping the existing Call/WhatsApp/Instagram icons and links intact.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-the-site-s-color-palette-and-overall-visual-styling-to-look-more-premium-and-modern-while-staying-consistent-across-header-hero-services-areas-footer-floating-contact-buttons-and-the-support-chat-widget-keep-the-current-non-blue-non-purple-primary-direction-fresh-clean-feel-improve-contrast-readability-and-preserve-responsiveness",
+      "title": "Refine the site’s color palette and overall visual styling to look more premium and modern while staying consistent across Header, Hero, Services, Areas, Footer, Floating Contact Buttons, and the Support Chat Widget. Keep the current non-blue/non-purple primary direction (fresh/clean feel), improve contrast/readability, and preserve responsiveness.",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-background-to-incorporate-a-light-before-vs-after-cleaning-style-image-subtle-professional-not-busy-while-keeping-the-current-hero-layout-overlay-readability-and-existing-call-to-action-buttons-unchanged",
+      "title": "Update the Hero background to incorporate a light, ‘before vs after’ cleaning style image (subtle, professional, not busy) while keeping the current Hero layout, overlay readability, and existing call-to-action buttons unchanged.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-seo-implementation-beyond-the-existing-title-description-keywords-by-adding-essential-on-page-seo-tags-and-structured-data-suitable-for-a-local-service-business-in-ahmedabad-gandhinagar-without-keyword-stuffing-include-a-json-ld-localbusiness-schema-and-add-open-graph-twitter-card-metadata-using-the-site-s-local-generated-logo-as-the-preview-image",
+      "title": "Improve SEO implementation beyond the existing title/description/keywords by adding essential on-page SEO tags and structured data suitable for a local service business in Ahmedabad & Gandhinagar (without keyword stuffing). Include a JSON-LD LocalBusiness schema and add Open Graph + Twitter card metadata using the site’s local generated logo as the preview image.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-modernize-and-standardize-icon-styling-across-key-ui-elements-services-cards-section-headers-calculator-highlights-and-any-decorative-icons-to-look-more-latest-and-consistent-while-keeping-the-existing-call-whatsapp-instagram-icons-and-their-links-intact",
+      "title": "Modernize and standardize icon styling across key UI elements (Services cards, section headers, calculator highlights, and any decorative icons) to look more ‘latest’ and consistent, while keeping the existing Call/WhatsApp/Instagram icons and their links intact.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-s-global-theme-colors-so-the-overall-look-is-not-green-only-and-instead-uses-a-more-appealing-multi-color-palette-that-incorporates-blue-yellow-and-orange-while-keeping-readability-contrast-and-a-professional-premium-cleaning-service-feel-apply-the-updated-palette-consistently-across-header-hero-services-areas-served-footer-floating-contact-buttons-and-the-support-chat-widget-without-changing-any-existing-cta-destinations-call-whatsapp-instagram-links-or-page-structure",
+      "title": "Update the site’s global theme colors so the overall look is not green-only, and instead uses a more appealing multi-color palette that incorporates blue, yellow, and orange (while keeping readability/contrast and a professional, premium cleaning-service feel). Apply the updated palette consistently across Header, Hero, Services, Areas Served, Footer, Floating Contact Buttons, and the Support Chat Widget, without changing any existing CTA destinations (Call/WhatsApp/Instagram links) or page structure.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-or-reduce-any-hard-coded-green-first-styling-used-for-non-whatsapp-ui-elements-so-that-components-primarily-follow-the-updated-theme-tokens-primary-secondary-accent-rather-than-fixed-oklch-green-values-keep-whatsapp-buttons-recognizable-as-whatsapp-but-ensure-the-rest-of-the-site-s-branding-is-not-dominated-by-green",
+      "title": "Replace or reduce any hard-coded green-first styling used for non-WhatsApp UI elements so that components primarily follow the updated theme tokens (primary/secondary/accent) rather than fixed OKLCH green values. Keep WhatsApp buttons recognizable as WhatsApp, but ensure the rest of the site’s branding is not dominated by green.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-on-page-section-that-highlights-the-business-s-google-business-profile-with-a-clear-claim-of-210-google-reviews-and-include-a-prominent-link-to-the-provided-google-business-profile-share-url-https-share-google-nex4ll5ooixavyxjz",
+      "title": "Add a new on-page section that highlights the business’s Google Business Profile with a clear claim of “210+ Google Reviews”, and include a prominent link to the provided Google Business Profile share URL: https://share.google/Nex4Ll5OOIXAVyXjZ.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-simple-static-reviews-comments-ui-in-the-new-google-reviews-section-that-can-display-a-list-of-review-comment-snippets-from-a-local-in-code-data-array-but-do-not-fabricate-specific-customer-names-comments-the-ui-should-be-ready-to-populate-once-real-review-text-is-provided",
+      "title": "Implement a simple, static “Reviews & Comments” UI in the new Google Reviews section that can display a list of review comment snippets from a local in-code data array, but do not fabricate specific customer names/comments; the UI should be ready to populate once real review text is provided.",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-google-business-profile-link-entry-in-the-footer-contact-us-or-adjacent-footer-area-using-english-link-text-e-g-google-business-profile-view-us-on-google-that-points-to-https-share-google-nex4ll5ooixavyxjz",
+      "title": "Add a Google Business Profile link entry in the Footer “Contact Us” or adjacent footer area, using English link text (e.g., “Google Business Profile” / “View us on Google”) that points to https://share.google/Nex4Ll5OOIXAVyXjZ.",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-on-page-google-business-review-comments-cards-ui-from-the-google-reviews-section-while-keeping-the-section-s-headline-star-rating-block-and-outbound-google-business-profile-link-https-share-google-nex4ll5ooixavyxjz-intact",
+      "title": "Remove the on-page Google Business review comments/cards UI from the Google Reviews section, while keeping the section’s headline, star rating block, and outbound Google Business Profile link (https://share.google/Nex4Ll5OOIXAVyXjZ) intact.",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-areas-we-serve-ahmedabad-list-so-the-following-areas-appear-at-the-very-top-of-the-ahmedabad-list-in-this-exact-order-nikol-naroda-bapunagar-hanspura-odhav-kuber-nagar-vastral-keep-the-rest-of-the-existing-ahmedabad-areas-in-the-list-do-not-remove-any-avoiding-duplicates",
+      "title": "Update the \"Areas We Serve\" (Ahmedabad list) so the following areas appear at the very top of the Ahmedabad list in this exact order: Nikol, Naroda, Bapunagar, Hanspura, Odhav, Kuber Nagar, Vastral. Keep the rest of the existing Ahmedabad areas in the list (do not remove any), avoiding duplicates.",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-further-improve-the-overall-visual-design-to-look-more-professional-and-modern-across-the-landing-page-header-hero-services-areas-served-google-reviews-section-footer-floating-contact-buttons-and-support-chat-widget-while-preserving-the-existing-layout-sections-and-keeping-all-cta-destinations-unchanged",
+      "title": "Further improve the overall visual design to look more professional and modern across the landing page (Header, Hero, Services, Areas Served, Google Reviews section, Footer, Floating Contact Buttons, and Support Chat Widget) while preserving the existing layout/sections and keeping all CTA destinations unchanged.",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-hero-section-includes-a-subtle-professional-before-vs-after-cleaning-style-image-as-the-background-using-a-locally-served-static-asset-no-external-image-urls",
+      "title": "Ensure the Hero section includes a subtle, professional before-vs-after cleaning style image as the background using a locally served static asset (no external image URLs).",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-restore-the-hero-section-background-image-to-the-previously-used-photo-the-one-used-before-the-current-before-after-hero-image-without-changing-the-hero-layout-overlay-readability-headings-or-the-existing-call-whatsapp-cta-links",
+      "title": "Restore the Hero section background image to the previously used photo (the one used before the current before/after hero image), without changing the Hero layout, overlay readability, headings, or the existing Call/WhatsApp CTA links.",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-services-section-so-the-primary-offerings-sofa-cleaning-carpet-cleaning-chair-cleaning-mattress-cleaning-and-ac-water-jet-service-are-clearly-prioritized-at-the-top-of-the-services-list-and-rename-the-current-ac-services-card-title-to-ac-water-jet-service-while-keeping-the-existing-ac-sub-service-pricing-list-visible",
+      "title": "Update the Services section so the primary offerings (Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service) are clearly prioritized at the top of the Services list, and rename the current “AC Services” card title to “AC Water Jet Service” while keeping the existing AC sub-service pricing list visible.",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-book-now-call-to-action-button-styling-more-visually-prominent-by-using-a-distinct-accent-color-and-slightly-larger-sizing-without-changing-the-destination-links",
+      "title": "Make the “Book Now” call-to-action button styling more visually prominent by using a distinct accent color and slightly larger sizing, without changing the destination links.",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-incorporate-the-exact-seo-keyword-phrase-sofa-cleaning-services-in-ahmedabad-into-on-page-marketing-copy-in-a-natural-way-no-keyword-stuffing-and-ensure-the-site-metadata-frontend-index-html-includes-that-phrase-where-appropriate",
+      "title": "Incorporate the exact SEO keyword phrase “Sofa Cleaning Services in Ahmedabad” into on-page marketing copy in a natural way (no keyword stuffing), and ensure the site metadata (frontend/index.html) includes that phrase where appropriate.",
+      "reqIds": [
+        "REQ-46"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-live-photos-section-on-the-landing-page-that-displays-a-small-responsive-gallery-of-locally-served-real-service-photos-no-external-image-urls",
+      "title": "Add a new “Live Photos” section on the landing page that displays a small, responsive gallery of locally-served real service photos (no external image URLs).",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-voice-input-option-to-the-existing-support-chat-widget-so-a-customer-can-speak-and-the-app-converts-the-speech-to-text-and-inserts-it-into-the-chat-input-or-directly-sends-it-as-a-user-message-use-only-in-browser-capabilities-no-external-apis-and-do-not-describe-the-feature-as-ai-anywhere-in-the-ui",
+      "title": "Add a voice-input option to the existing Support Chat Widget so a customer can speak and the app converts the speech to text and inserts it into the chat input (or directly sends it as a user message). Use only in-browser capabilities (no external APIs), and do not describe the feature as “AI” anywhere in the UI.",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-support-chat-widget-optionally-speak-the-widget-s-scripted-bot-reply-aloud-text-to-speech-after-it-is-appended-to-the-chat-history-using-in-browser-text-to-speech-provide-a-simple-on-off-toggle-within-the-widget-ui",
+      "title": "Make the Support Chat Widget optionally speak the widget’s scripted bot reply aloud (text-to-speech) after it is appended to the chat history, using in-browser text-to-speech. Provide a simple on/off toggle within the widget UI.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-voice-feature-gracefully-degrades-on-unsupported-browsers-and-handles-permission-denial-without-breaking-the-widget-show-a-non-intrusive-english-message-inside-the-widget-when-speech-recognition-or-speech-synthesis-is-unavailable",
+      "title": "Ensure the voice feature gracefully degrades on unsupported browsers and handles permission denial without breaking the widget. Show a non-intrusive English message inside the widget when speech recognition or speech synthesis is unavailable.",
+      "reqIds": [
+        "REQ-50"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cleaned-cropped-square-logo-asset-from-the-user-uploaded-image-img-20260207-wa0011-jpg-and-save-it-as-a-locally-served-static-file-under-frontend-public-assets-generated",
+      "title": "Create a cleaned, cropped, square logo asset from the user-uploaded image (IMG-20260207-WA0011.jpg) and save it as a locally served static file under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-website-to-use-the-new-uploaded-logo-asset-everywhere-the-brand-logo-is-referenced-including-header-logo-image-footer-logo-image-and-frontend-index-html-metadata-image-references-favicon-open-graph-twitter-and-json-ld-image",
+      "title": "Update the website to use the new uploaded-logo asset everywhere the brand logo is referenced, including: Header logo image, Footer logo image, and frontend/index.html metadata image references (favicon, Open Graph, Twitter, and JSON-LD image).",
+      "reqIds": [
+        "REQ-52"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-brand-logo-visibility-by-adding-a-clear-black-or-white-backing-shape-behind-the-existing-uploaded-logo-image-anywhere-it-appears-at-minimum-header-and-footer-the-backing-must-be-a-simple-solid-background-white-in-light-mode-and-black-in-dark-mode-or-an-equivalent-black-white-treatment-with-padding-and-a-subtle-border-shadow-so-the-logo-remains-readable-on-any-page-background",
+      "title": "Improve brand logo visibility by adding a clear black-or-white backing shape behind the existing uploaded logo image anywhere it appears (at minimum: Header and Footer). The backing must be a simple solid background (white in light mode and black in dark mode, or an equivalent black/white treatment) with padding and a subtle border/shadow so the logo remains readable on any page background.",
+      "reqIds": [
+        "REQ-53"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-professional-marketing-copy-emphasizing-hygienic-cleaning-fast-drying-in-2-hours-and-thorough-cleanup-finish-across-the-landing-page-where-it-naturally-fits-e-g-hero-supporting-text-and-or-a-short-highlight-line-near-the-services-intro-using-english-only-text",
+      "title": "Add professional marketing copy emphasizing hygienic cleaning, fast drying in ~2 hours, and thorough cleanup/finish across the landing page where it naturally fits (e.g., Hero supporting text and/or a short highlight line near the services intro), using English-only text.",
+      "reqIds": [
+        "REQ-54"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-explicit-office-chair-cleaning-offering-in-the-services-section-so-it-is-clearly-visible-as-a-service-not-just-implied-this-can-be-done-by-renaming-the-existing-chair-cleaning-card-title-to-office-chair-cleaning-and-adjusting-its-description-accordingly-while-keeping-the-existing-chair-cleaning-pricing-unchanged",
+      "title": "Add an explicit “Office Chair Cleaning” offering in the Services section so it is clearly visible as a service (not just implied). This can be done by renaming the existing Chair Cleaning card title to “Office Chair Cleaning” and adjusting its description accordingly, while keeping the existing Chair Cleaning pricing unchanged.",
+      "reqIds": [
+        "REQ-55"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-site-layout-feel-more-professional-by-reducing-oversized-ui-boxes-cards-decrease-padding-vertical-spacing-and-card-header-sizing-across-key-card-based-sections-at-minimum-services-cards-live-photos-cards-google-reviews-star-rating-block-and-footer-qr-payment-block-while-preserving-readability-and-responsiveness",
+      "title": "Make the site layout feel more professional by reducing oversized UI boxes/cards: decrease padding, vertical spacing, and card/header sizing across key card-based sections (at minimum: Services cards, Live Photos cards, Google Reviews star-rating block, and Footer QR/payment block) while preserving readability and responsiveness.",
+      "reqIds": [
+        "REQ-56"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-the-global-visual-styling-so-the-website-feels-more-blue-while-staying-premium-and-readable-increase-the-presence-of-the-existing-blue-primary-color-in-non-whatsapp-ui-elements-e-g-section-chips-headings-accents-borders-key-buttons-without-changing-any-whatsapp-green-styling-or-any-cta-destinations",
+      "title": "Adjust the global visual styling so the website feels more ‘blue’ while staying premium and readable: increase the presence of the existing blue primary color in non-WhatsApp UI elements (e.g., section chips, headings accents, borders, key buttons) without changing any WhatsApp green styling or any CTA destinations.",
+      "reqIds": [
+        "REQ-57"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cleaned-cropped-square-logo-asset-from-the-newly-uploaded-image-img-20260207-wa0012-jpg-and-save-it-as-a-locally-served-static-file-under-frontend-public-assets-generated",
+      "title": "Create a cleaned, cropped, square logo asset from the newly uploaded image (IMG-20260207-WA0012.jpg) and save it as a locally served static file under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-58"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-website-to-use-the-new-logo-asset-everywhere-the-brand-logo-is-referenced-including-header-logo-image-footer-logo-image-and-frontend-index-html-metadata-image-references-favicon-open-graph-twitter-and-json-ld-image",
+      "title": "Update the website to use the new logo asset everywhere the brand logo is referenced, including: header logo image, footer logo image, and frontend/index.html metadata image references (favicon, Open Graph, Twitter, and JSON-LD image).",
+      "reqIds": [
+        "REQ-59"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-live-photos-section-to-explicitly-include-office-chair-cleaning-as-a-clearly-identified-gallery-item-using-existing-locally-served-photo-assets-no-external-image-urls",
+      "title": "Update the Live Photos section to explicitly include Office Chair Cleaning as a clearly identified gallery item, using existing locally served photo assets (no external image URLs).",
+      "reqIds": [
+        "REQ-60"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-locally-served-live-photos-gallery-image-for-office-chair-cleaning-and-ensure-it-appears-in-the-live-photos-grid-alongside-the-existing-office-chair-cleaning-item",
+      "title": "Add a new locally-served Live Photos gallery image for Office Chair Cleaning, and ensure it appears in the Live Photos grid alongside the existing Office Chair Cleaning item.",
+      "reqIds": [
+        "REQ-61"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-locally-served-live-photos-gallery-image-that-clearly-shows-a-before-after-sofa-cleaning-result-and-label-it-in-the-live-photos-grid-using-english-only-text",
+      "title": "Add a new locally-served Live Photos gallery image that clearly shows a before/after sofa cleaning result, and label it in the Live Photos grid using English-only text.",
+      "reqIds": [
+        "REQ-62"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-on-page-support-chat-ai-support-option-from-the-website-so-there-is-no-chat-support-widget-ui-visible-anywhere-including-the-floating-bottom-right-support-button-and-the-expandable-chat-panel",
+      "title": "Remove the on-page Support/Chat (\"AI support\") option from the website so there is no chat/support widget UI visible anywhere (including the floating bottom-right \"Support\" button and the expandable chat panel).",
+      "reqIds": [
+        "REQ-63"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cleaned-cropped-square-logo-asset-from-the-newly-uploaded-image-img-20260207-wa0011-1-jpg-and-save-it-as-a-locally-served-static-file-under-frontend-public-assets-generated",
+      "title": "Create a cleaned, cropped, square logo asset from the newly uploaded image (IMG-20260207-WA0011-1.jpg) and save it as a locally served static file under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-64"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-website-to-use-the-newly-generated-logo-asset-everywhere-the-brand-logo-is-referenced-including-header-logo-image-footer-logo-image-and-frontend-index-html-metadata-image-references-favicon-open-graph-twitter-and-json-ld-image",
+      "title": "Update the website to use the newly generated logo asset everywhere the brand logo is referenced, including: Header logo image, Footer logo image, and frontend/index.html metadata image references (favicon, Open Graph, Twitter, and JSON-LD image).",
+      "reqIds": [
+        "REQ-65"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-local-seo-targeting-for-ahmedabad-by-updating-on-page-copy-and-metadata-to-clearly-communicate-that-services-are-available-across-all-areas-of-ahmedabad-without-keyword-stuffing-while-keeping-all-existing-cta-destinations-call-whatsapp-instagram-google-business-profile-links-unchanged",
+      "title": "Improve local SEO targeting for Ahmedabad by updating on-page copy and metadata to clearly communicate that services are available across all areas of Ahmedabad (without keyword stuffing), while keeping all existing CTA destinations (Call/WhatsApp/Instagram/Google Business Profile links) unchanged.",
+      "reqIds": [
+        "REQ-66"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -123,6 +579,180 @@
     {
       "id": "AR-4",
       "summary": "Do not add any AI-based features now or in future scope for this website.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add an expanded “Areas Served” list covering both new and old areas of Ahmedabad and Gandhinagar.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a clear price list for services (Sofa 90/ft, Mattress 599, Carpet 15/sqft, Chair 100–150, AC services pricing as provided).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Expand AC services offerings to include: Water Jet, Water Foam Jet, AC Repair (starting 200), Installation 1499, Uninstallation 599, Gas Refilling 3499.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Refresh the site with a more professional, modern digital design and include SEO-oriented keywords in the copy.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add floating contact buttons (WhatsApp + Call) and an on-page chat-style widget that can reveal a Google Pay QR/payment prompt for discounts.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Update “Areas Served” section to split Ahmedabad vs Gandhinagar into separate grouped lists, keep the layout compact, and include: Nikol, Naroda, Bapunagar, Hanspura, Nana Chiloda, Odhav, Kuber Nagar, Kathwada.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add the Google Pay QR code in a smaller (compact) display size on the page/widget.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Add an Instagram icon/symbol linking to https://www.instagram.com/magical_sofa_cleaning?igsh=MW42bHIweG9oZDV0bQ== (e.g., in header/footer/contact section).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Add an interactive price-calculator form for Sofa Cleaning (₹90 per foot) where customers can scroll/select feet and see the estimated bill, and show a clear note like “No extra charges” (also add a small pricing mention near footer if requested).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Revise existing mixed Gujarati+English site copy to English-only and add Ahmedabad-focused SEO keywords (e.g., “sofa cleaning Ahmedabad”).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Improve site colors/theme; add a subtle before/after-style background image (light/cleaning themed); enhance SEO with Ahmedabad-focused keywords and metadata; refine icon/design presentation for a more premium look.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Refine the site color palette: move away from the current green-only look; use a more appealing mix such as blue/yellow/orange.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Add Google Business Profile information/link (from provided share.google URL) to the website (e.g., in footer/contact/CTA area).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Update Areas Served (Ahmedabad list): add “Vastral” and place it near the top with Nikol, Naroda, Bapunagar, Hanspura, Odhav, Kuber Nagar.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Revert/restore the hero (before/after) photo to the previously used image (“pela je photo”).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Prioritize the listed services (Sofa, Carpet, Chair, Mattress cleaning + AC Water Jet) at the top of the Services section/order.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Change the “Book Now” button to a slightly different/accent color so it stands out more.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Incorporate SEO keyword phrasing such as “Sofa Cleaning Services in Ahmedabad” into on-page copy (without keyword stuffing).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Add/replace with real “live photos” (actual service photos) on the website (served locally as project assets).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Add the business logo to the website UI (e.g., in the header/hero) as requested by the user.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Set the logo background behind/around the logo to black or white (improve logo visibility).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Add marketing copy points: hygienic cleaning, quick drying in ~2 hours, and thorough cleaning completion messaging.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Add/mention an Office Chair Cleaning service offering on the website (e.g., in Services list/cards).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Reduce oversized UI boxes/cards (make section cards more compact) for a more professional website look.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Introduce some blue color into the site styling/theme (while keeping a professional look).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "Update the Live Photos section to include office chair cleaning photos/content (show Office Chair Cleaning in the Live Photos gallery).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Update the Live Photos section to include a before/after sofa cleaning photo (served locally as a project asset).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-34",
+      "summary": "Remove/delete the “AI support” option from the website UI (no AI support/assistant option shown).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "Improve local SEO targeting Ahmedabad (all areas) for sofa cleaning keywords across on-page copy and metadata.",
       "reqIds": [],
       "status": "pending"
     }

@@ -1,31 +1,60 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T08:17:43.674Z",
-  "summary": "REQ-9 and REQ-10 appear implemented: Services.tsx now defines 5 service cards (Sofa, Carpet, Chair, Mattress, AC Water Jet) with bilingual titles/descriptions, and removes the prior “Home Cleaning”/combined cards. REQ-11 appears satisfied: no AI-related UI/endpoints/TODOs are shown in the diff. Phone/WhatsApp CTAs in Footer remain unchanged per constraint.",
+  "generatedAt": "2026-02-07T14:10:57.943Z",
+  "summary": "BuildRequest has no explicit requirements beyond layout sizing/spacing adjustments and several constraints. The diff appears to make broad visual/theme and content/SEO-related changes that go beyond simply reducing oversized UI boxes/cards, and it also references a chat widget change/removal not requested.",
   "missing_requirements": [],
   "hallucinated_features": [
     {
-      "description": "Footer marketing copy was updated to list specific services (sofa, carpet, chair, mattress, AC) in English and Gujarati, which was not explicitly requested by the BuildRequest requirements.",
-      "reason": "BuildRequest requirements focus on updating the Services section offerings and removing Home Cleaning; it does not request Footer copy changes (though they are consistent with the services update).",
+      "description": "Added/modified comprehensive SEO metadata and JSON-LD structured data in the HTML entry point.",
+      "reason": "Non-goal/constraint indicates this request should not change SEO content; requested scope was only adjusting sizing/spacing of existing UI elements.",
       "evidence": [
-        "frontend/src/components/landing/Footer.tsx"
+        "frontend-file-summaries.txt (\"frontend/index.html\": \"comprehensive SEO metadata... and JSON-LD LocalBusiness structured data\")"
       ]
     },
     {
-      "description": "Project metadata/state files were modified (frontend-file-summaries.txt and project_state.json), which are not part of the stated frontend Services-section requirements.",
-      "reason": "No requirement requests updating file summary or project state documentation; these changes are ancillary to the requested UI update.",
+      "description": "Primary color palette/theme changes (including references to professional blue primary palette and OKLCH palette changes).",
+      "reason": "BuildRequest only asked to reduce oversized UI boxes/cards; large-scale theme/palette changes are beyond the stated scope (and potentially conflict with existing theme constraints depending on prior context).",
       "evidence": [
-        "frontend-file-summaries.txt",
-        "project_state.json"
+        "frontend-file-summaries.txt (\"frontend/src/index.css\": \"enhanced professional blue primary color palette\")",
+        "frontend-file-summaries.txt (\"frontend/index.css\": \"Global styles with fresh green primary palette...\")"
+      ]
+    },
+    {
+      "description": "Support chat widget changes/removal from the app composition and separate styling updates to SupportChatWidget.",
+      "reason": "BuildRequest explicitly lists non-goal: no new sections or features beyond layout sizing/spacing; changing/removing/altering a chat widget is a functional/feature-level change not requested.",
+      "evidence": [
+        "frontend-file-summaries.txt (\"frontend/src/App.tsx\": \"...FloatingContactButtons overlay (SupportChatWidget removed)\")",
+        "frontend-file-summaries.txt (\"frontend/src/components/chat/SupportChatWidget.tsx\": \"Support chat widget with polished visuals...\")"
+      ]
+    },
+    {
+      "description": "Introduced a new reusable logo component and references to a newly uploaded logo (v2) for favicon/social images.",
+      "reason": "Not requested; scope was to reduce oversized UI boxes/cards. Also touches brand assets/metadata rather than purely sizing/spacing.",
+      "evidence": [
+        "frontend-file-summaries.txt (\"frontend/src/components/common/LogoWithBacking.tsx\": \"Reusable component...\")",
+        "frontend-file-summaries.txt (\"frontend/index.html\": \"...referencing the new uploaded logo (v2) for favicon and social media images\")"
+      ]
+    },
+    {
+      "description": "Added a new interactive 'Sofa Cleaning Price Calculator' UI element (or materially expanded it) including slider-based calculation.",
+      "reason": "Not requested in this change request; it is a feature/UI addition beyond resizing/spacing adjustments.",
+      "evidence": [
+        "frontend/src/components/landing/Services.tsx (imports SofaPriceCalculator and includes it)",
+        "frontend/src/components/landing/SofaPriceCalculator.tsx (full interactive calculator component)"
       ]
     }
   ],
-  "confidence": 0.74,
+  "confidence": 0.62,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/floating/FloatingContactButtons.tsx",
+    "frontend/src/components/landing/AreasServed.tsx",
+    "frontend/src/components/landing/GoogleReviewsSection.tsx",
+    "frontend/src/components/landing/Hero.tsx",
+    "frontend/src/components/landing/LivePhotos.tsx",
     "frontend/src/components/landing/Services.tsx",
+    "frontend/src/components/landing/SofaPriceCalculator.tsx",
     "project_state.json"
   ]
 }

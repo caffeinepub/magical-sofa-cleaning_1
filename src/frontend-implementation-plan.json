@@ -1,54 +1,6 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update landing page services list (remove Home Cleaning; add Chair Cleaning & AC Water Jet Service; no AI)",
-  "requirements": [
-    {
-      "id": "REQ-9",
-      "summary": "Remove the “Full Home Cleaning” service card from the Services section.",
-      "acceptanceCriteria": [
-        "The Services grid no longer displays any service titled or described as “Home Cleaning” (English or Gujarati).",
-        "The Services section continues to render correctly without layout breaks after removing the card."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/landing/Services.tsx",
-          "operation": "modify",
-          "description": "Remove the “Full Home Cleaning | સંપૂર્ણ ઘર સફાઈ” item from the local services list so it is not rendered in the Services grid, while preserving existing layout/styling and without changing any phone/WhatsApp CTA links."
-        }
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "summary": "Update Services offerings to exactly 5 bilingual cards: Sofa, Carpet, Chair, Mattress, and AC Water Jet Service.",
-      "acceptanceCriteria": [
-        "The Services section displays 5 service cards for: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service.",
-        "The existing “AC Service” card is renamed/updated to “AC Water Jet Service” (and Gujarati counterpart updated accordingly) while preserving the existing call/WhatsApp CTAs elsewhere on the page.",
-        "No “combined” card remains for “Carpet & Mattress” (Carpet and Mattress are separate service cards).",
-        "Each service card includes an English title/description and a Gujarati title/description consistent with the current bilingual pattern in Services.tsx."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/landing/Services.tsx",
-          "operation": "modify",
-          "description": "Update the Services services array to contain exactly five entries: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service. Replace the combined “Carpet & Mattress” entry with two separate bilingual cards, rename “AC Service” to “AC Water Jet Service” (including Gujarati title/description), and add a new Chair Cleaning bilingual card. Adjust icons/imports and responsive grid columns as needed to avoid layout breaks, without modifying any CTA links (tel:+918000262644 and https://wa.me/918000262644)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "summary": "Ensure no AI-related UI/copy/placeholders are added anywhere on the site.",
-      "acceptanceCriteria": [
-        "No UI sections, buttons, copy, or backend endpoints related to AI features are added.",
-        "No TODOs, stubs, or placeholder components for future AI functionality are introduced."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/landing/Footer.tsx",
-          "operation": "modify",
-          "description": "Remove or replace the AI-associated attribution/link text (e.g., caffeine.ai) so no AI-related copy is present in the UI, while keeping existing phone/WhatsApp CTA links unchanged."
-        }
-      ]
-    }
-  ]
+  "title": "Reduce oversized UI boxes/cards for a more professional look",
+  "requirements": []
 }

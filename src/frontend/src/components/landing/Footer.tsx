@@ -1,102 +1,159 @@
-import { Phone, MapPin } from 'lucide-react';
-import { SiWhatsapp } from 'react-icons/si';
+import { Phone, MapPin, ExternalLink } from 'lucide-react';
+import { SiWhatsapp, SiGoogle } from 'react-icons/si';
+import { Heart } from 'lucide-react';
+import LogoWithBacking from '@/components/common/LogoWithBacking';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
-      <div className="container px-4 py-12 md:px-6 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t-2 border-primary/20 bg-card">
+      <div className="container px-4 py-12 md:px-6 md:py-14 lg:py-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <img 
-                src="/assets/generated/magical-service-logo.dim_512x512.png" 
-                alt="Magical Service" 
-                className="h-12 w-12 object-contain"
-              />
+              <LogoWithBacking size="lg" />
               <div className="flex flex-col">
-                <span className="text-xl font-bold leading-none tracking-tight">
+                <span className="text-xl font-bold leading-none tracking-tight lg:text-2xl">
                   MAGICAL <span className="text-primary">SERVICE</span>
                 </span>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Your trusted partner for professional sofa, carpet, chair, mattress, and AC cleaning services in Ahmedabad & Gandhinagar.
-              <span className="mt-2 block">
-                અમદાવાદ અને ગાંધીનગરમાં વ્યાવસાયિક સોફા, કાર્પેટ, ખુરશી, ગાદલું અને AC સફાઈ સેવાઓ માટે તમારા વિશ્વાસુ ભાગીદાર.
-              </span>
+            <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
+              Your trusted partner for professional sofa cleaning, carpet cleaning, chair cleaning, mattress cleaning, and complete AC services in Ahmedabad & Gandhinagar. Affordable rates with same-day service.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Quick Links | ઝડપી લિંક્સ</h3>
-            <ul className="space-y-2 text-sm">
+          <div className="space-y-5">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary lg:text-base">Quick Links</h3>
+            <ul className="space-y-3 text-sm lg:text-base">
               <li>
-                <a href="#home" className="text-muted-foreground transition-colors hover:text-primary">
-                  Home | હોમ
+                <a href="#home" className="font-medium text-muted-foreground transition-colors hover:text-primary">
+                  Home
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground transition-colors hover:text-primary">
-                  Services | સેવાઓ
+                <a href="#services" className="font-medium text-muted-foreground transition-colors hover:text-primary">
+                  Services
                 </a>
               </li>
               <li>
-                <a href="#areas" className="text-muted-foreground transition-colors hover:text-primary">
-                  Areas Served | વિસ્તારો
+                <a href="#areas" className="font-medium text-muted-foreground transition-colors hover:text-primary">
+                  Areas Served
+                </a>
+              </li>
+              <li>
+                <a href="#reviews" className="font-medium text-muted-foreground transition-colors hover:text-primary">
+                  Reviews
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Contact Us | અમારો સંપર્ક કરો</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="tel:+918000262644" className="text-muted-foreground transition-colors hover:text-primary">
+          <div className="space-y-5">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary lg:text-base">Contact Us</h3>
+            <ul className="space-y-3.5 text-sm lg:text-base">
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 stroke-[2.5] text-primary" />
+                <a href="tel:+918000262644" className="font-medium text-muted-foreground transition-colors hover:text-primary">
                   8000 2626 44
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">
-                  Nikol, Naroda, Bapunagar<br />Ahmedabad, Gujarat
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 stroke-[2.5] text-primary" />
+                <span className="font-medium text-muted-foreground">
+                  Serving Ahmedabad & Gandhinagar<br />
+                  Gujarat, India
                 </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <SiGoogle className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                <a 
+                  href="https://share.google/Nex4Ll5OOIXAVyXjZ" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <span>View us on Google</span>
+                  <ExternalLink className="h-3 w-3 stroke-[2.5]" />
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* CTA */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Book Now | હમણાં બુક કરો</h3>
-            <div className="space-y-3">
+          {/* CTA & Payment QR */}
+          <div className="space-y-5">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary lg:text-base">Book Now</h3>
+            <div className="space-y-2.5">
               <a
                 href="tel:+918000262644"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-5 py-3.5 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg lg:text-base"
               >
-                <Phone className="h-4 w-4" />
-                <span>Call Now | કૉલ કરો</span>
+                <Phone className="h-5 w-5 stroke-[3]" />
+                <span>Call Now</span>
               </a>
               <a
                 href="https://wa.me/918000262644"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[oklch(0.65_0.19_145)] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[oklch(0.60_0.19_145)] hover:shadow-md"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] px-5 py-3.5 text-sm font-bold text-white shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg lg:text-base"
               >
-                <SiWhatsapp className="h-4 w-4" />
+                <SiWhatsapp className="h-5 w-5" />
                 <span>WhatsApp</span>
               </a>
+            </div>
+            
+            {/* Payment QR Codes */}
+            <div className="space-y-2.5 rounded-xl border-2 border-primary/20 bg-primary/5 p-4">
+              <p className="text-center text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                Quick Payment
+              </p>
+              <div className="grid grid-cols-2 gap-2.5">
+                <div className="space-y-1.5">
+                  <img 
+                    src="/assets/generated/google-pay-qr.dim_512x512.png" 
+                    alt="Google Pay QR Code" 
+                    className="w-full rounded-lg border-2 border-primary/20 bg-white p-1.5 shadow-xs"
+                  />
+                  <p className="text-center text-xs font-semibold text-muted-foreground">Google Pay</p>
+                </div>
+                <div className="space-y-1.5">
+                  <img 
+                    src="/assets/generated/magical-upi-qr.dim_512x512.png" 
+                    alt="UPI QR Code" 
+                    className="w-full rounded-lg border-2 border-primary/20 bg-white p-1.5 shadow-xs"
+                  />
+                  <p className="text-center text-xs font-semibold text-muted-foreground">UPI</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-border pt-8">
-          <div className="flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground">
-            <p>
-              © 2026 <strong className="font-semibold text-foreground">Magical Sofa Cleaning</strong>. Managed by Jaydeep Patel.
+        <div className="mt-12 border-t border-primary/20 pt-8">
+          <div className="flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
+            <p className="text-sm text-muted-foreground lg:text-base">
+              © 2026. Built with <Heart className="inline h-4 w-4 fill-primary text-primary" /> using{' '}
+              <a 
+                href="https://caffeine.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-semibold text-primary transition-colors hover:text-primary/80"
+              >
+                caffeine.ai
+              </a>
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-foreground lg:text-base">
+              <a href="#services" className="font-medium transition-colors hover:text-primary">
+                Services
+              </a>
+              <a href="#areas" className="font-medium transition-colors hover:text-primary">
+                Areas
+              </a>
+              <a href="#reviews" className="font-medium transition-colors hover:text-primary">
+                Reviews
+              </a>
+            </div>
           </div>
         </div>
       </div>

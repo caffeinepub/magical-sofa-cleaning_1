@@ -1,57 +1,28 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T08:17:43.676Z",
+  "generatedAt": "2026-02-07T14:10:57.945Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
-    "items": [
-      {
-        "id": "REQ-10",
-        "summary": "Update the Services section offerings to include exactly these services: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service (keeping the existing bilingual style used on the page).",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/landing/Services.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/landing/Services.tsx"
-        ]
-      },
-      {
-        "id": "REQ-11",
-        "summary": "Do not add any AI-based features (now or as placeholder “future” functionality) anywhere in the website.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/landing/Footer.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/landing/Footer.tsx"
-        ]
-      },
-      {
-        "id": "REQ-9",
-        "summary": "Update the Services section to remove the “Full Home Cleaning” service card entirely.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/landing/Services.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/landing/Services.tsx"
-        ]
-      }
-    ]
+    "total": 0,
+    "implemented": 0,
+    "items": []
   },
   "changedFiles": [
     "build-request.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/floating/FloatingContactButtons.tsx",
+    "frontend/src/components/landing/AreasServed.tsx",
+    "frontend/src/components/landing/GoogleReviewsSection.tsx",
+    "frontend/src/components/landing/Hero.tsx",
+    "frontend/src/components/landing/LivePhotos.tsx",
     "frontend/src/components/landing/Services.tsx",
+    "frontend/src/components/landing/SofaPriceCalculator.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

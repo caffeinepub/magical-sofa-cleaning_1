@@ -1,114 +1,128 @@
 import { Sofa, Wind, Armchair, Sparkles, Layers } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import IconBadge from '@/components/common/IconBadge';
+import SofaPriceCalculator from './SofaPriceCalculator';
 
 const services = [
   {
     icon: Sofa,
-    title: 'Sofa Cleaning | સોફા સફાઈ',
-    description: 'Professional deep shampoo cleaning for all types of sofas including fabric, leather, and velvet. We restore your furniture to like-new condition.',
-    descriptionGuj: 'ફેબ્રિક, લેધર અને વેલ્વેટ સહિત તમામ પ્રકારના સોફા માટે વ્યાવસાયિક ડીપ શેમ્પૂ સફાઈ. અમે તમારા ફર્નિચરને નવા જેવી સ્થિતિમાં પુનઃસ્થાપિત કરીએ છીએ.',
-    price: 'From ₹99/Seat | ₹99/સીટથી',
+    title: 'Sofa Cleaning',
+    description: 'Professional deep shampoo cleaning for fabric, leather, and velvet sofas. We restore your furniture to like-new condition with eco-friendly products.',
+    price: '₹90/ft',
     featured: true,
+    variant: 'primary' as const,
   },
   {
     icon: Layers,
-    title: 'Carpet Cleaning | કાર્પેટ સફાઈ',
-    description: 'Specialized dry and wet cleaning for all types of carpets. Perfect for offices and homes seeking a fresh, clean environment.',
-    descriptionGuj: 'તમામ પ્રકારના કાર્પેટ માટે વિશિષ્ટ ડ્રાય અને વેટ ક્લીનિંગ. તાજા, સ્વચ્છ વાતાવરણની શોધમાં ઓફિસો અને ઘરો માટે યોગ્ય.',
-    price: 'Competitive | સ્પર્ધાત્મક',
+    title: 'Carpet Cleaning',
+    description: 'Specialized dry and wet cleaning for all carpet types. Perfect for offices and homes seeking fresh, clean environments.',
+    price: '₹15/sq ft',
     featured: false,
+    variant: 'primary' as const,
   },
   {
     icon: Armchair,
-    title: 'Chair Cleaning | ખુરશી સફાઈ',
-    description: 'Expert cleaning for office chairs, dining chairs, and all types of seating furniture. Deep cleaning that removes stains and odors.',
-    descriptionGuj: 'ઓફિસ ખુરશીઓ, ડાઇનિંગ ખુરશીઓ અને તમામ પ્રકારના બેઠક ફર્નિચર માટે નિષ્ણાત સફાઈ. ડાઘ અને ગંધને દૂર કરતી ડીપ ક્લીનિંગ.',
-    price: 'Affordable | પોસાય તેવું',
+    title: 'Office Chair Cleaning',
+    description: 'Expert cleaning for office chairs, dining chairs, and all seating furniture. Deep cleaning removes stains and odors effectively.',
+    price: '₹100-₹150',
     featured: false,
+    variant: 'primary' as const,
   },
   {
     icon: Sparkles,
-    title: 'Mattress Cleaning | ગાદલું સફાઈ',
-    description: 'Deep cleaning and sanitization for mattresses. Removes dust mites, allergens, and stains for a healthier sleep environment.',
-    descriptionGuj: 'ગાદલા માટે ડીપ ક્લીનિંગ અને સેનિટાઇઝેશન. તંદુરસ્ત ઊંઘના વાતાવરણ માટે ધૂળના જીવાણુઓ, એલર્જન અને ડાઘને દૂર કરે છે.',
-    price: 'Best Value | શ્રેષ્ઠ મૂલ્ય',
-    featured: false,
+    title: 'Mattress Cleaning',
+    description: 'Deep cleaning and sanitization for all mattress types. Removes dust mites, allergens, and stains for healthier sleep.',
+    price: '₹599',
+    featured: true,
+    variant: 'secondary' as const,
   },
   {
     icon: Wind,
-    title: 'AC Water Jet Service | AC વોટર જેટ સર્વિસ',
-    description: 'Complete AC maintenance with high-pressure water jet cleaning and gas filling for both split and window units. Fast and reliable service.',
-    descriptionGuj: 'સ્પ્લિટ અને વિન્ડો બંને યુનિટ માટે હાઇ-પ્રેશર વોટર જેટ ક્લીનિંગ અને ગેસ ફિલિંગ સાથે સંપૂર્ણ AC જાળવણી. ઝડપી અને વિશ્વસનીય સેવા.',
-    price: 'Best Rates | શ્રેષ્ઠ દરો',
+    title: 'AC Water Jet Service',
+    description: 'Complete AC maintenance including water jet cleaning, foam jet service, repair, installation, uninstallation, and gas refilling for split and window units.',
+    price: 'Multiple Services',
     featured: false,
+    variant: 'secondary' as const,
+    acServices: [
+      { name: 'Water Jet Service', price: '₹499' },
+      { name: 'Water Foam Jet Service', price: '₹599' },
+      { name: 'AC Repair', price: 'Starting ₹200' },
+      { name: 'AC Installation', price: '₹1499' },
+      { name: 'AC Uninstallation', price: '₹599' },
+      { name: 'AC Gas Refilling', price: '₹3499' },
+    ],
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-24">
+    <section id="services" className="bg-gradient-to-b from-background to-primary/5 py-12 md:py-16 lg:py-20">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="mb-3 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
             Our Premium Services
-            <span className="mt-2 block text-2xl sm:text-3xl md:text-4xl">
-              અમારી પ્રીમિયમ સેવાઓ
-            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Professional cleaning solutions tailored to your needs in Ahmedabad & Gandhinagar
-            <span className="mt-1 block">
-              અમદાવાદ અને ગાંધીનગરમાં તમારી જરૂરિયાતો અનુસાર વ્યાવસાયિક સફાઈ ઉકેલો
-            </span>
+          <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
+            Professional Sofa Cleaning Services in Ahmedabad, carpet, chair, mattress cleaning and AC services across Ahmedabad & Gandhinagar with affordable rates and same-day availability
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <Card
-                key={index}
-                className={`group relative overflow-hidden transition-all hover:shadow-xl ${
-                  service.featured ? 'border-primary ring-2 ring-primary/20' : ''
-                }`}
-              >
-                {service.featured && (
-                  <div className="absolute right-0 top-0 bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
-                    POPULAR | લોકપ્રિય
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          {services.map((service, index) => (
+            <Card
+              key={index}
+              className={`group relative overflow-hidden border-2 transition-all hover:shadow-premium-lg ${
+                service.featured ? 'border-primary/40 bg-gradient-to-br from-primary/5 to-secondary/5 shadow-premium' : 'border-primary/20 hover:border-primary/30'
+              }`}
+            >
+              {service.featured && (
+                <div className="absolute right-0 top-0 rounded-bl-lg bg-gradient-to-r from-primary to-primary/80 px-3 py-1 text-xs font-bold text-primary-foreground shadow-premium">
+                  POPULAR
+                </div>
+              )}
+              <CardHeader className="space-y-3 pb-3">
+                <IconBadge 
+                  icon={service.icon} 
+                  size="sm"
+                  variant={service.variant}
+                  className="transition-all group-hover:scale-110 group-hover:shadow-premium"
+                />
+                <div className="space-y-1.5">
+                  <CardTitle className="text-lg font-bold tracking-tight lg:text-xl">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-xs leading-relaxed lg:text-sm">
+                    {service.description}
+                  </CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-2.5 pb-4">
+                {service.acServices ? (
+                  <div className="space-y-1.5 rounded-lg border border-primary/20 bg-primary/5 p-2.5">
+                    {service.acServices.map((acService, idx) => (
+                      <div key={idx} className="flex items-center justify-between text-xs">
+                        <span className="font-medium text-foreground">{acService.name}</span>
+                        <Badge variant="outline" className="border-primary/30 bg-background text-xs font-bold text-primary">
+                          {acService.price}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-between rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5">
+                    <span className="text-xs font-semibold text-muted-foreground">Starting at</span>
+                    <span className="text-lg font-bold text-primary lg:text-xl">{service.price}</span>
                   </div>
                 )}
-                <CardHeader className="space-y-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <CardTitle className="text-xl leading-snug">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-sm leading-relaxed">
-                    {service.description}
-                    <span className="mt-2 block">
-                      {service.descriptionGuj}
-                    </span>
-                  </CardDescription>
-                  <div className="pt-2">
-                    <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary">
-                      {service.price}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            All services include professional equipment, eco-friendly products, and satisfaction guarantee
-            <span className="mt-1 block">
-              તમામ સેવાઓમાં વ્યાવસાયિક સાધનો, ઇકો-ફ્રેન્ડલી ઉત્પાદનો અને સંતોષની ગેરંટી શામેલ છે
-            </span>
-          </p>
+        {/* Sofa Price Calculator */}
+        <div className="mt-10">
+          <SofaPriceCalculator />
         </div>
       </div>
     </section>

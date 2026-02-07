@@ -4,59 +4,59 @@
 
 @layer base {
     :root {
-        --radius: 0.75rem;
-        /* Fresh green primary palette with warm neutrals */
-        --background: 0.99 0 0;
-        --foreground: 0.20 0.01 120;
+        --radius: 0.875rem;
+        /* Professional blue palette for cleaning service */
+        --background: 0.99 0.005 240;
+        --foreground: 0.20 0.018 240;
         --card: 1 0 0;
-        --card-foreground: 0.20 0.01 120;
+        --card-foreground: 0.20 0.018 240;
         --popover: 1 0 0;
-        --popover-foreground: 0.20 0.01 120;
-        --primary: 0.55 0.15 150;
-        --primary-foreground: 0.99 0 0;
-        --secondary: 0.96 0.01 90;
-        --secondary-foreground: 0.20 0.01 120;
-        --muted: 0.96 0.01 90;
-        --muted-foreground: 0.50 0.02 120;
-        --accent: 0.94 0.02 100;
-        --accent-foreground: 0.20 0.01 120;
+        --popover-foreground: 0.20 0.018 240;
+        --primary: 0.55 0.22 250;
+        --primary-foreground: 0.99 0.005 240;
+        --secondary: 0.75 0.18 85;
+        --secondary-foreground: 0.20 0.018 60;
+        --muted: 0.96 0.012 240;
+        --muted-foreground: 0.50 0.028 240;
+        --accent: 0.68 0.20 45;
+        --accent-foreground: 0.99 0.005 45;
         --destructive: 0.577 0.245 27.325;
         --destructive-foreground: 0.99 0 0;
-        --border: 0.90 0.01 100;
-        --input: 0.90 0.01 100;
-        --ring: 0.55 0.15 150;
-        --chart-1: 0.55 0.15 150;
-        --chart-2: 0.65 0.19 145;
-        --chart-3: 0.70 0.12 180;
-        --chart-4: 0.60 0.18 40;
-        --chart-5: 0.75 0.10 200;
+        --border: 0.90 0.018 240;
+        --input: 0.90 0.018 240;
+        --ring: 0.55 0.22 250;
+        --chart-1: 0.55 0.22 250;
+        --chart-2: 0.75 0.18 85;
+        --chart-3: 0.68 0.20 45;
+        --chart-4: 0.60 0.20 255;
+        --chart-5: 0.70 0.16 70;
     }
 
     .dark {
-        --background: 0.15 0.01 120;
-        --foreground: 0.98 0.01 100;
-        --card: 0.18 0.01 120;
-        --card-foreground: 0.98 0.01 100;
-        --popover: 0.20 0.01 120;
-        --popover-foreground: 0.98 0.01 100;
-        --primary: 0.60 0.16 150;
-        --primary-foreground: 0.15 0.01 120;
-        --secondary: 0.25 0.02 120;
-        --secondary-foreground: 0.98 0.01 100;
-        --muted: 0.25 0.02 120;
-        --muted-foreground: 0.65 0.02 120;
-        --accent: 0.30 0.02 130;
-        --accent-foreground: 0.98 0.01 100;
+        --background: 0.15 0.018 240;
+        --foreground: 0.98 0.008 240;
+        --card: 0.18 0.020 240;
+        --card-foreground: 0.98 0.008 240;
+        --popover: 0.20 0.020 240;
+        --popover-foreground: 0.98 0.008 240;
+        --primary: 0.60 0.23 250;
+        --primary-foreground: 0.15 0.018 240;
+        --secondary: 0.70 0.17 85;
+        --secondary-foreground: 0.15 0.018 60;
+        --muted: 0.25 0.028 240;
+        --muted-foreground: 0.65 0.028 240;
+        --accent: 0.65 0.19 45;
+        --accent-foreground: 0.98 0.008 45;
         --destructive: 0.60 0.22 25;
-        --destructive-foreground: 0.15 0.01 120;
-        --border: 0.30 0.02 120;
-        --input: 0.30 0.02 120;
-        --ring: 0.60 0.16 150;
-        --chart-1: 0.60 0.16 150;
-        --chart-2: 0.65 0.19 145;
-        --chart-3: 0.70 0.12 180;
-        --chart-4: 0.60 0.18 40;
-        --chart-5: 0.75 0.10 200;
+        --destructive-foreground: 0.15 0.018 240;
+        --border: 0.30 0.028 240;
+        --input: 0.30 0.028 240;
+        --ring: 0.60 0.23 250;
+        --chart-1: 0.60 0.23 250;
+        --chart-2: 0.70 0.17 85;
+        --chart-3: 0.65 0.19 45;
+        --chart-4: 0.58 0.20 255;
+        --chart-5: 0.68 0.15 70;
     }
 
     * {
@@ -64,8 +64,19 @@
     }
     body {
         @apply bg-background text-foreground;
-        /* Enhanced line-height for better bilingual text readability */
-        line-height: 1.6;
+        /* Enhanced line-height for better readability */
+        line-height: 1.7;
+        font-feature-settings: "kern" 1, "liga" 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+@layer components {
+    /* Logo backing component styling */
+    .logo-backing {
+        @apply rounded-full bg-white dark:bg-gray-900 border-2 border-primary/20 shadow-sm transition-all;
     }
 }
 
@@ -74,8 +85,13 @@
         text-wrap: balance;
     }
     
-    /* Helper for bilingual text wrapping */
-    .bilingual-text {
-        line-height: 1.7;
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Enhanced focus states for accessibility */
+    *:focus-visible {
+        @apply outline-2 outline-offset-2 outline-ring;
     }
 }

@@ -1,68 +1,138 @@
 import { MapPin } from 'lucide-react';
+import IconBadge from '@/components/common/IconBadge';
 
-const areas = [
-  'Ahmedabad',
-  'Gandhinagar',
+const ahmedabadAreas: string[] = [
+  // Priority areas (specified first in exact order)
   'Nikol',
   'Naroda',
   'Bapunagar',
+  'Hanspura',
+  'Odhav',
+  'Kuber Nagar',
   'Vastral',
+  
+  // Other Ahmedabad areas
+  'Nana Chiloda',
+  'Kathwada',
+  'Rakhial',
   'Maninagar',
+  'Isanpur',
+  'Vatva',
+  'Narol',
   'Satellite',
+  'Vastrapur',
+  'Bodakdev',
+  'Thaltej',
+  'Ambawadi',
+  'Prahladnagar',
+  'Jodhpur',
+  'Bopal',
+  'Ghuma',
+  'Shilaj',
+  'Sola',
+  'Science City',
+  'SG Highway',
+  'Gota',
+  'Chandkheda',
+  'Motera',
+  'Sabarmati',
+  'Ranip',
+  'Ghatlodia',
+  'Vejalpur',
+  'Jivraj Park',
+  'Memnagar',
+  'Navrangpura',
+  'CG Road',
+  'Ashram Road',
+  'Paldi',
+  'Ellis Bridge',
+  'Nehru Bridge',
+  'Relief Road',
+  'Kalupur',
+  'Jamalpur',
+  'Shahpur',
+  'Dariapur',
+  'Raipur',
+];
+
+const gandhinagarAreas: string[] = [
+  'Sector 1-30',
+  'Kudasan',
+  'Raysan',
+  'Pethapur',
+  'Kalol',
+  'Mansa',
+  'Adalaj',
+  'Koba',
+  'Vavol',
+  'Infocity',
+  'GIFT City',
 ];
 
 export default function AreasServed() {
   return (
-    <section id="areas" className="bg-muted/30 py-16 md:py-24">
+    <section id="areas" className="bg-gradient-to-b from-muted/20 to-background py-12 md:py-16 lg:py-20">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 inline-flex items-center justify-center rounded-full bg-primary/10 p-3">
-            <MapPin className="h-6 w-6 text-primary" />
+          <div className="mb-3 inline-flex">
+            <IconBadge icon={MapPin} size="sm" variant="accent" />
           </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             Areas We Serve
-            <span className="mt-2 block text-2xl sm:text-3xl">
-              અમે જે વિસ્તારોમાં સેવા આપીએ છીએ
-            </span>
           </h2>
-          <p className="mb-8 text-lg text-muted-foreground">
-            Providing professional cleaning services across Ahmedabad & Gandhinagar
-            <span className="mt-1 block">
-              અમદાવાદ અને ગાંધીનગરમાં વ્યાવસાયિક સફાઈ સેવાઓ પ્રદાન કરીએ છીએ
-            </span>
+          <p className="mb-8 text-sm text-muted-foreground md:text-base lg:text-lg">
+            Professional sofa, carpet, mattress, chair cleaning and AC services across all major areas
           </p>
         </div>
 
-        <div className="mx-auto max-w-4xl">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-            {areas.map((area, index) => (
-              <div
-                key={index}
-                className="group flex items-center justify-center rounded-xl border border-border bg-card p-4 text-center transition-all hover:border-primary hover:shadow-md"
-              >
-                <span className="font-semibold text-foreground transition-colors group-hover:text-primary">
-                  {area}
-                </span>
-              </div>
-            ))}
+        <div className="mx-auto max-w-7xl space-y-10">
+          {/* Ahmedabad Areas */}
+          <div>
+            <h3 className="mb-5 text-center text-xl font-bold text-primary sm:text-2xl">
+              Ahmedabad
+            </h3>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3">
+              {ahmedabadAreas.map((area, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center rounded-lg border-2 border-border bg-card p-3 text-center shadow-xs transition-all hover:border-secondary hover:bg-secondary/5 hover:shadow-premium lg:p-3.5"
+                >
+                  <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-secondary sm:text-sm">
+                    {area}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              Don't see your area? Call us at{' '}
-              <a href="tel:+918000262644" className="font-semibold text-primary hover:underline">
-                8000262644
-              </a>{' '}
-              to check availability
-              <span className="mt-1 block">
-                તમારો વિસ્તાર દેખાતો નથી? ઉપલબ્ધતા તપાસવા માટે અમને{' '}
-                <a href="tel:+918000262644" className="font-semibold text-primary hover:underline">
-                  8000262644
-                </a>{' '}
-                પર કૉલ કરો
-              </span>
-            </p>
+          {/* Gandhinagar Areas */}
+          <div>
+            <h3 className="mb-5 text-center text-xl font-bold text-accent sm:text-2xl">
+              Gandhinagar
+            </h3>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3">
+              {gandhinagarAreas.map((area, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center rounded-lg border-2 border-border bg-card p-3 text-center shadow-xs transition-all hover:border-accent hover:bg-accent/5 hover:shadow-premium lg:p-3.5"
+                >
+                  <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
+                    {area}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-xs text-muted-foreground md:text-sm">
+            Don't see your area? Call us at{' '}
+            <a href="tel:+918000262644" className="font-semibold text-primary transition-colors hover:text-primary/80 hover:underline">
+              8000262644
+            </a>{' '}
+            to check availability
+          </p>
         </div>
       </div>
     </section>

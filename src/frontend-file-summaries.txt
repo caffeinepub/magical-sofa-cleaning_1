@@ -1,11 +1,19 @@
 {
-  "frontend/src/App.tsx": "Main application component that composes the single-page landing layout with Header, Hero, Services, AreasServed, and Footer sections.",
-  "frontend/src/components/landing/Header.tsx": "Sticky header component with logo, bilingual (English + Gujarati) navigation links, and prominent Call/WhatsApp CTAs for mobile and desktop.",
-  "frontend/src/components/landing/Hero.tsx": "Hero section with full-width background image, bilingual headline and subheadline (English + Gujarati), and above-the-fold Call/WhatsApp CTAs.",
-  "frontend/src/components/landing/Services.tsx": "Services section displaying five bilingual service cards (Sofa, Carpet, Chair, Mattress, AC Water Jet) with icons, descriptions in English and Gujarati, pricing, and responsive grid layout.",
-  "frontend/src/components/landing/AreasServed.tsx": "Areas served section with bilingual heading and supporting text (English + Gujarati) listing Ahmedabad, Gandhinagar, Nikol, Naroda, and other locations in a responsive grid.",
-  "frontend/src/components/landing/Footer.tsx": "Footer component with bilingual brand info, quick links, contact details, and Call/WhatsApp CTAs without any AI-related attribution.",
+  "frontend/src/App.tsx": "Main application component that composes the single-page landing layout with Header, Hero, Services, LivePhotos, AreasServed, GoogleReviewsSection, Footer sections, plus FloatingContactButtons overlay (SupportChatWidget removed).",
+  "frontend/src/components/landing/Header.tsx": "Sticky header with logo backing wrapper, enhanced blue primary color accents in branding and navigation, while keeping WhatsApp button green and all contact URLs unchanged.",
+  "frontend/src/components/landing/Hero.tsx": "Compact hero section with reduced height, smaller text sizing, tighter badge spacing, and smaller CTA buttons for a more professional and polished appearance.",
+  "frontend/src/components/landing/Services.tsx": "Compact services section with reduced padding, smaller card spacing, tighter text sizing, and smaller icon badges for a more professional and polished appearance while maintaining all service information and pricing.",
+  "frontend/src/components/landing/AreasServed.tsx": "Compact areas served section with reduced padding, smaller area cards, tighter grid spacing, and smaller text sizing for a more professional and space-efficient layout.",
+  "frontend/src/components/landing/Footer.tsx": "Compact footer with logo backing wrapper, reduced padding throughout, tighter payment QR block, enhanced blue primary color accents while keeping WhatsApp green and all contact URLs unchanged.",
   "frontend/index.css": "Global styles with fresh green primary palette (avoiding blue/purple) using OKLCH color system for light and dark modes.",
-  "frontend/tailwind.config.js": "Tailwind configuration with custom Poppins display font and extended design tokens matching the green cleaning service theme.",
-  "frontend/src/index.css": "Global styles with fresh green primary palette using OKLCH color system for light and dark modes, enhanced with improved line-height for better bilingual text readability."
+  "frontend/tailwind.config.js": "Tailwind configuration with enhanced shadow utilities (xs, premium, premium-lg) and refined border radius values for consistent modern styling across all components.",
+  "frontend/src/index.css": "Global styles with enhanced professional blue primary color palette (increased saturation and adjusted hue to 250), logo backing component styling, and improved contrast for both light and dark modes.",
+  "frontend/index.html": "HTML entry point with comprehensive SEO metadata including the exact phrase \"Sofa Cleaning Services in Ahmedabad\" in title, description, Open Graph tags, Twitter cards, and JSON-LD LocalBusiness structured data, now referencing the new uploaded logo (v2) for favicon and social media images.",
+  "frontend/src/components/floating/FloatingContactButtons.tsx": "Compact floating contact buttons with reduced sizing and tighter spacing for a more professional and less intrusive appearance.",
+  "frontend/src/components/chat/SupportChatWidget.tsx": "Support chat widget with polished visuals including enhanced header gradient, improved message bubble styling, refined payment QR section, and premium shadows throughout.",
+  "frontend/src/components/landing/SofaPriceCalculator.tsx": "Compact sofa price calculator with reduced padding, smaller icon badge, tighter spacing, and smaller text/button sizing for a more professional look while maintaining full functionality.",
+  "frontend/src/components/common/IconBadge.tsx": "Reusable icon wrapper component providing consistent sizing (sm/md/lg), stroke weight, padding, background, and color variants (default/primary/secondary/accent/muted) using theme tokens for multi-color palette support.",
+  "frontend/src/components/landing/GoogleReviewsSection.tsx": "Compact Google reviews section with reduced padding, smaller badge, tighter spacing, smaller star ratings, and reduced card padding for a more professional appearance.",
+  "frontend/src/components/landing/LivePhotos.tsx": "Compact live photos gallery with reduced padding, tighter grid spacing, and smaller card sizing for a more professional and space-efficient layout.",
+  "frontend/src/components/common/LogoWithBacking.tsx": "Reusable component that wraps the new uploaded logo image (v2) in a circular container with white/dark background backing, border, and shadow for improved contrast in both light and dark modes."
 }
