@@ -5,7 +5,7 @@ import LogoWithBacking from '@/components/common/LogoWithBacking';
 
 export default function Footer() {
   return (
-    <footer className="border-t-2 border-primary/20 bg-card">
+    <footer className="border-t-2 border-primary/30 bg-card">
       <div className="container px-4 py-12 md:px-6 md:py-14 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -35,6 +35,11 @@ export default function Footer() {
               <li>
                 <a href="#services" className="font-medium text-muted-foreground transition-colors hover:text-primary">
                   Services
+                </a>
+              </li>
+              <li>
+                <a href="#why-choose-us" className="font-medium text-muted-foreground transition-colors hover:text-primary">
+                  Why Choose Us
                 </a>
               </li>
               <li>
@@ -87,7 +92,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CTA & Payment QR */}
+          {/* CTA */}
           <div className="space-y-5">
             <h3 className="text-sm font-bold uppercase tracking-wider text-primary lg:text-base">Book Now</h3>
             <div className="space-y-2.5">
@@ -105,31 +110,6 @@ export default function Footer() {
                 <SiWhatsapp className="h-5 w-5" />
                 <span>WhatsApp</span>
               </a>
-            </div>
-            
-            {/* Payment QR Codes */}
-            <div className="space-y-2.5 rounded-xl border-2 border-primary/20 bg-primary/5 p-4">
-              <p className="text-center text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Quick Payment
-              </p>
-              <div className="grid grid-cols-2 gap-2.5">
-                <div className="space-y-1.5">
-                  <img 
-                    src="/assets/generated/google-pay-qr.dim_512x512.png" 
-                    alt="Google Pay QR Code" 
-                    className="w-full rounded-lg border-2 border-primary/20 bg-white p-1.5 shadow-xs"
-                  />
-                  <p className="text-center text-xs font-semibold text-muted-foreground">Google Pay</p>
-                </div>
-                <div className="space-y-1.5">
-                  <img 
-                    src="/assets/generated/magical-upi-qr.dim_512x512.png" 
-                    alt="UPI QR Code" 
-                    className="w-full rounded-lg border-2 border-primary/20 bg-white p-1.5 shadow-xs"
-                  />
-                  <p className="text-center text-xs font-semibold text-muted-foreground">UPI</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -151,6 +131,9 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-foreground lg:text-base">
               <a href="#services" className="font-medium transition-colors hover:text-primary">
                 Services
+              </a>
+              <a href="#why-choose-us" className="font-medium transition-colors hover:text-primary">
+                Why Choose Us
               </a>
               <a href="#appointment" className="font-medium transition-colors hover:text-primary">
                 Book Now

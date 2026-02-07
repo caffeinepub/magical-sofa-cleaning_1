@@ -5,82 +5,88 @@
 @layer base {
     :root {
         --radius: 0.875rem;
-        /* Professional blue palette for cleaning service */
+        /* Royal Blue + Gold Premium Palette */
         --background: 0.99 0.005 240;
-        --foreground: 0.20 0.018 240;
+        --foreground: 0.18 0.025 260;
         --card: 1 0 0;
-        --card-foreground: 0.20 0.018 240;
+        --card-foreground: 0.18 0.025 260;
         --popover: 1 0 0;
-        --popover-foreground: 0.20 0.018 240;
-        --primary: 0.55 0.22 250;
+        --popover-foreground: 0.18 0.025 260;
+        /* Royal Blue as primary */
+        --primary: 0.48 0.20 265;
         --primary-foreground: 0.99 0.005 240;
-        --secondary: 0.75 0.18 85;
+        /* Gold as secondary/accent */
+        --secondary: 0.72 0.16 75;
         --secondary-foreground: 0.20 0.018 60;
         --muted: 0.96 0.012 240;
-        --muted-foreground: 0.50 0.028 240;
-        --accent: 0.68 0.20 45;
-        --accent-foreground: 0.99 0.005 45;
+        --muted-foreground: 0.48 0.028 260;
+        /* Gold accent */
+        --accent: 0.70 0.18 65;
+        --accent-foreground: 0.15 0.018 60;
         --destructive: 0.577 0.245 27.325;
         --destructive-foreground: 0.99 0 0;
-        --border: 0.90 0.018 240;
-        --input: 0.90 0.018 240;
-        --ring: 0.55 0.22 250;
-        --chart-1: 0.55 0.22 250;
-        --chart-2: 0.75 0.18 85;
-        --chart-3: 0.68 0.20 45;
-        --chart-4: 0.60 0.20 255;
-        --chart-5: 0.70 0.16 70;
+        --border: 0.88 0.018 265;
+        --input: 0.88 0.018 265;
+        --ring: 0.48 0.20 265;
+        --chart-1: 0.48 0.20 265;
+        --chart-2: 0.72 0.16 75;
+        --chart-3: 0.70 0.18 65;
+        --chart-4: 0.52 0.19 270;
+        --chart-5: 0.68 0.15 70;
         
-        /* Service-specific color themes */
-        --service-sofa: 0.55 0.22 250;
+        /* Service-specific color themes - aligned to Royal Blue + Gold */
+        --service-sofa: 0.48 0.20 265;
         --service-sofa-foreground: 0.99 0.005 240;
-        --service-carpet: 0.65 0.20 35;
-        --service-carpet-foreground: 0.99 0.005 35;
-        --service-chair: 0.58 0.21 285;
-        --service-chair-foreground: 0.99 0.005 285;
-        --service-mattress: 0.60 0.20 195;
-        --service-mattress-foreground: 0.99 0.005 195;
-        --service-ac: 0.62 0.21 155;
-        --service-ac-foreground: 0.99 0.005 155;
+        --service-carpet: 0.70 0.18 65;
+        --service-carpet-foreground: 0.15 0.018 60;
+        --service-chair: 0.52 0.19 270;
+        --service-chair-foreground: 0.99 0.005 270;
+        --service-mattress: 0.50 0.18 260;
+        --service-mattress-foreground: 0.99 0.005 260;
+        --service-ac: 0.54 0.19 268;
+        --service-ac-foreground: 0.99 0.005 268;
     }
 
     .dark {
-        --background: 0.15 0.018 240;
+        --background: 0.15 0.020 260;
         --foreground: 0.98 0.008 240;
-        --card: 0.18 0.020 240;
+        --card: 0.18 0.022 260;
         --card-foreground: 0.98 0.008 240;
-        --popover: 0.20 0.020 240;
+        --popover: 0.20 0.022 260;
         --popover-foreground: 0.98 0.008 240;
-        --primary: 0.60 0.23 250;
-        --primary-foreground: 0.15 0.018 240;
-        --secondary: 0.70 0.17 85;
-        --secondary-foreground: 0.15 0.018 60;
-        --muted: 0.25 0.028 240;
-        --muted-foreground: 0.65 0.028 240;
-        --accent: 0.65 0.19 45;
-        --accent-foreground: 0.98 0.008 45;
+        /* Royal Blue primary - dark mode */
+        --primary: 0.58 0.22 265;
+        --primary-foreground: 0.15 0.020 260;
+        /* Gold secondary - dark mode */
+        --secondary: 0.68 0.15 75;
+        --secondary-foreground: 0.15 0.020 60;
+        --muted: 0.25 0.030 260;
+        --muted-foreground: 0.65 0.028 260;
+        /* Gold accent - dark mode */
+        --accent: 0.66 0.17 65;
+        --accent-foreground: 0.98 0.008 65;
         --destructive: 0.60 0.22 25;
-        --destructive-foreground: 0.15 0.018 240;
-        --border: 0.30 0.028 240;
-        --input: 0.30 0.028 240;
-        --ring: 0.60 0.23 250;
-        --chart-1: 0.60 0.23 250;
-        --chart-2: 0.70 0.17 85;
-        --chart-3: 0.65 0.19 45;
-        --chart-4: 0.58 0.20 255;
-        --chart-5: 0.68 0.15 70;
+        --destructive-foreground: 0.15 0.020 260;
+        --border: 0.30 0.030 265;
+        --input: 0.30 0.030 265;
+        --ring: 0.58 0.22 265;
+        --chart-1: 0.58 0.22 265;
+        --chart-2: 0.68 0.15 75;
+        --chart-3: 0.66 0.17 65;
+        --chart-4: 0.56 0.20 270;
+        --chart-5: 0.64 0.14 70;
         
         /* Service-specific color themes - dark mode */
-        --service-sofa: 0.60 0.23 250;
-        --service-sofa-foreground: 0.15 0.018 240;
-        --service-carpet: 0.68 0.19 35;
-        --service-carpet-foreground: 0.15 0.018 35;
-        --service-chair: 0.62 0.20 285;
-        --service-chair-foreground: 0.15 0.018 285;
-        --service-mattress: 0.63 0.19 195;
-        --service-mattress-foreground: 0.15 0.018 195;
-        --service-ac: 0.65 0.20 155;
-        --service-ac-foreground: 0.15 0.018 155;
+        --service-sofa: 0.58 0.22 265;
+        --service-sofa-foreground: 0.15 0.020 260;
+        --service-carpet: 0.66 0.17 65;
+        --service-carpet-foreground: 0.15 0.020 60;
+        --service-chair: 0.56 0.20 270;
+        --service-chair-foreground: 0.15 0.020 270;
+        --service-mattress: 0.54 0.19 260;
+        --service-mattress-foreground: 0.15 0.020 260;
+        --service-ac: 0.60 0.20 268;
+        --service-ac-foreground: 0.15 0.020 268;
     }
 
     * {
@@ -97,6 +103,156 @@
     }
 }
 
+@layer components {
+    /* Premium Box Styling */
+    .premium-box {
+        border-radius: 1rem;
+        border-width: 2px;
+        border-color: oklch(0.48 0.20 265 / 0.3);
+        background: linear-gradient(to bottom right, oklch(var(--card)), oklch(var(--card)), oklch(0.48 0.20 265 / 0.05));
+        box-shadow: 0 10px 20px -4px rgb(30 58 138 / 0.15), 0 4px 8px -2px rgb(30 58 138 / 0.08);
+        backdrop-filter: blur(4px);
+    }
+    
+    .premium-box-gold {
+        border-radius: 1rem;
+        border-width: 2px;
+        border-color: oklch(0.70 0.18 65 / 0.4);
+        background: linear-gradient(to bottom right, oklch(var(--card)), oklch(var(--card)), oklch(0.70 0.18 65 / 0.05));
+        box-shadow: 0 10px 20px -4px rgb(180 130 40 / 0.15), 0 4px 8px -2px rgb(180 130 40 / 0.08);
+        backdrop-filter: blur(4px);
+    }
+    
+    .premium-box-hover {
+        transition: all 0.3s ease;
+    }
+    
+    .premium-box-hover:hover {
+        border-color: oklch(0.48 0.20 265 / 0.5);
+        box-shadow: 0 24px 32px -8px rgb(30 58 138 / 0.20), 0 12px 16px -4px rgb(30 58 138 / 0.12);
+        transform: scale(1.02);
+    }
+    
+    /* Premium Icon Styling */
+    .premium-icon-badge {
+        border-radius: 0.75rem;
+        border-width: 2px;
+        border-color: oklch(0.70 0.18 65 / 0.3);
+        background: linear-gradient(to bottom right, oklch(var(--primary)), oklch(0.48 0.20 265 / 0.8));
+        box-shadow: 0 10px 20px -4px rgb(30 58 138 / 0.15), 0 4px 8px -2px rgb(30 58 138 / 0.08);
+    }
+    
+    .premium-icon-badge-gold {
+        border-radius: 0.75rem;
+        border-width: 2px;
+        border-color: oklch(0.70 0.18 65 / 0.5);
+        background: linear-gradient(to bottom right, oklch(var(--accent)), oklch(0.70 0.18 65 / 0.8));
+        box-shadow: 0 10px 20px -4px rgb(180 130 40 / 0.15), 0 4px 8px -2px rgb(180 130 40 / 0.08);
+    }
+    
+    /* Hero Section - Professional Chips */
+    .hero-chip {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 1rem;
+        border-radius: 9999px;
+        border-width: 1.5px;
+        border-color: oklch(0.70 0.18 65 / 0.4);
+        background-color: oklch(0 0 0 / 0.4);
+        backdrop-filter: blur(8px);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: white;
+        box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.3);
+        transition: all 0.2s ease;
+    }
+    
+    .hero-chip:hover {
+        border-color: oklch(0.70 0.18 65 / 0.6);
+        background-color: oklch(0 0 0 / 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px -4px rgb(0 0 0 / 0.4);
+    }
+    
+    .hero-chip-primary {
+        border-color: oklch(0.48 0.20 265 / 0.4);
+    }
+    
+    .hero-chip-primary:hover {
+        border-color: oklch(0.48 0.20 265 / 0.6);
+    }
+    
+    @media (min-width: 768px) {
+        .hero-chip {
+            font-size: 0.875rem;
+        }
+    }
+    
+    /* Hero Section - Professional CTA Buttons */
+    .hero-cta {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 0.625rem;
+        padding: 1rem 2.5rem;
+        border-radius: 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3), 0 4px 10px -2px rgb(0 0 0 / 0.2);
+        transition: all 0.2s ease;
+    }
+    
+    .hero-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px -5px rgb(0 0 0 / 0.4), 0 6px 15px -2px rgb(0 0 0 / 0.25);
+    }
+    
+    .hero-cta-accent {
+        background-color: oklch(var(--accent));
+        color: oklch(var(--accent-foreground));
+        border: 1px solid oklch(0.70 0.18 65 / 0.3);
+    }
+    
+    .hero-cta-accent:hover {
+        background-color: oklch(0.68 0.17 65);
+    }
+    
+    .hero-cta-primary {
+        background-color: oklch(var(--primary));
+        color: oklch(var(--primary-foreground));
+        border: 1px solid oklch(0.48 0.20 265 / 0.3);
+    }
+    
+    .hero-cta-primary:hover {
+        background-color: oklch(0.52 0.21 265);
+    }
+    
+    .hero-cta-whatsapp {
+        background-color: oklch(0.65 0.19 145);
+        color: white;
+        border: 1px solid oklch(0.65 0.19 145 / 0.3);
+    }
+    
+    .hero-cta-whatsapp:hover {
+        background-color: oklch(0.60 0.20 145);
+    }
+    
+    @media (min-width: 640px) {
+        .hero-cta {
+            width: auto;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .hero-cta {
+            padding: 1.25rem 3rem;
+            font-size: 1rem;
+        }
+    }
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;
@@ -110,5 +266,14 @@
     /* Enhanced focus states for accessibility */
     *:focus-visible {
         @apply outline-2 outline-offset-2 outline-ring;
+    }
+    
+    /* Premium gradient utilities */
+    .premium-gradient-royal {
+        background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--primary) / 0.8) 100%);
+    }
+    
+    .premium-gradient-gold {
+        background: linear-gradient(135deg, oklch(var(--accent)) 0%, oklch(var(--secondary)) 100%);
     }
 }

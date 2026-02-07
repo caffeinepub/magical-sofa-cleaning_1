@@ -1,88 +1,77 @@
 {
   "kind": "build_request",
-  "title": "Add an appointment form that opens WhatsApp with pre-filled booking details",
+  "title": "Update service copy for Carpet/Mattress/AC and add “sofa cleaning near me” phrase",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-85",
-      "text": "Add a new \"Appointment\" (booking) form UI on the landing page that collects basic booking details and, on submit, opens a WhatsApp chat to https://wa.me/918000262644 with the form details pre-filled in the message text (no backend storage).",
+      "id": "REQ-98",
+      "text": "Update the user-facing marketing copy line(s) for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service across the landing page so the wording is improved/changed while keeping the same services, pricing, and CTA destinations unchanged.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-3"
         ],
         "quotes": [
-          "Appointment form banavva nu che je dairect mara WhatsApp numbar ma khule"
+          "Carpet, mattress & ac service line chang"
         ]
       },
       "acceptanceCriteria": [
-        "A new, clearly labeled section is available on the page for booking (English-only user-facing text).",
-        "The form includes at minimum: Customer Name, Phone Number, Service (select from existing services), Area/Location, Preferred Date, Preferred Time, and Notes/Message.",
-        "Submitting the form opens WhatsApp to https://wa.me/918000262644 with a URL-encoded pre-filled message that includes all entered fields in a readable format.",
-        "The feature works on mobile and desktop (on desktop it opens web.whatsapp.com via the wa.me link as supported by the platform/browser).",
-        "No data is persisted to the backend; no Motoko changes are required for this feature."
+        "In frontend/src/components/landing/Services.tsx, the description text for the following service cards is updated: 'Carpet Cleaning in Ahmedabad', 'Mattress Cleaning in Ahmedabad', and 'AC Water Jet Service in Ahmedabad'.",
+        "Service titles, pricing values, and the AC sub-service list/prices remain exactly as currently implemented.",
+        "No changes are made to any Call/WhatsApp/Instagram/Google Business Profile links or their destinations."
       ]
     },
     {
-      "id": "REQ-86",
-      "text": "Add basic client-side validation for the appointment form and show inline, non-intrusive error messages in English when required fields are missing or invalid (e.g., empty name, invalid phone number).",
+      "id": "REQ-99",
+      "text": "Add the exact SEO phrase \"sofa cleaning near me\" into visible on-page marketing copy in a natural, non-spammy way (English only), without changing page structure or any CTA destinations.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-3"
         ],
         "quotes": [
-          "Appointment form banavva nu che je dairect mara WhatsApp numbar ma khule"
+          "and sofa cleaning near me add"
         ]
       },
       "acceptanceCriteria": [
-        "Required fields cannot be submitted while invalid; validation messages are shown near the corresponding inputs.",
-        "Validation does not block the rest of the page or break existing CTAs/links.",
-        "Error messages are English-only and concise."
+        "The exact phrase \"sofa cleaning near me\" appears in at least one visible paragraph of copy on the landing page (e.g., in the Hero supporting paragraph in frontend/src/components/landing/Hero.tsx and/or the Services intro paragraph in frontend/src/components/landing/Services.tsx).",
+        "The phrase is added in a grammatically natural way (not repeated multiple times).",
+        "All existing CTA buttons/links (tel:+918000262644, https://wa.me/918000262644, Instagram, Google Business Profile) remain unchanged."
       ]
     },
     {
-      "id": "REQ-87",
-      "text": "Add a prominent way to access the appointment form from the existing landing page flow (e.g., an additional button/link near the Hero CTAs or a navigation link) without removing or changing any existing Call/WhatsApp/Instagram/Google Business Profile CTA destinations.",
+      "id": "REQ-100",
+      "text": "If the Hero headline line that mentions \"Carpet, Mattress & AC Services\" is adjusted as part of the requested service line changes, keep it English-only and ensure it remains consistent with the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-3"
         ],
         "quotes": [
-          "Appointment form banavva nu che je dairect mara WhatsApp numbar ma khule"
+          "Carpet, mattress & ac service line chang"
         ]
       },
       "acceptanceCriteria": [
-        "Existing CTAs and their destinations remain unchanged (tel:+918000262644, https://wa.me/918000262644, Instagram link, and Google Business Profile link).",
-        "A new link/button scrolls to (or otherwise reveals) the appointment form section and is visible on both mobile and desktop.",
-        "All new visible text remains English-only."
+        "Any updated Hero headline/subheadline text in frontend/src/components/landing/Hero.tsx remains English-only.",
+        "The Hero headline/subheadline continues to reference Carpet, Mattress, and AC services without implying any new services not present in the Services section.",
+        "No layout changes are introduced to the Hero section beyond text changes."
       ]
     }
   ],
   "constraints": [
-    "Do not change any existing CTA destinations: tel:+918000262644, https://wa.me/918000262644, https://www.instagram.com/magical_sofa_cleaning?igsh=MW42bHIweG9oZDV0bQ==, https://share.google/Nex4Ll5OOIXAVyXjZ.",
-    "Do not add any backend persistence or external APIs for the appointment feature; WhatsApp deep-linking must be done purely via a wa.me URL with URL-encoded text.",
     "Use English for all user-facing text.",
-    "Do not modify any files under frontend/src/components/ui or any immutable paths listed in SYSTEM_CONTEXT."
+    "Do not change any existing CTA destinations/links, including tel:+918000262644, https://wa.me/918000262644, Instagram link, and Google Business Profile link.",
+    "Do not change service pricing amounts or the set/order of services already shown.",
+    "Frontend immutable paths must not be edited (per SYSTEM_CONTEXT)."
   ],
   "nonGoals": [
-    "Building an admin panel or storing appointments in a database/canister.",
-    "Sending emails/SMS notifications.",
-    "Adding any AI/chat/automation behavior to the appointment flow."
+    "Adding new services, sections, or navigation items.",
+    "Backend changes (Motoko) or data persistence.",
+    "Changing images, logo assets, or generating new graphics.",
+    "Reworking global theme/styling beyond copy/line changes requested."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

@@ -77,7 +77,7 @@ export default function AreasServed() {
           <div className="mb-3 inline-flex">
             <IconBadge icon={MapPin} size="sm" variant="accent" />
           </div>
-          <h2 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="mb-3 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
             Areas We Serve in Ahmedabad
           </h2>
           <p className="mb-8 text-sm text-muted-foreground md:text-base lg:text-lg">
@@ -95,9 +95,9 @@ export default function AreasServed() {
               {ahmedabadAreas.map((area, index) => (
                 <div
                   key={index}
-                  className="group flex items-center justify-center rounded-lg border-2 border-border bg-card p-3 text-center shadow-xs transition-all hover:border-secondary hover:bg-secondary/5 hover:shadow-premium lg:p-3.5"
+                  className="group flex items-center justify-center rounded-xl border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 p-3 text-center shadow-xs transition-all hover:border-accent/50 hover:bg-gradient-to-br hover:from-card hover:to-accent/10 hover:shadow-premium-gold lg:p-3.5"
                 >
-                  <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-secondary sm:text-sm">
+                  <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
                     {area}
                   </span>
                 </div>
@@ -114,7 +114,7 @@ export default function AreasServed() {
               {gandhinagarAreas.map((area, index) => (
                 <div
                   key={index}
-                  className="group flex items-center justify-center rounded-lg border-2 border-border bg-card p-3 text-center shadow-xs transition-all hover:border-accent hover:bg-accent/5 hover:shadow-premium lg:p-3.5"
+                  className="group flex items-center justify-center rounded-xl border-2 border-accent/40 bg-gradient-to-br from-card to-accent/5 p-3 text-center shadow-xs transition-all hover:border-accent/60 hover:bg-gradient-to-br hover:from-card hover:to-accent/15 hover:shadow-premium-gold lg:p-3.5"
                 >
                   <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
                     {area}
@@ -123,16 +123,20 @@ export default function AreasServed() {
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-xs text-muted-foreground md:text-sm">
-            Don't see your area in Ahmedabad? Call us at{' '}
-            <a href="tel:+918000262644" className="font-semibold text-primary transition-colors hover:text-primary/80 hover:underline">
-              8000262644
-            </a>{' '}
-            to check availability for sofa cleaning services in your location
-          </p>
+          {/* Call to Action */}
+          <div className="text-center">
+            <p className="mb-4 text-sm text-muted-foreground md:text-base">
+              Don't see your area? We serve all of Ahmedabad & Gandhinagar!
+            </p>
+            <a
+              href="tel:+918000262644"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-6 py-3 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg md:px-7 md:py-3.5 md:text-base"
+            >
+              <MapPin className="h-4 w-4 stroke-[2.5]" />
+              <span>Call to Confirm Service in Your Area</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

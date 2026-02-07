@@ -15,7 +15,7 @@ export default function FloatingContactButtons() {
       </a>
       <a
         href="tel:+918000262644"
-        className="group flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-premium-lg transition-all hover:scale-110 hover:bg-primary/90 hover:shadow-[0_15px_50px_-10px_rgba(0,0,0,0.5)] lg:h-16 lg:w-16"
+        className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-premium-lg transition-all hover:scale-110 hover:shadow-[0_15px_50px_-10px_rgba(0,0,0,0.5)] lg:h-16 lg:w-16"
         aria-label="Call"
       >
         <Phone className="h-7 w-7 stroke-[2.5] lg:h-8 lg:w-8" />

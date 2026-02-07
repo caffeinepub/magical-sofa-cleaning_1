@@ -115,9 +115,9 @@ export default function AppointmentFormSection() {
         </div>
 
         <div className="mx-auto mt-8 max-w-2xl">
-          <Card className="border-2 border-primary/20 shadow-premium">
+          <Card className="premium-box">
             <CardHeader className="space-y-2 pb-6">
-              <CardTitle className="text-xl font-bold lg:text-2xl">Appointment Details</CardTitle>
+              <CardTitle className="text-xl font-bold text-primary lg:text-2xl">Appointment Details</CardTitle>
               <CardDescription className="text-sm lg:text-base">
                 Enter your details and we'll reach out to you on WhatsApp
               </CardDescription>

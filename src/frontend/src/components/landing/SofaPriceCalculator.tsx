@@ -1,76 +1,96 @@
 import { useState } from 'react';
-import { Calculator, IndianRupee, Sparkles } from 'lucide-react';
+import { Calculator, Phone } from 'lucide-react';
+import { SiWhatsapp } from 'react-icons/si';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { Badge } from '@/components/ui/badge';
 import IconBadge from '@/components/common/IconBadge';
 
 export default function SofaPriceCalculator() {
-  const [feet, setFeet] = useState(10);
+  const [sofaSize, setSofaSize] = useState<number>(10);
   const pricePerFoot = 90;
-  const total = feet * pricePerFoot;
+  const estimatedPrice = sofaSize * pricePerFoot;
 
   return (
-    <Card className="mx-auto max-w-2xl border-border bg-card shadow-lg">
-      <CardHeader className="space-y-3 pb-4 text-center">
-        <div className="mx-auto">
-          <IconBadge icon={Calculator} size="sm" variant="primary" />
+    <Card className="premium-box mx-auto max-w-3xl">
+      <CardHeader className="space-y-3 pb-5">
+        <div className="flex items-center gap-3">
+          <IconBadge icon={Calculator} size="sm" variant="accent" />
+          <div>
+            <CardTitle className="text-xl font-bold text-primary lg:text-2xl">
+              Sofa Price Calculator
+            </CardTitle>
+            <CardDescription className="text-xs lg:text-sm">
+              Estimate your sofa cleaning cost instantly
+            </CardDescription>
+          </div>
         </div>
-        <CardTitle className="text-xl lg:text-2xl">Sofa Cleaning Price Calculator</CardTitle>
-        <CardDescription className="text-sm lg:text-base">
-          Calculate your sofa cleaning cost instantly at ₹90 per foot
-        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-muted-foreground lg:text-sm">Sofa Size (feet)</span>
-            <Badge variant="outline" className="text-base font-bold lg:text-lg">
-              {feet} ft
-            </Badge>
+            <Label htmlFor="sofa-size" className="text-sm font-semibold lg:text-base">
+              Sofa Size (in feet)
+            </Label>
+            <span className="rounded-lg border-2 border-accent/30 bg-accent/10 px-3 py-1 text-lg font-bold text-accent lg:text-xl">
+              {sofaSize} ft
+            </span>
           </div>
           <Slider
-            value={[feet]}
-            onValueChange={(value) => setFeet(value[0])}
+            id="sofa-size"
             min={5}
-            max={30}
+            max={25}
             step={1}
+            value={[sofaSize]}
+            onValueChange={(value) => setSofaSize(value[0])}
             className="w-full"
           />
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>5 ft (Small)</span>
-            <span>30 ft (Large)</span>
+            <span>15 ft (Medium)</span>
+            <span>25 ft (Large)</span>
           </div>
         </div>
 
-        <div className="space-y-3 rounded-xl border-2 border-muted bg-muted/30 p-5 text-center shadow-sm">
-          <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground lg:text-sm">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span>Estimated Total Cost</span>
+        <div className="premium-box-gold space-y-3 p-5">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-semibold text-muted-foreground lg:text-base">
+              Price per foot:
+            </span>
+            <span className="text-base font-bold text-accent lg:text-lg">₹{pricePerFoot}</span>
           </div>
-          <div className="flex items-center justify-center gap-2">
-            <IndianRupee className="h-7 w-7 text-primary lg:h-8 lg:w-8" />
-            <span className="text-4xl font-bold text-primary lg:text-5xl">{total}</span>
+          <div className="border-t-2 border-accent/20 pt-3">
+            <div className="flex items-center justify-between">
+              <span className="text-base font-bold text-foreground lg:text-lg">
+                Estimated Total:
+              </span>
+              <span className="text-2xl font-bold text-accent lg:text-3xl">
+                ₹{estimatedPrice}
+              </span>
+            </div>
           </div>
-          <p className="text-xs text-muted-foreground">
-            {feet} feet × ₹{pricePerFoot}/ft = ₹{total}
-          </p>
         </div>
 
-        <div className="flex flex-col gap-2.5 sm:flex-row">
+        <div className="grid gap-2.5 sm:grid-cols-2">
           <a
             href="tel:+918000262644"
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
+            className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-5 py-3.5 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg lg:text-base"
           >
-            <span>📞 Call Now</span>
+            <Phone className="h-4 w-4 stroke-[3]" />
+            <span>Call for Booking</span>
           </a>
           <a
             href="https://wa.me/918000262644"
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[oklch(0.65_0.19_145)] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-[oklch(0.60_0.19_145)] hover:shadow-lg"
+            className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] px-5 py-3.5 text-sm font-bold text-white shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg lg:text-base"
           >
-            <span>💬 WhatsApp</span>
+            <SiWhatsapp className="h-4 w-4" />
+            <span>WhatsApp Us</span>
           </a>
         </div>
+
+        <p className="text-center text-xs text-muted-foreground">
+          * Final price may vary based on sofa condition and material type
+        </p>
       </CardContent>
     </Card>
   );

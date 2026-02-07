@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 77,
+  "projectStateVersion": 87,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
@@ -708,6 +708,110 @@
         "REQ-87"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-global-theme-tokens-to-a-premium-royal-blue-gold-palette-and-apply-it-consistently-across-the-landing-page-header-hero-services-areas-served-live-photos-google-reviews-appointment-form-footer-and-floating-contact-buttons-without-changing-any-existing-content-sections-layout-or-cta-destinations",
+      "title": "Update the global theme tokens to a premium Royal Blue + Gold palette and apply it consistently across the landing page (Header, Hero, Services, Areas Served, Live Photos, Google Reviews, Appointment form, Footer, and Floating Contact Buttons) without changing any existing content, sections, layout, or CTA destinations.",
+      "reqIds": [
+        "REQ-88"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-restyle-key-card-box-based-ui-to-look-more-premium-using-the-new-royal-blue-gold-theme-e-g-stronger-but-tasteful-borders-refined-gradients-premium-shadow-treatment-and-consistent-rounded-corners-while-preserving-current-spacing-responsiveness-and-keeping-all-existing-information-and-component-structure-intact",
+      "title": "Restyle key card/box-based UI to look more premium using the new Royal Blue + Gold theme (e.g., stronger but tasteful borders, refined gradients, premium shadow treatment, and consistent rounded corners), while preserving current spacing/responsiveness and keeping all existing information and component structure intact.",
+      "reqIds": [
+        "REQ-89"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-icon-styling-across-the-site-to-look-premium-and-consistent-with-the-royal-blue-gold-theme-e-g-icon-badges-section-header-icons-and-service-icons-while-keeping-the-existing-call-whatsapp-instagram-icons-and-their-colors-recognizability-intact",
+      "title": "Update icon styling across the site to look premium and consistent with the Royal Blue + Gold theme (e.g., icon badges, section header icons, and service icons), while keeping the existing Call/WhatsApp/Instagram icons and their colors/recognizability intact.",
+      "reqIds": [
+        "REQ-90"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-payment-options-ui-from-the-website-so-customers-do-not-see-any-qr-codes-scan-to-pay-blocks-or-payment-related-labels-anywhere-on-the-landing-page",
+      "title": "Remove all payment options UI from the website so customers do not see any QR codes, scan-to-pay blocks, or payment-related labels anywhere on the landing page.",
+      "reqIds": [
+        "REQ-91"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-payment-qr-static-assets-are-not-referenced-anywhere-in-the-frontend-code-after-removing-payment-options",
+      "title": "Ensure payment QR static assets are not referenced anywhere in the frontend code after removing payment options.",
+      "reqIds": [
+        "REQ-92"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-landing-page-section-with-anchor-id-why-choose-us-titled-why-choose-us-that-lists-exactly-these-four-points-as-visible-english-text-eco-friendly-chemicals-german-machines-technology-gold-standard-equipment-and-certified-experts",
+      "title": "Add a new landing-page section with anchor id \"why-choose-us\" titled \"Why Choose Us\" that lists exactly these four points as visible English text: \"Eco-Friendly Chemicals\", \"German Machines Technology\", \"Gold-Standard Equipment\", and \"Certified Experts\".",
+      "reqIds": [
+        "REQ-93"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-why-choose-us-button-link-in-the-site-navigation-that-scrolls-to-the-new-why-choose-us-section-without-changing-any-existing-cta-destinations-call-whatsapp-instagram-google-business-profile-or-removing-any-existing-navigation-items",
+      "title": "Add a new \"Why Choose Us\" button/link in the site navigation that scrolls to the new \"#why-choose-us\" section, without changing any existing CTA destinations (Call/WhatsApp/Instagram/Google Business Profile) or removing any existing navigation items.",
+      "reqIds": [
+        "REQ-94"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-footer-quick-links-list-includes-a-why-choose-us-link-to-why-choose-us-to-match-the-existing-pattern-of-in-page-section-links-without-removing-or-altering-any-existing-footer-links-or-contact-details",
+      "title": "Ensure the Footer \"Quick Links\" list includes a \"Why Choose Us\" link to \"#why-choose-us\" to match the existing pattern of in-page section links, without removing or altering any existing footer links or contact details.",
+      "reqIds": [
+        "REQ-95"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-top-section-header-hero-styling-to-look-more-professional-and-attractive-by-removing-replacing-any-overly-flashy-or-mismatched-color-treatments-while-keeping-the-existing-layout-structure-copy-and-all-cta-destinations-unchanged",
+      "title": "Update the Home top section (Header + Hero) styling to look more professional and attractive by removing/replacing any overly flashy or mismatched color treatments, while keeping the existing layout/structure, copy, and all CTA destinations unchanged.",
+      "reqIds": [
+        "REQ-96"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-the-hero-section-s-highlight-chips-and-cta-button-visuals-to-be-cleaner-and-more-premium-consistent-spacing-borders-shadows-and-theme-colors-while-keeping-their-text-and-actions-unchanged",
+      "title": "Refine the Hero section’s highlight chips and CTA button visuals to be cleaner and more premium (consistent spacing, borders, shadows, and theme colors), while keeping their text and actions unchanged.",
+      "reqIds": [
+        "REQ-97"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-user-facing-marketing-copy-line-s-for-carpet-cleaning-mattress-cleaning-and-ac-water-jet-service-across-the-landing-page-so-the-wording-is-improved-changed-while-keeping-the-same-services-pricing-and-cta-destinations-unchanged",
+      "title": "Update the user-facing marketing copy line(s) for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service across the landing page so the wording is improved/changed while keeping the same services, pricing, and CTA destinations unchanged.",
+      "reqIds": [
+        "REQ-98"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-exact-seo-phrase-sofa-cleaning-near-me-into-visible-on-page-marketing-copy-in-a-natural-non-spammy-way-english-only-without-changing-page-structure-or-any-cta-destinations",
+      "title": "Add the exact SEO phrase \"sofa cleaning near me\" into visible on-page marketing copy in a natural, non-spammy way (English only), without changing page structure or any CTA destinations.",
+      "reqIds": [
+        "REQ-99"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-if-the-hero-headline-line-that-mentions-carpet-mattress-ac-services-is-adjusted-as-part-of-the-requested-service-line-changes-keep-it-english-only-and-ensure-it-remains-consistent-with-the-services-section-offerings-carpet-cleaning-mattress-cleaning-ac-water-jet-service",
+      "title": "If the Hero headline line that mentions \"Carpet, Mattress & AC Services\" is adjusted as part of the requested service line changes, keep it English-only and ensure it remains consistent with the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
+      "reqIds": [
+        "REQ-100"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -962,6 +1066,42 @@
     {
       "id": "AR-44",
       "summary": "Add an Appointment/Booking form that submits directly to the business WhatsApp number (opens WhatsApp chat with the form details pre-filled).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-45",
+      "summary": "Update the site’s visual theme to a premium Royal Blue + Gold palette, with premium-styled boxes/cards and premium-looking icons across the UI.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-46",
+      "summary": "Remove/delete payment options from the website UI (e.g., QR/Scan-to-Pay blocks and any payment prompts).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-47",
+      "summary": "Add a \"Why Choose Us\" button/CTA that links to a new (or existing) \"Why Choose Us\" section listing: Eco-Friendly Chemicals, German machines technology, Gold-Standard Equipment, Certified Experts.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-48",
+      "summary": "Make the home/top (hero) section more professional and attractive, and adjust/change the color styling by removing any colors/elements that don’t look good.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-49",
+      "summary": "Update the service line/copy for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (user requested line changes).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-50",
+      "summary": "Add the SEO phrase “sofa cleaning near me” into on-page marketing copy in a natural way (no keyword stuffing).",
       "reqIds": [],
       "status": "pending"
     }

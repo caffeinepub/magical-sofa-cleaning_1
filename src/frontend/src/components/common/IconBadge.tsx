@@ -15,29 +15,29 @@ export default function IconBadge({
   className 
 }: IconBadgeProps) {
   const sizeClasses = {
-    sm: 'h-10 w-10',
-    md: 'h-14 w-14',
-    lg: 'h-16 w-16'
+    sm: 'h-12 w-12',
+    md: 'h-16 w-16',
+    lg: 'h-20 w-20'
   };
 
   const iconSizeClasses = {
-    sm: 'h-5 w-5',
-    md: 'h-7 w-7',
-    lg: 'h-8 w-8'
+    sm: 'h-6 w-6',
+    md: 'h-8 w-8',
+    lg: 'h-10 w-10'
   };
 
   const variantClasses = {
-    default: 'bg-primary/10 text-primary',
-    primary: 'bg-primary text-primary-foreground',
-    secondary: 'bg-secondary text-secondary-foreground',
-    accent: 'bg-accent text-accent-foreground',
-    muted: 'bg-muted text-muted-foreground'
+    default: 'premium-icon-badge text-primary-foreground',
+    primary: 'premium-icon-badge text-primary-foreground',
+    secondary: 'bg-gradient-to-br from-secondary to-secondary/80 text-secondary-foreground border-2 border-secondary/30 shadow-premium-gold',
+    accent: 'premium-icon-badge-gold text-accent-foreground',
+    muted: 'bg-muted text-muted-foreground border-2 border-border'
   };
 
   return (
     <div 
       className={cn(
-        'flex items-center justify-center rounded-xl transition-all',
+        'flex items-center justify-center rounded-2xl transition-all',
         sizeClasses[size],
         variantClasses[variant],
         className

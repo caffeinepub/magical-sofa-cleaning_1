@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Add an Appointment booking form to the landing page that validates input and, on submit, opens WhatsApp with a pre-filled booking message (no backend storage).
+**Goal:** Refresh landing-page marketing copy for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service, and add the exact SEO phrase “sofa cleaning near me” in a natural way—without changing services, pricing, layout, or CTA destinations.
 
 **Planned changes:**
-- Add a new “Appointment” section on the landing page with an English-only booking form (Customer Name, Phone Number, Service selection from existing services, Area/Location, Preferred Date, Preferred Time, Notes/Message).
-- Implement client-side validation with inline, non-intrusive English error messages for required/invalid fields (e.g., empty name, invalid phone number).
-- On successful submit, open `https://wa.me/918000262644` with a URL-encoded pre-filled message containing all entered booking details in a readable format.
-- Add a prominent new button/link in the existing landing page flow (e.g., near Hero CTAs or nav) that scrolls to/reveals the Appointment form, without changing any existing CTA destinations.
+- Update the description text for the service cards “Carpet Cleaning in Ahmedabad”, “Mattress Cleaning in Ahmedabad”, and “AC Water Jet Service in Ahmedabad” in `frontend/src/components/landing/Services.tsx` (titles, pricing, and AC sub-service list/prices unchanged).
+- Add the exact phrase “sofa cleaning near me” to at least one visible paragraph of landing-page copy (e.g., in `frontend/src/components/landing/Hero.tsx` and/or the Services intro copy) in a grammatically natural, non-repetitive way.
+- If adjusting the Hero line that mentions Carpet/Mattress/AC, keep it English-only and consistent with the Services section offerings, with no layout changes.
 
-**User-visible outcome:** Visitors can quickly access an Appointment form, fill in booking details, and be taken to WhatsApp with a ready-to-send message to the business number, on both mobile and desktop.
+**User-visible outcome:** Visitors see improved service descriptions and a naturally integrated “sofa cleaning near me” phrase on the landing page, while all pricing and CTA links/destinations remain the same.

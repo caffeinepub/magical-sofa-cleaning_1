@@ -56,7 +56,7 @@ export default function LivePhotos() {
           {livePhotos.map((photo, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden border-2 border-primary/20 bg-card shadow-xs transition-all hover:border-primary/40 hover:shadow-premium-lg"
+              className="group relative overflow-hidden premium-box premium-box-hover"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -66,7 +66,7 @@ export default function LivePhotos() {
                   loading="lazy"
                 />
                 {photo.label && (
-                  <Badge className="absolute left-3 top-3 border-primary/30 bg-primary/90 text-xs font-bold text-primary-foreground shadow-premium backdrop-blur-sm">
+                  <Badge className="absolute left-3 top-3 border-2 border-accent/40 bg-gradient-to-r from-accent to-accent/80 text-xs font-bold text-accent-foreground shadow-premium-gold backdrop-blur-sm">
                     {photo.label}
                   </Badge>
                 )}
