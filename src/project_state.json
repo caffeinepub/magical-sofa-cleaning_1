@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
+  "architectural_notes": [
+    "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site."
+  ],
+  "known_issues": [
+    "Potential conflict: existing scope requires all user-facing text in English, but latest requirement is English + Gujarati mix."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-new-single-page-marketing-website-for-a-sofa-cleaning-service-based-on-the-provided-html-content-structure-hero-services-contact-ctas-footer-implemented-in-the-existing-react-tailwind-app",
+      "title": "Create a new single-page marketing website for a sofa cleaning service, based on the provided HTML content structure (Hero, Services, Contact CTAs, Footer), implemented in the existing React + Tailwind app.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-english-for-all-user-facing-text-while-preserving-the-business-intent-from-the-user-s-drafts-promote-sofa-cleaning-and-related-services-and-target-ahmedabad-gandhinagar",
+      "title": "Use English for all user-facing text while preserving the business intent from the user’s drafts: promote sofa cleaning and related services, and target Ahmedabad & Gandhinagar.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-prominent-contact-ctas-using-the-exact-phone-number-and-whatsapp-link-shown-in-the-user-s-html-drafts-phone-link-tel-918000262644-and-whatsapp-link-https-wa-me-918000262644",
+      "title": "Implement prominent contact CTAs using the exact phone number and WhatsApp link shown in the user’s HTML drafts: phone link tel:+918000262644 and WhatsApp link https://wa.me/918000262644.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-services-section-that-includes-at-minimum-sofa-cleaning-plus-additional-services-reflected-in-the-user-s-drafts-e-g-ac-service-home-cleaning-carpet-mattress-cleaning-each-displayed-as-a-card-with-short-descriptions-and-optional-pricing-text-like-from-99-seat",
+      "title": "Add a Services section that includes at minimum Sofa Cleaning plus additional services reflected in the user’s drafts (e.g., AC Service, Home Cleaning, Carpet/Mattress cleaning), each displayed as a card with short descriptions and optional pricing text like “From ₹99/Seat”.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-areas-served-section-listing-locations-mentioned-in-the-user-drafts-at-minimum-ahmedabad-gandhinagar-nikol-naroda",
+      "title": "Add an “Areas Served” section listing locations mentioned in the user drafts (at minimum: Ahmedabad, Gandhinagar, Nikol, Naroda).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-coherent-premium-cleaning-service-visual-theme-and-apply-it-consistently-colors-typography-spacing-buttons-cards-do-not-use-a-blue-purple-primary-palette",
+      "title": "Create a coherent, premium “cleaning service” visual theme and apply it consistently (colors, typography, spacing, buttons, cards). Do not use a blue/purple primary palette.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-images-hero-background-simple-brand-logo-to-the-project-under-frontend-public-assets-generated-and-use-them-in-the-landing-page-do-not-fetch-hero-imagery-from-external-urls",
+      "title": "Add generated static images (hero background + simple brand logo) to the project under frontend/public/assets/generated and use them in the landing page (do not fetch hero imagery from external URLs).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-landing-page-content-to-use-a-mixed-language-style-english-gujarati-across-all-visible-sections-header-hero-services-areas-served-footer-by-adding-gujarati-alongside-the-existing-english-copy-while-keeping-the-same-page-structure-ctas-and-contact-links-unchanged",
+      "title": "Update the landing page content to use a mixed-language style (English + Gujarati) across all visible sections (Header, Hero, Services, Areas Served, Footer) by adding Gujarati alongside the existing English copy, while keeping the same page structure, CTAs, and contact links unchanged.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a new website for the sofa cleaning service (business landing page).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Support mixed-language (English + Gujarati) user-facing content across the landing page sections.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Magical Sofa Cleaning",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "build_request",
+  "title": "Support mixed-language (English + Gujarati) copy across the landing page",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Update the landing page content to use a mixed-language style (English + Gujarati) across all visible sections (Header, Hero, Services, Areas Served, Footer) by adding Gujarati alongside the existing English copy, while keeping the same page structure, CTAs, and contact links unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "English+ gujrati mix"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header navigation labels and brand tagline include Gujarati alongside English (e.g., English text plus Gujarati in parentheses or on a second line) without breaking the layout on mobile or desktop.",
+        "Hero headline, subheadline, and CTA button labels include Gujarati alongside English, and the existing links remain exactly: tel:+918000262644 and https://wa.me/918000262644.",
+        "Services section title/description and each service card title/description/price text include Gujarati alongside English (keeping service list and pricing semantics intact).",
+        "Areas Served section heading and supporting text include Gujarati alongside English; the area names may remain in English if desired, but any explanatory sentences include Gujarati alongside English.",
+        "Footer headings, quick links, contact/booking labels, and descriptive paragraph include Gujarati alongside English; do not remove the existing business name and attribution line.",
+        "No user-facing text becomes Gujarati-only; English remains present everywhere user-facing text exists."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the existing contact CTA destinations: tel:+918000262644 and https://wa.me/918000262644.",
+    "Do not fetch images from external URLs; keep using existing static assets under /assets/generated.",
+    "Do not modify files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT."
+  ],
+  "nonGoals": [
+    "Adding a booking form or any new page/route.",
+    "Adding backend functionality or data persistence changes.",
+    "Changing the visual theme beyond what is necessary to accommodate bilingual text (e.g., minor spacing/typography adjustments only)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Bilingual (English + Gujarati) copy across landing page",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Add Gujarati alongside existing English copy across all landing page sections while preserving structure, CTAs, and contact links.",
+      "acceptanceCriteria": [
+        "Header navigation labels and brand tagline include Gujarati alongside English (e.g., English text plus Gujarati in parentheses or on a second line) without breaking the layout on mobile or desktop.",
+        "Hero headline, subheadline, and CTA button labels include Gujarati alongside English, and the existing links remain exactly: tel:+918000262644 and https://wa.me/918000262644.",
+        "Services section title/description and each service card title/description/price text include Gujarati alongside English (keeping service list and pricing semantics intact).",
+        "Areas Served section heading and supporting text include Gujarati alongside English; the area names may remain in English if desired, but any explanatory sentences include Gujarati alongside English.",
+        "Footer headings, quick links, contact/booking labels, and descriptive paragraph include Gujarati alongside English; do not remove the existing business name and attribution line.",
+        "No user-facing text becomes Gujarati-only; English remains present everywhere user-facing text exists."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/Header.tsx",
+          "operation": "modify",
+          "description": "Update brand tagline and header navigation/CTA labels to include Gujarati alongside existing English (e.g., second line or parentheses) while keeping the same header structure and ensuring the contact links remain unchanged (tel:+918000262644 and https://wa.me/918000262644)."
+        },
+        {
+          "path": "frontend/src/components/landing/Hero.tsx",
+          "operation": "modify",
+          "description": "Update hero headline, subheadline, and CTA button labels to mixed English + Gujarati copy while keeping the same layout, background asset usage, and ensuring CTA href values remain exactly tel:+918000262644 and https://wa.me/918000262644."
+        },
+        {
+          "path": "frontend/src/components/landing/Services.tsx",
+          "operation": "modify",
+          "description": "Update services section heading/description and each service card’s title/description/price strings to include Gujarati alongside English, preserving the existing service list, pricing semantics, and component structure (do not modify any files under frontend/src/components/ui)."
+        },
+        {
+          "path": "frontend/src/components/landing/AreasServed.tsx",
+          "operation": "modify",
+          "description": "Update Areas Served heading and supporting sentences to include Gujarati alongside English (area names may remain English), and keep the existing phone link destination unchanged (tel:+918000262644)."
+        },
+        {
+          "path": "frontend/src/components/landing/Footer.tsx",
+          "operation": "modify",
+          "description": "Update footer headings, quick links labels, contact/booking labels, and descriptive paragraph to include Gujarati alongside English, while preserving existing business name and attribution line and keeping CTA href values unchanged (tel:+918000262644 and https://wa.me/918000262644)."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply minor global typography/spacing adjustments (e.g., line-height/text wrapping helpers or font fallbacks that support Gujarati) to accommodate bilingual text without changing the overall visual theme."
+        }
+      ]
+    }
+  ]
+}

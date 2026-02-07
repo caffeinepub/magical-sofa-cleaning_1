@@ -1,0 +1,51 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T08:07:07.125Z",
+  "summary": "Most landing-page sections were updated to include Gujarati alongside English (Hero, Areas Served, much of Footer, and service titles/prices). However, at least one CTA label (Header WhatsApp) remains English-only, and it’s unclear from the truncated diff whether service card descriptions actually render Gujarati. Additionally, there are styling/theme-token changes (color palette) that go beyond the requested bilingual copy updates.",
+  "missing_requirements": [
+    {
+      "id": "REQ-8",
+      "requirement": "Hero/CTA button labels include Gujarati alongside English, while keeping the existing contact links unchanged.",
+      "reason": "The Header WhatsApp CTA label appears to remain English-only (no Gujarati alongside it), which violates the requirement that no user-facing text becomes English-only where bilingual is expected for CTAs.",
+      "evidence": [
+        "frontend/src/components/landing/Header.tsx"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "Services section: each service card title/description/price text include Gujarati alongside English (keeping service list and pricing semantics intact).",
+      "reason": "Service objects include a separate Gujarati description field (descriptionGuj), but the rendering code is truncated at `{service.descr...`, so it is not verifiable that Gujarati descriptions are actually displayed alongside English in each card.",
+      "evidence": [
+        "frontend/src/components/landing/Services.tsx (truncated)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Changed global visual theme tokens / color palette (OKLCH variables) and related styling beyond minor spacing/typography adjustments.",
+      "reason": "The request explicitly says not to change the visual theme beyond what is necessary to accommodate bilingual text; editing the primary palette and multiple design tokens appears to be a broader theme change.",
+      "evidence": [
+        "frontend/src/index.css"
+      ]
+    },
+    {
+      "description": "Tailwind configuration changes (e.g., custom font/design tokens) not requested for bilingual copy support.",
+      "reason": "The diff summary indicates modifications to Tailwind configuration for fonts/design tokens, which is outside the scope of adding mixed-language copy.",
+      "evidence": [
+        "frontend-file-summaries.txt (mentions modified frontend/tailwind.config.js)"
+      ]
+    }
+  ],
+  "confidence": 0.66,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/landing/AreasServed.tsx",
+    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/landing/Header.tsx",
+    "frontend/src/components/landing/Hero.tsx",
+    "frontend/src/components/landing/Services.tsx",
+    "frontend/src/index.css",
+    "project_state.json"
+  ]
+}
