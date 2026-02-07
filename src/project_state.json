@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 87,
+  "projectStateVersion": 89,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
@@ -26,7 +26,7 @@
     "User indicates the hero/before-after image was changed; needs to be reverted to the previously used photo.",
     "Asset dependency: “live photos” (real service photos) are requested but not yet provided; needs image assets and confirmation of usage rights."
   ],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-new-single-page-marketing-website-for-a-sofa-cleaning-service-based-on-the-provided-html-content-structure-hero-services-contact-ctas-footer-implemented-in-the-existing-react-tailwind-app",
@@ -810,6 +810,22 @@
       "title": "If the Hero headline line that mentions \"Carpet, Mattress & AC Services\" is adjusted as part of the requested service line changes, keep it English-only and ensure it remains consistent with the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
       "reqIds": [
         "REQ-100"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-headline-s-second-line-so-the-service-names-are-explicitly-aligned-with-the-services-section-offerings-replacing-the-generic-text-carpet-mattress-ac-services-with-wording-that-clearly-references-carpet-cleaning-mattress-cleaning-and-ac-water-jet-service-english-only",
+      "title": "Update the Hero headline’s second line so the service names are explicitly aligned with the Services section offerings, replacing the generic text \"Carpet, Mattress & AC Services\" with wording that clearly references Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (English-only).",
+      "reqIds": [
+        "REQ-101"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-exact-phrase-sofa-cleaning-near-me-appears-as-visible-user-facing-on-page-marketing-copy-english-only-in-a-natural-non-spammy-way-and-is-not-removed-during-the-service-line-update",
+      "title": "Ensure the exact phrase \"sofa cleaning near me\" appears as visible, user-facing on-page marketing copy (English-only), in a natural, non-spammy way, and is not removed during the service-line update.",
+      "reqIds": [
+        "REQ-102"
       ],
       "version": 1
     }

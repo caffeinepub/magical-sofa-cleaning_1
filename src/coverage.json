@@ -1,18 +1,18 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T18:09:44.125Z",
+  "generatedAt": "2026-02-07T18:18:01.202Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-100",
-        "summary": "If the Hero headline line that mentions \"Carpet, Mattress & AC Services\" is adjusted as part of the requested service line changes, keep it English-only and ensure it remains consistent with the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
+        "id": "REQ-101",
+        "summary": "Update the Hero headline’s second line so the service names are explicitly aligned with the Services section offerings, replacing the generic text \"Carpet, Mattress & AC Services\" with wording that clearly references Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (English-only).",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/components/landing/Hero.tsx"
@@ -22,22 +22,12 @@
         ]
       },
       {
-        "id": "REQ-98",
-        "summary": "Update the user-facing marketing copy line(s) for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service across the landing page so the wording is improved/changed while keeping the same services, pricing, and CTA destinations unchanged.",
+        "id": "REQ-102",
+        "summary": "Ensure the exact phrase \"sofa cleaning near me\" appears as visible, user-facing on-page marketing copy (English-only), in a natural, non-spammy way, and is not removed during the service-line update.",
         "status": "implemented",
         "plannedFiles": [
+          "frontend/src/components/landing/Hero.tsx",
           "frontend/src/components/landing/Services.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/landing/Services.tsx"
-        ]
-      },
-      {
-        "id": "REQ-99",
-        "summary": "Add the exact SEO phrase \"sofa cleaning near me\" into visible on-page marketing copy in a natural, non-spammy way (English only), without changing page structure or any CTA destinations.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/landing/Hero.tsx"
         ],
         "matchedFiles": [
           "frontend/src/components/landing/Hero.tsx"
@@ -51,7 +41,6 @@
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/src/components/landing/Hero.tsx",
-    "frontend/src/components/landing/Services.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

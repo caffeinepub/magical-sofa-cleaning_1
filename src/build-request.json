@@ -1,74 +1,54 @@
 {
   "kind": "build_request",
-  "title": "Update service copy for Carpet/Mattress/AC and add “sofa cleaning near me” phrase",
+  "title": "Fix Hero service line naming and ensure 'sofa cleaning near me' is visible on-page",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-98",
-      "text": "Update the user-facing marketing copy line(s) for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service across the landing page so the wording is improved/changed while keeping the same services, pricing, and CTA destinations unchanged.",
+      "id": "REQ-101",
+      "text": "Update the Hero headline’s second line so the service names are explicitly aligned with the Services section offerings, replacing the generic text \"Carpet, Mattress & AC Services\" with wording that clearly references Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (English-only).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-4"
         ],
         "quotes": [
-          "Carpet, mattress & ac service line chang"
+          "Chang nathi thayu\nCarpet, mattress & AC service name chang Ane"
         ]
       },
       "acceptanceCriteria": [
-        "In frontend/src/components/landing/Services.tsx, the description text for the following service cards is updated: 'Carpet Cleaning in Ahmedabad', 'Mattress Cleaning in Ahmedabad', and 'AC Water Jet Service in Ahmedabad'.",
-        "Service titles, pricing values, and the AC sub-service list/prices remain exactly as currently implemented.",
-        "No changes are made to any Call/WhatsApp/Instagram/Google Business Profile links or their destinations."
+        "On the landing page Hero, the second line under the main headline no longer reads \"Carpet, Mattress & AC Services\".",
+        "The updated Hero service line explicitly names the services in a way that matches the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
+        "No CTA destinations are changed (tel:+918000262644 and https://wa.me/918000262644 remain exactly the same)."
       ]
     },
     {
-      "id": "REQ-99",
-      "text": "Add the exact SEO phrase \"sofa cleaning near me\" into visible on-page marketing copy in a natural, non-spammy way (English only), without changing page structure or any CTA destinations.",
+      "id": "REQ-102",
+      "text": "Ensure the exact phrase \"sofa cleaning near me\" appears as visible, user-facing on-page marketing copy (English-only), in a natural, non-spammy way, and is not removed during the service-line update.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-4"
         ],
         "quotes": [
-          "and sofa cleaning near me add"
+          "Sofa cleaning near me? Add"
         ]
       },
       "acceptanceCriteria": [
-        "The exact phrase \"sofa cleaning near me\" appears in at least one visible paragraph of copy on the landing page (e.g., in the Hero supporting paragraph in frontend/src/components/landing/Hero.tsx and/or the Services intro paragraph in frontend/src/components/landing/Services.tsx).",
-        "The phrase is added in a grammatically natural way (not repeated multiple times).",
-        "All existing CTA buttons/links (tel:+918000262644, https://wa.me/918000262644, Instagram, Google Business Profile) remain unchanged."
-      ]
-    },
-    {
-      "id": "REQ-100",
-      "text": "If the Hero headline line that mentions \"Carpet, Mattress & AC Services\" is adjusted as part of the requested service line changes, keep it English-only and ensure it remains consistent with the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-3"
-        ],
-        "quotes": [
-          "Carpet, mattress & ac service line chang"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Any updated Hero headline/subheadline text in frontend/src/components/landing/Hero.tsx remains English-only.",
-        "The Hero headline/subheadline continues to reference Carpet, Mattress, and AC services without implying any new services not present in the Services section.",
-        "No layout changes are introduced to the Hero section beyond text changes."
+        "The exact phrase \"sofa cleaning near me\" appears in visible page content (not only in metadata).",
+        "The phrase is present after the Hero service-line update is applied.",
+        "No page sections are removed and no CTA destinations are changed."
       ]
     }
   ],
   "constraints": [
-    "Use English for all user-facing text.",
-    "Do not change any existing CTA destinations/links, including tel:+918000262644, https://wa.me/918000262644, Instagram link, and Google Business Profile link.",
-    "Do not change service pricing amounts or the set/order of services already shown.",
-    "Frontend immutable paths must not be edited (per SYSTEM_CONTEXT)."
+    "Keep all user-facing text English-only.",
+    "Do not change any existing CTA destinations or contact links (tel:+918000262644, https://wa.me/918000262644, Instagram link, Google Business Profile link).",
+    "Frontend immutable paths must not be edited (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui)."
   ],
   "nonGoals": [
-    "Adding new services, sections, or navigation items.",
-    "Backend changes (Motoko) or data persistence.",
-    "Changing images, logo assets, or generating new graphics.",
-    "Reworking global theme/styling beyond copy/line changes requested."
+    "Do not add new sections, new services, or change service pricing.",
+    "Do not introduce any AI-related features or chat widgets.",
+    "Do not change branding assets, images, or overall page layout beyond the requested text updates."
   ],
   "imageRequirements": {
     "required": [],

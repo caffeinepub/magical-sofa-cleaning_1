@@ -1,53 +1,42 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update landing-page service copy and add SEO phrase",
+  "title": "Align Hero service line with Services offerings and keep \"sofa cleaning near me\" visible",
   "requirements": [
     {
-      "id": "REQ-98",
-      "summary": "Improve the marketing descriptions for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service cards while keeping services, pricing, and CTAs unchanged.",
+      "id": "REQ-101",
+      "summary": "Replace the Hero headline second line with explicit service names that match the Services section (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
       "acceptanceCriteria": [
-        "In frontend/src/components/landing/Services.tsx, the description text for the following service cards is updated: 'Carpet Cleaning in Ahmedabad', 'Mattress Cleaning in Ahmedabad', and 'AC Water Jet Service in Ahmedabad'.",
-        "Service titles, pricing values, and the AC sub-service list/prices remain exactly as currently implemented.",
-        "No changes are made to any Call/WhatsApp/Instagram/Google Business Profile links or their destinations."
+        "On the landing page Hero, the second line under the main headline no longer reads \"Carpet, Mattress & AC Services\".",
+        "The updated Hero service line explicitly names the services in a way that matches the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
+        "No CTA destinations are changed (tel:+918000262644 and https://wa.me/918000262644 remain exactly the same)."
       ],
       "file_operations": [
+        {
+          "path": "frontend/src/components/landing/Hero.tsx",
+          "operation": "modify",
+          "description": "Update the Hero headline second line text to explicitly name: Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service; keep all CTA hrefs exactly unchanged and keep all user-facing text English-only."
+        }
+      ]
+    },
+    {
+      "id": "REQ-102",
+      "summary": "Ensure the exact phrase \"sofa cleaning near me\" remains in visible on-page marketing copy after the Hero text change.",
+      "acceptanceCriteria": [
+        "The exact phrase \"sofa cleaning near me\" appears in visible page content (not only in metadata).",
+        "The phrase is present after the Hero service-line update is applied.",
+        "No page sections are removed and no CTA destinations are changed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/Hero.tsx",
+          "operation": "modify",
+          "description": "Verify and preserve the exact visible phrase \"sofa cleaning near me\" within the Hero marketing paragraph while adjusting surrounding copy only if needed for natural English; do not change any CTA destinations/links."
+        },
         {
           "path": "frontend/src/components/landing/Services.tsx",
           "operation": "modify",
-          "description": "Update only the description strings for the three specified service cards (Carpet Cleaning in Ahmedabad, Mattress Cleaning in Ahmedabad, AC Water Jet Service in Ahmedabad) to improved English marketing copy. Do not change service titles, any pricing values, the AC sub-service list items/prices, card order, or any CTA/link destinations."
-        }
-      ]
-    },
-    {
-      "id": "REQ-99",
-      "summary": "Insert the exact SEO phrase \"sofa cleaning near me\" into visible landing-page copy naturally, without changing structure or CTA destinations.",
-      "acceptanceCriteria": [
-        "The exact phrase \"sofa cleaning near me\" appears in at least one visible paragraph of copy on the landing page (e.g., in the Hero supporting paragraph in frontend/src/components/landing/Hero.tsx and/or the Services intro paragraph in frontend/src/components/landing/Services.tsx).",
-        "The phrase is added in a grammatically natural way (not repeated multiple times).",
-        "All existing CTA buttons/links (tel:+918000262644, https://wa.me/918000262644, Instagram, Google Business Profile) remain unchanged."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/landing/Hero.tsx",
-          "operation": "modify",
-          "description": "Add the exact phrase \"sofa cleaning near me\" once within an existing visible paragraph (preferably the Hero supporting paragraph) in a natural English sentence. Do not change any CTA hrefs/destinations, and do not alter layout/structure beyond the text edit."
-        }
-      ]
-    },
-    {
-      "id": "REQ-100",
-      "summary": "Ensure any Hero headline/subheadline adjustments remain English-only and consistent with the Services offerings (Carpet, Mattress, AC Water Jet).",
-      "acceptanceCriteria": [
-        "Any updated Hero headline/subheadline text in frontend/src/components/landing/Hero.tsx remains English-only.",
-        "The Hero headline/subheadline continues to reference Carpet, Mattress, and AC services without implying any new services not present in the Services section.",
-        "No layout changes are introduced to the Hero section beyond text changes."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/landing/Hero.tsx",
-          "operation": "modify",
-          "description": "If any Hero headline/subheadline text is edited while implementing other copy changes, keep it English-only and aligned to the existing Services offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service). Ensure no layout changes are introduced and CTA destinations remain unchanged."
+          "description": "Ensure the Services section intro copy still includes the exact visible phrase \"sofa cleaning near me\" in a natural, non-spammy sentence; do not remove sections or alter any contact/CTA links."
         }
       ]
     }

@@ -20,7 +20,7 @@ export default function Hero() {
           <h1 className="text-3xl font-bold tracking-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl">
             Sofa Cleaning Services in Ahmedabad
             <span className="mt-3 block text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-              Carpet, Mattress & AC Services
+              Carpet Cleaning, Mattress Cleaning, AC Water Jet Service
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-base font-medium text-white/95 drop-shadow-md sm:text-lg md:text-xl lg:text-2xl">

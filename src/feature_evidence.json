@@ -2,26 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-user-facing-marketing-copy-line-s-for-carpet-cleaning-mattress-cleaning-and-ac-water-jet-service-across-the-landing-page-so-the-wording-is-improved-changed-while-keeping-the-same-services-pricing-and-cta-destinations-unchanged",
-      "featureTitle": "Update the user-facing marketing copy line(s) for Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service across the landing page so the wording is improved/changed while keeping the same services, pricing, and CTA destinations unchanged.",
-      "files": [
-        "frontend/src/components/landing/Services.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-98"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-the-exact-seo-phrase-sofa-cleaning-near-me-into-visible-on-page-marketing-copy-in-a-natural-non-spammy-way-english-only-without-changing-page-structure-or-any-cta-destinations",
-      "featureTitle": "Add the exact SEO phrase \"sofa cleaning near me\" into visible on-page marketing copy in a natural, non-spammy way (English only), without changing page structure or any CTA destinations.",
+      "featureId": "feature-update-the-hero-headline-s-second-line-so-the-service-names-are-explicitly-aligned-with-the-services-section-offerings-replacing-the-generic-text-carpet-mattress-ac-services-with-wording-that-clearly-references-carpet-cleaning-mattress-cleaning-and-ac-water-jet-service-english-only",
+      "featureTitle": "Update the Hero headline’s second line so the service names are explicitly aligned with the Services section offerings, replacing the generic text \"Carpet, Mattress & AC Services\" with wording that clearly references Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (English-only).",
       "files": [
         "frontend/src/components/landing/Hero.tsx"
       ],
@@ -33,13 +15,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-99"
+        "REQ-101"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-if-the-hero-headline-line-that-mentions-carpet-mattress-ac-services-is-adjusted-as-part-of-the-requested-service-line-changes-keep-it-english-only-and-ensure-it-remains-consistent-with-the-services-section-offerings-carpet-cleaning-mattress-cleaning-ac-water-jet-service",
-      "featureTitle": "If the Hero headline line that mentions \"Carpet, Mattress & AC Services\" is adjusted as part of the requested service line changes, keep it English-only and ensure it remains consistent with the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
+      "featureId": "feature-ensure-the-exact-phrase-sofa-cleaning-near-me-appears-as-visible-user-facing-on-page-marketing-copy-english-only-in-a-natural-non-spammy-way-and-is-not-removed-during-the-service-line-update",
+      "featureTitle": "Ensure the exact phrase \"sofa cleaning near me\" appears as visible, user-facing on-page marketing copy (English-only), in a natural, non-spammy way, and is not removed during the service-line update.",
       "files": [
         "frontend/src/components/landing/Hero.tsx"
       ],
@@ -51,7 +33,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-100"
+        "REQ-102"
       ],
       "confidence": "high"
     }
