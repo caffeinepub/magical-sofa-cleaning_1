@@ -1,39 +1,70 @@
 {
   "kind": "build_request",
-  "title": "Support mixed-language (English + Gujarati) copy across the landing page",
+  "title": "Update Services: remove Home Cleaning, add Chair Cleaning and AC Water Jet Service; exclude AI features",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-8",
-      "text": "Update the landing page content to use a mixed-language style (English + Gujarati) across all visible sections (Header, Hero, Services, Areas Served, Footer) by adding Gujarati alongside the existing English copy, while keeping the same page structure, CTAs, and contact links unchanged.",
+      "id": "REQ-9",
+      "text": "Update the Services section to remove the “Full Home Cleaning” service card entirely.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-1"
+          "msg-4"
         ],
         "quotes": [
-          "English+ gujrati mix"
+          "Home cleaning nu Kadhi nakhvanu che"
         ]
       },
       "acceptanceCriteria": [
-        "Header navigation labels and brand tagline include Gujarati alongside English (e.g., English text plus Gujarati in parentheses or on a second line) without breaking the layout on mobile or desktop.",
-        "Hero headline, subheadline, and CTA button labels include Gujarati alongside English, and the existing links remain exactly: tel:+918000262644 and https://wa.me/918000262644.",
-        "Services section title/description and each service card title/description/price text include Gujarati alongside English (keeping service list and pricing semantics intact).",
-        "Areas Served section heading and supporting text include Gujarati alongside English; the area names may remain in English if desired, but any explanatory sentences include Gujarati alongside English.",
-        "Footer headings, quick links, contact/booking labels, and descriptive paragraph include Gujarati alongside English; do not remove the existing business name and attribution line.",
-        "No user-facing text becomes Gujarati-only; English remains present everywhere user-facing text exists."
+        "The Services grid no longer displays any service titled or described as “Home Cleaning” (English or Gujarati).",
+        "The Services section continues to render correctly without layout breaks after removing the card."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Update the Services section offerings to include exactly these services: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service (keeping the existing bilingual style used on the page).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Ane sofa, carpet, chair, mattress cleaning Ane ac water jet service aatlu add karva nu che"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Services section displays 5 service cards for: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service.",
+        "The existing “AC Service” card is renamed/updated to “AC Water Jet Service” (and Gujarati counterpart updated accordingly) while preserving the existing call/WhatsApp CTAs elsewhere on the page.",
+        "No “combined” card remains for “Carpet & Mattress” (Carpet and Mattress are separate service cards).",
+        "Each service card includes an English title/description and a Gujarati title/description consistent with the current bilingual pattern in Services.tsx."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Do not add any AI-based features (now or as placeholder “future” functionality) anywhere in the website.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Ane ai na future add karva na che"
+        ]
+      },
+      "acceptanceCriteria": [
+        "No UI sections, buttons, copy, or backend endpoints related to AI features are added.",
+        "No TODOs, stubs, or placeholder components for future AI functionality are introduced."
       ]
     }
   ],
   "constraints": [
-    "Do not change the existing contact CTA destinations: tel:+918000262644 and https://wa.me/918000262644.",
-    "Do not fetch images from external URLs; keep using existing static assets under /assets/generated.",
-    "Do not modify files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT."
+    "Do not change the existing phone and WhatsApp CTA links (tel:+918000262644 and https://wa.me/918000262644).",
+    "Do not edit any files under frontend/src/components/ui or any paths listed as immutable in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Adding a booking form or any new page/route.",
-    "Adding backend functionality or data persistence changes.",
-    "Changing the visual theme beyond what is necessary to accommodate bilingual text (e.g., minor spacing/typography adjustments only)."
+    "Adding a booking form or lead capture form.",
+    "Adding any backend data storage, admin panel, or CMS for managing services.",
+    "Adding AI features, AI chat, AI recommendations, or any AI integrations."
   ],
   "imageRequirements": {
     "required": [],

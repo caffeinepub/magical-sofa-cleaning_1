@@ -1,4 +1,4 @@
-import { Sofa, Wind, Home, Sparkles } from 'lucide-react';
+import { Sofa, Wind, Armchair, Sparkles, Layers } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const services = [
@@ -11,27 +11,35 @@ const services = [
     featured: true,
   },
   {
-    icon: Wind,
-    title: 'AC Service | AC સર્વિસ',
-    description: 'Complete AC maintenance including deep jet cleaning and gas filling for both split and window units. Fast and reliable service.',
-    descriptionGuj: 'સ્પ્લિટ અને વિન્ડો બંને યુનિટ માટે ડીપ જેટ ક્લીનિંગ અને ગેસ ફિલિંગ સહિત સંપૂર્ણ AC જાળવણી. ઝડપી અને વિશ્વસનીય સેવા.',
-    price: 'Best Rates | શ્રેષ્ઠ દરો',
+    icon: Layers,
+    title: 'Carpet Cleaning | કાર્પેટ સફાઈ',
+    description: 'Specialized dry and wet cleaning for all types of carpets. Perfect for offices and homes seeking a fresh, clean environment.',
+    descriptionGuj: 'તમામ પ્રકારના કાર્પેટ માટે વિશિષ્ટ ડ્રાય અને વેટ ક્લીનિંગ. તાજા, સ્વચ્છ વાતાવરણની શોધમાં ઓફિસો અને ઘરો માટે યોગ્ય.',
+    price: 'Competitive | સ્પર્ધાત્મક',
     featured: false,
   },
   {
-    icon: Home,
-    title: 'Full Home Cleaning | સંપૂર્ણ ઘર સફાઈ',
-    description: 'Comprehensive deep cleaning for kitchen, bathroom, and floors. We cover every corner of your home with professional care.',
-    descriptionGuj: 'રસોડા, બાથરૂમ અને ફ્લોર માટે વ્યાપક ડીપ ક્લીનિંગ. અમે વ્યાવસાયિક સંભાળ સાથે તમારા ઘરના દરેક ખૂણાને આવરી લઈએ છીએ.',
+    icon: Armchair,
+    title: 'Chair Cleaning | ખુરશી સફાઈ',
+    description: 'Expert cleaning for office chairs, dining chairs, and all types of seating furniture. Deep cleaning that removes stains and odors.',
+    descriptionGuj: 'ઓફિસ ખુરશીઓ, ડાઇનિંગ ખુરશીઓ અને તમામ પ્રકારના બેઠક ફર્નિચર માટે નિષ્ણાત સફાઈ. ડાઘ અને ગંધને દૂર કરતી ડીપ ક્લીનિંગ.',
     price: 'Affordable | પોસાય તેવું',
     featured: false,
   },
   {
     icon: Sparkles,
-    title: 'Carpet & Mattress Cleaning | કાર્પેટ અને ગાદલું સફાઈ',
-    description: 'Specialized dry and wet cleaning for carpets and mattresses. Perfect for offices and homes seeking a fresh, clean environment.',
-    descriptionGuj: 'કાર્પેટ અને ગાદલા માટે વિશિષ્ટ ડ્રાય અને વેટ ક્લીનિંગ. તાજા, સ્વચ્છ વાતાવરણની શોધમાં ઓફિસો અને ઘરો માટે યોગ્ય.',
-    price: 'Competitive | સ્પર્ધાત્મક',
+    title: 'Mattress Cleaning | ગાદલું સફાઈ',
+    description: 'Deep cleaning and sanitization for mattresses. Removes dust mites, allergens, and stains for a healthier sleep environment.',
+    descriptionGuj: 'ગાદલા માટે ડીપ ક્લીનિંગ અને સેનિટાઇઝેશન. તંદુરસ્ત ઊંઘના વાતાવરણ માટે ધૂળના જીવાણુઓ, એલર્જન અને ડાઘને દૂર કરે છે.',
+    price: 'Best Value | શ્રેષ્ઠ મૂલ્ય',
+    featured: false,
+  },
+  {
+    icon: Wind,
+    title: 'AC Water Jet Service | AC વોટર જેટ સર્વિસ',
+    description: 'Complete AC maintenance with high-pressure water jet cleaning and gas filling for both split and window units. Fast and reliable service.',
+    descriptionGuj: 'સ્પ્લિટ અને વિન્ડો બંને યુનિટ માટે હાઇ-પ્રેશર વોટર જેટ ક્લીનિંગ અને ગેસ ફિલિંગ સાથે સંપૂર્ણ AC જાળવણી. ઝડપી અને વિશ્વસનીય સેવા.',
+    price: 'Best Rates | શ્રેષ્ઠ દરો',
     featured: false,
   },
 ];
@@ -55,7 +63,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

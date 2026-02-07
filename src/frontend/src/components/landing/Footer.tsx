@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Heart } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 
 export default function Footer() {
@@ -21,9 +21,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Your trusted partner for professional sofa, AC, and home cleaning services in Ahmedabad & Gandhinagar.
+              Your trusted partner for professional sofa, carpet, chair, mattress, and AC cleaning services in Ahmedabad & Gandhinagar.
               <span className="mt-2 block">
-                અમદાવાદ અને ગાંધીનગરમાં વ્યાવસાયિક સોફા, AC અને ઘર સફાઈ સેવાઓ માટે તમારા વિશ્વાસુ ભાગીદાર.
+                અમદાવાદ અને ગાંધીનગરમાં વ્યાવસાયિક સોફા, કાર્પેટ, ખુરશી, ગાદલું અને AC સફાઈ સેવાઓ માટે તમારા વિશ્વાસુ ભાગીદાર.
               </span>
             </p>
           </div>
@@ -93,20 +93,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-border pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row md:text-left">
+          <div className="flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground">
             <p>
               © 2026 <strong className="font-semibold text-foreground">Magical Sofa Cleaning</strong>. Managed by Jaydeep Patel.
-            </p>
-            <p className="flex items-center gap-1">
-              Built with <Heart className="h-4 w-4 fill-red-500 text-red-500" /> using{' '}
-              <a 
-                href="https://caffeine.ai" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-semibold text-primary hover:underline"
-              >
-                caffeine.ai
-              </a>
             </p>
           </div>
         </div>

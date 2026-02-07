@@ -2,9 +2,9 @@
   "frontend/src/App.tsx": "Main application component that composes the single-page landing layout with Header, Hero, Services, AreasServed, and Footer sections.",
   "frontend/src/components/landing/Header.tsx": "Sticky header component with logo, bilingual (English + Gujarati) navigation links, and prominent Call/WhatsApp CTAs for mobile and desktop.",
   "frontend/src/components/landing/Hero.tsx": "Hero section with full-width background image, bilingual headline and subheadline (English + Gujarati), and above-the-fold Call/WhatsApp CTAs.",
-  "frontend/src/components/landing/Services.tsx": "Services section displaying four service cards with bilingual titles, descriptions, and pricing (English + Gujarati) for Sofa Cleaning, AC Service, Full Home Cleaning, and Carpet & Mattress services.",
+  "frontend/src/components/landing/Services.tsx": "Services section displaying five bilingual service cards (Sofa, Carpet, Chair, Mattress, AC Water Jet) with icons, descriptions in English and Gujarati, pricing, and responsive grid layout.",
   "frontend/src/components/landing/AreasServed.tsx": "Areas served section with bilingual heading and supporting text (English + Gujarati) listing Ahmedabad, Gandhinagar, Nikol, Naroda, and other locations in a responsive grid.",
-  "frontend/src/components/landing/Footer.tsx": "Footer component with bilingual brand info, quick links, contact details, and repeated Call/WhatsApp CTAs (English + Gujarati) plus caffeine.ai attribution.",
+  "frontend/src/components/landing/Footer.tsx": "Footer component with bilingual brand info, quick links, contact details, and Call/WhatsApp CTAs without any AI-related attribution.",
   "frontend/index.css": "Global styles with fresh green primary palette (avoiding blue/purple) using OKLCH color system for light and dark modes.",
   "frontend/tailwind.config.js": "Tailwind configuration with custom Poppins display font and extended design tokens matching the green cleaning service theme.",
   "frontend/src/index.css": "Global styles with fresh green primary palette using OKLCH color system for light and dark modes, enhanced with improved line-height for better bilingual text readability."

@@ -1,11 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Support mixed-language (English + Gujarati) copy across the entire landing page while keeping the existing structure, CTAs, and contact links unchanged.
+**Goal:** Update the Services section offerings by removing Home Cleaning, adding Chair Cleaning, and renaming AC Service to AC Water Jet Service, while keeping the existing bilingual style and excluding any AI features.
 
 **Planned changes:**
-- Update all user-facing text in Header, Hero, Services, Areas Served, and Footer to include Gujarati alongside the existing English copy (e.g., second line or parentheses), ensuring English remains present everywhere.
-- Preserve all existing CTAs and contact links exactly (tel:+918000262644 and https://wa.me/918000262644), and keep the current page layout/sections intact.
-- Make minor spacing/typography adjustments only as needed to prevent layout breaks on mobile and desktop due to longer bilingual text.
+- Remove the “Full Home Cleaning” service card from the Services grid.
+- Ensure the Services section contains exactly 5 cards: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service.
+- Split any combined “Carpet & Mattress” offering into separate Carpet Cleaning and Mattress Cleaning cards.
+- Update the existing “AC Service” card text to “AC Water Jet Service” with corresponding Gujarati title/description updates, while keeping existing phone/WhatsApp CTAs unchanged.
+- Do not add any AI-related UI, copy, components, or backend endpoints (including placeholders).
 
-**User-visible outcome:** Visitors see bilingual English+Gujarati messaging across the landing page without any changes to navigation, page structure, or the existing call/WhatsApp contact actions.
+**User-visible outcome:** Visitors see an updated Services section with the correct five bilingual service cards (no Home Cleaning), including Chair Cleaning and AC Water Jet Service, with the site otherwise unchanged (including call/WhatsApp links).

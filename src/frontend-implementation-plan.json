@@ -1,49 +1,52 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Bilingual (English + Gujarati) copy across landing page",
+  "title": "Update landing page services list (remove Home Cleaning; add Chair Cleaning & AC Water Jet Service; no AI)",
   "requirements": [
     {
-      "id": "REQ-8",
-      "summary": "Add Gujarati alongside existing English copy across all landing page sections while preserving structure, CTAs, and contact links.",
+      "id": "REQ-9",
+      "summary": "Remove the “Full Home Cleaning” service card from the Services section.",
       "acceptanceCriteria": [
-        "Header navigation labels and brand tagline include Gujarati alongside English (e.g., English text plus Gujarati in parentheses or on a second line) without breaking the layout on mobile or desktop.",
-        "Hero headline, subheadline, and CTA button labels include Gujarati alongside English, and the existing links remain exactly: tel:+918000262644 and https://wa.me/918000262644.",
-        "Services section title/description and each service card title/description/price text include Gujarati alongside English (keeping service list and pricing semantics intact).",
-        "Areas Served section heading and supporting text include Gujarati alongside English; the area names may remain in English if desired, but any explanatory sentences include Gujarati alongside English.",
-        "Footer headings, quick links, contact/booking labels, and descriptive paragraph include Gujarati alongside English; do not remove the existing business name and attribution line.",
-        "No user-facing text becomes Gujarati-only; English remains present everywhere user-facing text exists."
+        "The Services grid no longer displays any service titled or described as “Home Cleaning” (English or Gujarati).",
+        "The Services section continues to render correctly without layout breaks after removing the card."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/Header.tsx",
+          "path": "frontend/src/components/landing/Services.tsx",
           "operation": "modify",
-          "description": "Update brand tagline and header navigation/CTA labels to include Gujarati alongside existing English (e.g., second line or parentheses) while keeping the same header structure and ensuring the contact links remain unchanged (tel:+918000262644 and https://wa.me/918000262644)."
-        },
-        {
-          "path": "frontend/src/components/landing/Hero.tsx",
-          "operation": "modify",
-          "description": "Update hero headline, subheadline, and CTA button labels to mixed English + Gujarati copy while keeping the same layout, background asset usage, and ensuring CTA href values remain exactly tel:+918000262644 and https://wa.me/918000262644."
-        },
+          "description": "Remove the “Full Home Cleaning | સંપૂર્ણ ઘર સફાઈ” item from the local services list so it is not rendered in the Services grid, while preserving existing layout/styling and without changing any phone/WhatsApp CTA links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Update Services offerings to exactly 5 bilingual cards: Sofa, Carpet, Chair, Mattress, and AC Water Jet Service.",
+      "acceptanceCriteria": [
+        "The Services section displays 5 service cards for: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service.",
+        "The existing “AC Service” card is renamed/updated to “AC Water Jet Service” (and Gujarati counterpart updated accordingly) while preserving the existing call/WhatsApp CTAs elsewhere on the page.",
+        "No “combined” card remains for “Carpet & Mattress” (Carpet and Mattress are separate service cards).",
+        "Each service card includes an English title/description and a Gujarati title/description consistent with the current bilingual pattern in Services.tsx."
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/components/landing/Services.tsx",
           "operation": "modify",
-          "description": "Update services section heading/description and each service card’s title/description/price strings to include Gujarati alongside English, preserving the existing service list, pricing semantics, and component structure (do not modify any files under frontend/src/components/ui)."
-        },
-        {
-          "path": "frontend/src/components/landing/AreasServed.tsx",
-          "operation": "modify",
-          "description": "Update Areas Served heading and supporting sentences to include Gujarati alongside English (area names may remain English), and keep the existing phone link destination unchanged (tel:+918000262644)."
-        },
+          "description": "Update the Services services array to contain exactly five entries: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service. Replace the combined “Carpet & Mattress” entry with two separate bilingual cards, rename “AC Service” to “AC Water Jet Service” (including Gujarati title/description), and add a new Chair Cleaning bilingual card. Adjust icons/imports and responsive grid columns as needed to avoid layout breaks, without modifying any CTA links (tel:+918000262644 and https://wa.me/918000262644)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Ensure no AI-related UI/copy/placeholders are added anywhere on the site.",
+      "acceptanceCriteria": [
+        "No UI sections, buttons, copy, or backend endpoints related to AI features are added.",
+        "No TODOs, stubs, or placeholder components for future AI functionality are introduced."
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/components/landing/Footer.tsx",
           "operation": "modify",
-          "description": "Update footer headings, quick links labels, contact/booking labels, and descriptive paragraph to include Gujarati alongside English, while preserving existing business name and attribution line and keeping CTA href values unchanged (tel:+918000262644 and https://wa.me/918000262644)."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Apply minor global typography/spacing adjustments (e.g., line-height/text wrapping helpers or font fallbacks that support Gujarati) to accommodate bilingual text without changing the overall visual theme."
+          "description": "Remove or replace the AI-associated attribution/link text (e.g., caffeine.ai) so no AI-related copy is present in the UI, while keeping existing phone/WhatsApp CTA links unchanged."
         }
       ]
     }

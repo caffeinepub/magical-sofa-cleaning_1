@@ -2,15 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-landing-page-content-to-use-a-mixed-language-style-english-gujarati-across-all-visible-sections-header-hero-services-areas-served-footer-by-adding-gujarati-alongside-the-existing-english-copy-while-keeping-the-same-page-structure-ctas-and-contact-links-unchanged",
-      "featureTitle": "Update the landing page content to use a mixed-language style (English + Gujarati) across all visible sections (Header, Hero, Services, Areas Served, Footer) by adding Gujarati alongside the existing English copy, while keeping the same page structure, CTAs, and contact links unchanged.",
+      "featureId": "feature-update-the-services-section-to-remove-the-full-home-cleaning-service-card-entirely",
+      "featureTitle": "Update the Services section to remove the “Full Home Cleaning” service card entirely.",
       "files": [
-        "frontend/src/components/landing/AreasServed.tsx",
-        "frontend/src/components/landing/Footer.tsx",
-        "frontend/src/components/landing/Header.tsx",
-        "frontend/src/components/landing/Hero.tsx",
-        "frontend/src/components/landing/Services.tsx",
-        "frontend/src/index.css"
+        "frontend/src/components/landing/Services.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -20,7 +15,43 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-8"
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-services-section-offerings-to-include-exactly-these-services-sofa-cleaning-carpet-cleaning-chair-cleaning-mattress-cleaning-and-ac-water-jet-service-keeping-the-existing-bilingual-style-used-on-the-page",
+      "featureTitle": "Update the Services section offerings to include exactly these services: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service (keeping the existing bilingual style used on the page).",
+      "files": [
+        "frontend/src/components/landing/Services.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-do-not-add-any-ai-based-features-now-or-as-placeholder-future-functionality-anywhere-in-the-website",
+      "featureTitle": "Do not add any AI-based features (now or as placeholder “future” functionality) anywhere in the website.",
+      "files": [
+        "frontend/src/components/landing/Footer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
       ],
       "confidence": "high"
     }

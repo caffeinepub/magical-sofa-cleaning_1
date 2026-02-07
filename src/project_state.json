@@ -1,9 +1,11 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
-    "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site."
+    "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
+    "Services scope update: remove Home Cleaning; offer Sofa, Carpet, Chair, Mattress cleaning + AC Water Jet service.",
+    "Explicit scope constraint: no AI features should be added (now or future)."
   ],
   "known_issues": [
     "Potential conflict: existing scope requires all user-facing text in English, but latest requirement is English + Gujarati mix."
@@ -73,6 +75,30 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-services-section-to-remove-the-full-home-cleaning-service-card-entirely",
+      "title": "Update the Services section to remove the “Full Home Cleaning” service card entirely.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-services-section-offerings-to-include-exactly-these-services-sofa-cleaning-carpet-cleaning-chair-cleaning-mattress-cleaning-and-ac-water-jet-service-keeping-the-existing-bilingual-style-used-on-the-page",
+      "title": "Update the Services section offerings to include exactly these services: Sofa Cleaning, Carpet Cleaning, Chair Cleaning, Mattress Cleaning, and AC Water Jet Service (keeping the existing bilingual style used on the page).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-do-not-add-any-ai-based-features-now-or-as-placeholder-future-functionality-anywhere-in-the-website",
+      "title": "Do not add any AI-based features (now or as placeholder “future” functionality) anywhere in the website.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -85,6 +111,18 @@
     {
       "id": "AR-2",
       "summary": "Support mixed-language (English + Gujarati) user-facing content across the landing page sections.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Update Services section: remove Home Cleaning; include Sofa, Carpet, Chair, Mattress cleaning, and AC Water Jet service.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Do not add any AI-based features now or in future scope for this website.",
       "reqIds": [],
       "status": "pending"
     }
