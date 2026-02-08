@@ -1,57 +1,108 @@
 {
   "kind": "build_request",
-  "title": "Fix Hero service line naming and ensure 'sofa cleaning near me' is visible on-page",
+  "title": "Update hero and key marketing copy to match provided heading, subheading, and intro content",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-101",
-      "text": "Update the Hero headline’s second line so the service names are explicitly aligned with the Services section offerings, replacing the generic text \"Carpet, Mattress & AC Services\" with wording that clearly references Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (English-only).",
+      "id": "REQ-125",
+      "text": "Update the landing page Hero section main heading and subheading to exactly match the user-provided text: Heading: \"Best Sofa Cleaning Services in Ahmedabad\"; Subheading: \"Professional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service\".",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "Chang nathi thayu\nCarpet, mattress & AC service name chang Ane"
+          "Main Heading (મુખ્ય લખાણ)\nBest Sofa Cleaning Services in Ahmedabad\n\nSub-heading (સર્વિસની વિગત)\nProfessional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service"
         ]
       },
       "acceptanceCriteria": [
-        "On the landing page Hero, the second line under the main headline no longer reads \"Carpet, Mattress & AC Services\".",
-        "The updated Hero service line explicitly names the services in a way that matches the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
-        "No CTA destinations are changed (tel:+918000262644 and https://wa.me/918000262644 remain exactly the same)."
+        "Hero headline displays exactly: \"Best Sofa Cleaning Services in Ahmedabad\".",
+        "Hero sub-headline displays exactly: \"Professional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service\".",
+        "No CTA destinations in the Hero section are changed (tel:+918000262644 and https://wa.me/918000262644 remain unchanged)."
       ]
     },
     {
-      "id": "REQ-102",
-      "text": "Ensure the exact phrase \"sofa cleaning near me\" appears as visible, user-facing on-page marketing copy (English-only), in a natural, non-spammy way, and is not removed during the service-line update.",
+      "id": "REQ-126",
+      "text": "Update the Hero section supporting description text to incorporate the user-provided intro content in a natural, readable way (English-only), including: ₹90/ft pricing, same-day availability, 210+ customers, 5-star reviews, and coverage across Ahmedabad & Gandhinagar with explicit mentions of Nikol, Naroda, Satellite, and SG Highway.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "Sofa cleaning near me? Add"
+          "Looking for the Best Sofa Cleaning in Ahmedabad?\nWe provide expert cleaning services at just ₹90/ft with same-day availability. Trusted by 210+ customers with 5-star reviews, we serve all areas including Nikol, Naroda, Satellite, and SG Highway across Ahmedabad and Gandhinagar."
         ]
       },
       "acceptanceCriteria": [
-        "The exact phrase \"sofa cleaning near me\" appears in visible page content (not only in metadata).",
-        "The phrase is present after the Hero service-line update is applied.",
-        "No page sections are removed and no CTA destinations are changed."
+        "Hero description mentions ₹90/ft and same-day availability.",
+        "Hero description mentions 210+ customers and a 5-star reviews claim.",
+        "Hero description mentions service coverage across Ahmedabad & Gandhinagar and explicitly includes Nikol, Naroda, Satellite, and SG Highway.",
+        "All user-visible text added/updated for this requirement is English-only."
+      ]
+    },
+    {
+      "id": "REQ-127",
+      "text": "Add a compact, clearly readable \"Why Choose Magical Service?\" content block on the landing page in a high-visibility location (preferably within the Hero section below the description, or immediately below the Hero section), listing exactly these three points as visible English text: \"Deep Cleaning & Sanitization for a germ-free home.\", \"Quick Dry Technology: Dry in just ~2 hours.\", \"Affordable Rates with guaranteed professional results.\"",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Why Choose Magical Service?\n• Deep Cleaning & Sanitization for a germ-free home.\n• Quick Dry Technology: Dry in just ~2 hours.\n• Affordable Rates with guaranteed professional results."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible \"Why Choose Magical Service?\" label is present.",
+        "The three bullet points appear exactly as provided (matching punctuation and wording).",
+        "The new block does not remove or rename any existing sections (e.g., the existing \"Why Choose Us\" section remains present)."
+      ]
+    },
+    {
+      "id": "REQ-128",
+      "text": "Ensure the Services section intro/description copy (and any other prominent marketing copy that references the core offering list) remains consistent with the user-provided services list and subheading wording: Sofa, Carpet, Chair, Mattress Cleaning, and AC Water Jet Service, without changing service pricing or CTA destinations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Services We Offer:\n• Sofa Cleaning (Our Specialty)\n• Carpet & Mattress Cleaning\n• AC Water Jet Service\n• Chair Cleaning"
+        ]
+      },
+      "acceptanceCriteria": [
+        "No service outside the set (Sofa Cleaning, Carpet Cleaning, Office/Chair Cleaning, Mattress Cleaning, AC Water Jet Service) is introduced in visible marketing copy.",
+        "Existing service prices remain unchanged (e.g., Sofa ₹90/ft).",
+        "No existing CTA destinations are changed anywhere on the page."
       ]
     }
   ],
   "constraints": [
-    "Keep all user-facing text English-only.",
-    "Do not change any existing CTA destinations or contact links (tel:+918000262644, https://wa.me/918000262644, Instagram link, Google Business Profile link).",
-    "Frontend immutable paths must not be edited (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui)."
+    "Use English for all new/updated user-facing text in this change set.",
+    "Do not change any existing CTA destinations, including tel:+918000262644 and https://wa.me/918000262644.",
+    "Keep the existing page structure and section order intact; only add the requested small content block and update copy.",
+    "Do not edit any files under frontend/src/components/ui (compose existing UI components instead)."
   ],
   "nonGoals": [
-    "Do not add new sections, new services, or change service pricing.",
-    "Do not introduce any AI-related features or chat widgets.",
-    "Do not change branding assets, images, or overall page layout beyond the requested text updates."
+    "Adding new backend functionality or storing the provided content in backend state.",
+    "Changing the visual theme/palette or redesigning layouts beyond what is necessary to place the requested text.",
+    "Adding, removing, or changing images/assets.",
+    "Changing Google Business Profile link destinations or reviews UI beyond the copy consistency needed for this request."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Prefer the landing page Hero copy to use the exact provided heading/subheading and reflect ₹90/ft, same-day availability, 210+ customers, 5-star reviews, and Ahmedabad/Gandhinagar coverage."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

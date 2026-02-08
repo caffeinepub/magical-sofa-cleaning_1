@@ -79,9 +79,9 @@ export default {
       },
       boxShadow: {
         'xs': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-        'premium': '0 10px 20px -4px rgb(30 58 138 / 0.15), 0 4px 8px -2px rgb(30 58 138 / 0.08)',
-        'premium-lg': '0 24px 32px -8px rgb(30 58 138 / 0.20), 0 12px 16px -4px rgb(30 58 138 / 0.12)',
-        'premium-gold': '0 10px 20px -4px rgb(180 130 40 / 0.15), 0 4px 8px -2px rgb(180 130 40 / 0.08)',
+        'premium': '0 10px 20px -4px oklch(var(--primary) / 0.15), 0 4px 8px -2px oklch(var(--primary) / 0.08)',
+        'premium-lg': '0 24px 32px -8px oklch(var(--primary) / 0.20), 0 12px 16px -4px oklch(var(--primary) / 0.12)',
+        'premium-gold': '0 10px 20px -4px oklch(var(--accent) / 0.15), 0 4px 8px -2px oklch(var(--accent) / 0.08)',
       },
     },
   },

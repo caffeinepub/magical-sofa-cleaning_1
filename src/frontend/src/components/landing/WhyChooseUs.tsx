@@ -1,40 +1,43 @@
 import { Leaf, Cog, Award, UserCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import IconBadge from '@/components/common/IconBadge';
-
-const features = [
-  {
-    icon: Leaf,
-    title: 'Eco-Friendly Chemicals',
-    description: 'We use only environmentally safe, non-toxic cleaning solutions that are gentle on your furniture and safe for your family and pets.',
-  },
-  {
-    icon: Cog,
-    title: 'German Machines Technology',
-    description: 'Advanced German-engineered cleaning equipment ensures deep, thorough cleaning with superior results and faster drying times.',
-  },
-  {
-    icon: Award,
-    title: 'Gold-Standard Equipment',
-    description: 'Premium, industry-leading tools and machinery deliver professional-grade cleaning that exceeds expectations every time.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Certified Experts',
-    description: 'Our trained and certified professionals bring years of experience and expertise to every cleaning job, ensuring quality service.',
-  },
-];
+import { useI18n } from '@/i18n/useI18n';
 
 export default function WhyChooseUs() {
+  const { t } = useI18n();
+
+  const features = [
+    {
+      icon: Leaf,
+      title: t.whyChooseUs.ecoFriendlyTitle,
+      description: t.whyChooseUs.ecoFriendlyDescription,
+    },
+    {
+      icon: Cog,
+      title: t.whyChooseUs.germanMachinesTitle,
+      description: t.whyChooseUs.germanMachinesDescription,
+    },
+    {
+      icon: Award,
+      title: t.whyChooseUs.goldStandardTitle,
+      description: t.whyChooseUs.goldStandardDescription,
+    },
+    {
+      icon: UserCheck,
+      title: t.whyChooseUs.certifiedExpertsTitle,
+      description: t.whyChooseUs.certifiedExpertsDescription,
+    },
+  ];
+
   return (
     <section id="why-choose-us" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-3 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
-            Why Choose Us
+          <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
+            {t.whyChooseUs.heading}
           </h2>
-          <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-            Experience the difference with our premium cleaning services backed by cutting-edge technology and eco-friendly practices
+          <p className="text-balance text-sm text-muted-foreground md:text-base lg:text-lg">
+            {t.whyChooseUs.description}
           </p>
         </div>
 
@@ -52,12 +55,12 @@ export default function WhyChooseUs() {
                     variant="primary"
                   />
                 </div>
-                <CardTitle className="text-center text-lg font-bold leading-tight lg:text-xl">
+                <CardTitle className="text-balance text-center text-lg font-bold leading-tight lg:text-xl">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-center text-xs leading-relaxed text-muted-foreground lg:text-sm">
+                <p className="text-balance text-center text-xs leading-relaxed text-muted-foreground lg:text-sm">
                   {feature.description}
                 </p>
               </CardContent>

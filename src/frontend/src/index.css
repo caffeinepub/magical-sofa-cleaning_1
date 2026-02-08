@@ -7,273 +7,241 @@
         --radius: 0.875rem;
         /* Royal Blue + Gold Premium Palette */
         --background: 0.99 0.005 240;
-        --foreground: 0.18 0.025 260;
+        --foreground: 0.18 0.025 240;
         --card: 1 0 0;
-        --card-foreground: 0.18 0.025 260;
+        --card-foreground: 0.18 0.025 240;
         --popover: 1 0 0;
-        --popover-foreground: 0.18 0.025 260;
+        --popover-foreground: 0.18 0.025 240;
         /* Royal Blue as primary */
-        --primary: 0.48 0.20 265;
-        --primary-foreground: 0.99 0.005 240;
+        --primary: 0.48 0.22 265;
+        --primary-foreground: 0.99 0.005 265;
         /* Gold as secondary/accent */
-        --secondary: 0.72 0.16 75;
-        --secondary-foreground: 0.20 0.018 60;
+        --secondary: 0.72 0.18 85;
+        --secondary-foreground: 0.15 0.018 85;
         --muted: 0.96 0.012 240;
-        --muted-foreground: 0.48 0.028 260;
+        --muted-foreground: 0.48 0.028 240;
         /* Gold accent */
-        --accent: 0.70 0.18 65;
-        --accent-foreground: 0.15 0.018 60;
-        --destructive: 0.577 0.245 27.325;
-        --destructive-foreground: 0.99 0 0;
-        --border: 0.88 0.018 265;
-        --input: 0.88 0.018 265;
-        --ring: 0.48 0.20 265;
-        --chart-1: 0.48 0.20 265;
-        --chart-2: 0.72 0.16 75;
-        --chart-3: 0.70 0.18 65;
-        --chart-4: 0.52 0.19 270;
-        --chart-5: 0.68 0.15 70;
-        
-        /* Service-specific color themes - aligned to Royal Blue + Gold */
-        --service-sofa: 0.48 0.20 265;
-        --service-sofa-foreground: 0.99 0.005 240;
-        --service-carpet: 0.70 0.18 65;
-        --service-carpet-foreground: 0.15 0.018 60;
-        --service-chair: 0.52 0.19 270;
-        --service-chair-foreground: 0.99 0.005 270;
-        --service-mattress: 0.50 0.18 260;
-        --service-mattress-foreground: 0.99 0.005 260;
-        --service-ac: 0.54 0.19 268;
-        --service-ac-foreground: 0.99 0.005 268;
+        --accent: 0.75 0.20 75;
+        --accent-foreground: 0.15 0.018 75;
+        --destructive: 0.55 0.25 25;
+        --destructive-foreground: 0.99 0.005 25;
+        --border: 0.92 0.015 240;
+        --input: 0.92 0.015 240;
+        --ring: 0.48 0.22 265;
+        --chart-1: 0.48 0.22 265;
+        --chart-2: 0.75 0.20 75;
+        --chart-3: 0.65 0.18 180;
+        --chart-4: 0.72 0.18 85;
+        --chart-5: 0.58 0.20 320;
+        /* WhatsApp green preserved */
+        --whatsapp: 0.52 0.18 145;
+        --whatsapp-foreground: 0.99 0.005 145;
     }
 
     .dark {
-        --background: 0.15 0.020 260;
-        --foreground: 0.98 0.008 240;
-        --card: 0.18 0.022 260;
-        --card-foreground: 0.98 0.008 240;
-        --popover: 0.20 0.022 260;
-        --popover-foreground: 0.98 0.008 240;
-        /* Royal Blue primary - dark mode */
-        --primary: 0.58 0.22 265;
-        --primary-foreground: 0.15 0.020 260;
-        /* Gold secondary - dark mode */
-        --secondary: 0.68 0.15 75;
-        --secondary-foreground: 0.15 0.020 60;
-        --muted: 0.25 0.030 260;
-        --muted-foreground: 0.65 0.028 260;
-        /* Gold accent - dark mode */
-        --accent: 0.66 0.17 65;
-        --accent-foreground: 0.98 0.008 65;
-        --destructive: 0.60 0.22 25;
-        --destructive-foreground: 0.15 0.020 260;
-        --border: 0.30 0.030 265;
-        --input: 0.30 0.030 265;
-        --ring: 0.58 0.22 265;
-        --chart-1: 0.58 0.22 265;
-        --chart-2: 0.68 0.15 75;
-        --chart-3: 0.66 0.17 65;
-        --chart-4: 0.56 0.20 270;
-        --chart-5: 0.64 0.14 70;
-        
-        /* Service-specific color themes - dark mode */
-        --service-sofa: 0.58 0.22 265;
-        --service-sofa-foreground: 0.15 0.020 260;
-        --service-carpet: 0.66 0.17 65;
-        --service-carpet-foreground: 0.15 0.020 60;
-        --service-chair: 0.56 0.20 270;
-        --service-chair-foreground: 0.15 0.020 270;
-        --service-mattress: 0.54 0.19 260;
-        --service-mattress-foreground: 0.15 0.020 260;
-        --service-ac: 0.60 0.20 268;
-        --service-ac-foreground: 0.15 0.020 268;
+        --background: 0.15 0.018 240;
+        --foreground: 0.96 0.012 240;
+        --card: 0.18 0.020 240;
+        --card-foreground: 0.96 0.012 240;
+        --popover: 0.15 0.018 240;
+        --popover-foreground: 0.96 0.012 240;
+        /* Royal Blue lighter in dark mode */
+        --primary: 0.62 0.20 265;
+        --primary-foreground: 0.12 0.018 265;
+        /* Gold brighter in dark mode */
+        --secondary: 0.78 0.18 85;
+        --secondary-foreground: 0.15 0.018 85;
+        --muted: 0.22 0.022 240;
+        --muted-foreground: 0.68 0.020 240;
+        /* Gold accent brighter */
+        --accent: 0.78 0.20 75;
+        --accent-foreground: 0.12 0.015 75;
+        --destructive: 0.62 0.22 25;
+        --destructive-foreground: 0.96 0.012 25;
+        --border: 0.25 0.022 240;
+        --input: 0.25 0.022 240;
+        --ring: 0.62 0.20 265;
+        --chart-1: 0.62 0.20 265;
+        --chart-2: 0.78 0.20 75;
+        --chart-3: 0.68 0.18 180;
+        --chart-4: 0.78 0.18 85;
+        --chart-5: 0.65 0.18 320;
+        /* WhatsApp green preserved */
+        --whatsapp: 0.58 0.18 145;
+        --whatsapp-foreground: 0.98 0.008 145;
     }
+}
 
+@layer base {
     * {
         @apply border-border;
     }
     body {
         @apply bg-background text-foreground;
-        /* Enhanced line-height for better readability */
-        line-height: 1.7;
-        font-feature-settings: "kern" 1, "liga" 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
-}
-
-@layer components {
-    /* Premium Box Styling */
-    .premium-box {
-        border-radius: 1rem;
-        border-width: 2px;
-        border-color: oklch(0.48 0.20 265 / 0.3);
-        background: linear-gradient(to bottom right, oklch(var(--card)), oklch(var(--card)), oklch(0.48 0.20 265 / 0.05));
-        box-shadow: 0 10px 20px -4px rgb(30 58 138 / 0.15), 0 4px 8px -2px rgb(30 58 138 / 0.08);
-        backdrop-filter: blur(4px);
-    }
-    
-    .premium-box-gold {
-        border-radius: 1rem;
-        border-width: 2px;
-        border-color: oklch(0.70 0.18 65 / 0.4);
-        background: linear-gradient(to bottom right, oklch(var(--card)), oklch(var(--card)), oklch(0.70 0.18 65 / 0.05));
-        box-shadow: 0 10px 20px -4px rgb(180 130 40 / 0.15), 0 4px 8px -2px rgb(180 130 40 / 0.08);
-        backdrop-filter: blur(4px);
-    }
-    
-    .premium-box-hover {
-        transition: all 0.3s ease;
-    }
-    
-    .premium-box-hover:hover {
-        border-color: oklch(0.48 0.20 265 / 0.5);
-        box-shadow: 0 24px 32px -8px rgb(30 58 138 / 0.20), 0 12px 16px -4px rgb(30 58 138 / 0.12);
-        transform: scale(1.02);
-    }
-    
-    /* Premium Icon Styling */
-    .premium-icon-badge {
-        border-radius: 0.75rem;
-        border-width: 2px;
-        border-color: oklch(0.70 0.18 65 / 0.3);
-        background: linear-gradient(to bottom right, oklch(var(--primary)), oklch(0.48 0.20 265 / 0.8));
-        box-shadow: 0 10px 20px -4px rgb(30 58 138 / 0.15), 0 4px 8px -2px rgb(30 58 138 / 0.08);
-    }
-    
-    .premium-icon-badge-gold {
-        border-radius: 0.75rem;
-        border-width: 2px;
-        border-color: oklch(0.70 0.18 65 / 0.5);
-        background: linear-gradient(to bottom right, oklch(var(--accent)), oklch(0.70 0.18 65 / 0.8));
-        box-shadow: 0 10px 20px -4px rgb(180 130 40 / 0.15), 0 4px 8px -2px rgb(180 130 40 / 0.08);
-    }
-    
-    /* Hero Section - Professional Chips */
-    .hero-chip {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.625rem 1rem;
-        border-radius: 9999px;
-        border-width: 1.5px;
-        border-color: oklch(0.70 0.18 65 / 0.4);
-        background-color: oklch(0 0 0 / 0.4);
-        backdrop-filter: blur(8px);
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: white;
-        box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.3);
-        transition: all 0.2s ease;
-    }
-    
-    .hero-chip:hover {
-        border-color: oklch(0.70 0.18 65 / 0.6);
-        background-color: oklch(0 0 0 / 0.5);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px -4px rgb(0 0 0 / 0.4);
-    }
-    
-    .hero-chip-primary {
-        border-color: oklch(0.48 0.20 265 / 0.4);
-    }
-    
-    .hero-chip-primary:hover {
-        border-color: oklch(0.48 0.20 265 / 0.6);
-    }
-    
-    @media (min-width: 768px) {
-        .hero-chip {
-            font-size: 0.875rem;
-        }
-    }
-    
-    /* Hero Section - Professional CTA Buttons */
-    .hero-cta {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        gap: 0.625rem;
-        padding: 1rem 2.5rem;
-        border-radius: 0.75rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3), 0 4px 10px -2px rgb(0 0 0 / 0.2);
-        transition: all 0.2s ease;
-    }
-    
-    .hero-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 15px 35px -5px rgb(0 0 0 / 0.4), 0 6px 15px -2px rgb(0 0 0 / 0.25);
-    }
-    
-    .hero-cta-accent {
-        background-color: oklch(var(--accent));
-        color: oklch(var(--accent-foreground));
-        border: 1px solid oklch(0.70 0.18 65 / 0.3);
-    }
-    
-    .hero-cta-accent:hover {
-        background-color: oklch(0.68 0.17 65);
-    }
-    
-    .hero-cta-primary {
-        background-color: oklch(var(--primary));
-        color: oklch(var(--primary-foreground));
-        border: 1px solid oklch(0.48 0.20 265 / 0.3);
-    }
-    
-    .hero-cta-primary:hover {
-        background-color: oklch(0.52 0.21 265);
-    }
-    
-    .hero-cta-whatsapp {
-        background-color: oklch(0.65 0.19 145);
-        color: white;
-        border: 1px solid oklch(0.65 0.19 145 / 0.3);
-    }
-    
-    .hero-cta-whatsapp:hover {
-        background-color: oklch(0.60 0.20 145);
-    }
-    
-    @media (min-width: 640px) {
-        .hero-cta {
-            width: auto;
-        }
-    }
-    
-    @media (min-width: 1024px) {
-        .hero-cta {
-            padding: 1.25rem 3rem;
-            font-size: 1rem;
-        }
+        font-feature-settings: "rlig" 1, "calt" 1;
     }
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
+    /* Premium Box Styling */
+    .premium-box {
+        border-radius: 0.75rem;
+        border-width: 2px;
+        border-color: oklch(var(--primary) / 0.2);
+        background: linear-gradient(to bottom right, oklch(var(--card)), oklch(var(--card)), oklch(var(--primary) / 0.05));
+        box-shadow: 0 10px 20px -4px oklch(var(--primary) / 0.15), 0 4px 8px -2px oklch(var(--primary) / 0.08);
+        backdrop-filter: blur(4px);
     }
     
-    /* Smooth scroll behavior */
-    html {
-        scroll-behavior: smooth;
+    .premium-box-hover {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
     }
     
-    /* Enhanced focus states for accessibility */
-    *:focus-visible {
-        @apply outline-2 outline-offset-2 outline-ring;
+    .premium-box-hover:hover {
+        border-color: oklch(var(--primary) / 0.4);
+        box-shadow: 0 24px 32px -8px oklch(var(--primary) / 0.20), 0 12px 16px -4px oklch(var(--primary) / 0.12);
+        transform: translateY(-0.25rem);
     }
     
-    /* Premium gradient utilities */
-    .premium-gradient-royal {
-        background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--primary) / 0.8) 100%);
+    .premium-box-gold {
+        border-radius: 0.75rem;
+        border-width: 2px;
+        border-color: oklch(var(--accent) / 0.3);
+        background: linear-gradient(to bottom right, oklch(var(--card)), oklch(var(--card)), oklch(var(--accent) / 0.05));
+        box-shadow: 0 10px 20px -4px oklch(var(--accent) / 0.15), 0 4px 8px -2px oklch(var(--accent) / 0.08);
+    }
+
+    /* Icon Badge Utilities */
+    .premium-icon-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        border-width: 2px;
+        border-color: oklch(var(--primary) / 0.3);
+        background: linear-gradient(to bottom right, oklch(var(--primary) / 0.15), oklch(var(--primary) / 0.05));
+        box-shadow: 0 10px 20px -4px oklch(var(--primary) / 0.15), 0 4px 8px -2px oklch(var(--primary) / 0.08);
+        backdrop-filter: blur(4px);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
     }
     
-    .premium-gradient-gold {
-        background: linear-gradient(135deg, oklch(var(--accent)) 0%, oklch(var(--secondary)) 100%);
+    .premium-icon-badge:hover {
+        border-color: oklch(var(--primary) / 0.5);
+        box-shadow: 0 24px 32px -8px oklch(var(--primary) / 0.20), 0 12px 16px -4px oklch(var(--primary) / 0.12);
+        transform: scale(1.05);
+    }
+    
+    .premium-icon-badge-gold {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        border-width: 2px;
+        border-color: oklch(var(--accent) / 0.4);
+        background: linear-gradient(to bottom right, oklch(var(--accent) / 0.15), oklch(var(--accent) / 0.05));
+        box-shadow: 0 10px 20px -4px oklch(var(--accent) / 0.15), 0 4px 8px -2px oklch(var(--accent) / 0.08);
+        backdrop-filter: blur(4px);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+    }
+    
+    .premium-icon-badge-gold:hover {
+        border-color: oklch(var(--accent) / 0.6);
+        box-shadow: 0 24px 32px -8px oklch(var(--accent) / 0.20), 0 12px 16px -4px oklch(var(--accent) / 0.08);
+        transform: scale(1.05);
+    }
+
+    /* Inline Icon Utilities - for labels, chips, small CTAs */
+    .inline-icon {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        stroke-width: 2.5;
+        vertical-align: middle;
+    }
+
+    /* Hero Chip Utilities */
+    .hero-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        border-width: 2px;
+        border-color: oklch(var(--accent) / 0.4);
+        background: linear-gradient(to right, oklch(var(--accent) / 0.2), oklch(var(--accent) / 0.1));
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: white;
+        box-shadow: 0 10px 20px -4px oklch(var(--accent) / 0.15), 0 4px 8px -2px oklch(var(--accent) / 0.08);
+        backdrop-filter: blur(4px);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+    }
+    
+    .hero-chip:hover {
+        border-color: oklch(var(--accent) / 0.6);
+        box-shadow: 0 24px 32px -8px oklch(var(--accent) / 0.20), 0 12px 16px -4px oklch(var(--accent) / 0.12);
+        transform: scale(1.05);
+    }
+    
+    .hero-chip-primary {
+        border-color: oklch(var(--primary) / 0.4);
+        background: linear-gradient(to right, oklch(var(--primary) / 0.2), oklch(var(--primary) / 0.1));
+        box-shadow: 0 10px 20px -4px oklch(var(--primary) / 0.15), 0 4px 8px -2px oklch(var(--primary) / 0.08);
+    }
+    
+    .hero-chip-primary:hover {
+        border-color: oklch(var(--primary) / 0.6);
+        box-shadow: 0 24px 32px -8px oklch(var(--primary) / 0.20), 0 12px 16px -4px oklch(var(--primary) / 0.12);
+    }
+
+    /* Hero CTA Button Utilities */
+    .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        box-shadow: 0 24px 32px -8px oklch(var(--primary) / 0.20), 0 12px 16px -4px oklch(var(--primary) / 0.12);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+    }
+    
+    .hero-cta:hover {
+        box-shadow: 0 10px 20px -4px oklch(var(--accent) / 0.15), 0 4px 8px -2px oklch(var(--accent) / 0.08);
+        transform: scale(1.05);
+    }
+    
+    @media (min-width: 640px) {
+        .hero-cta {
+            padding: 0.875rem 2rem;
+            font-size: 1.125rem;
+        }
+    }
+    
+    .hero-cta-accent {
+        background: linear-gradient(to right, oklch(var(--accent)), oklch(var(--accent) / 0.85));
+        color: oklch(var(--accent-foreground));
+    }
+    
+    .hero-cta-whatsapp {
+        background: linear-gradient(to right, oklch(0.65 0.19 145), oklch(0.55 0.22 145));
+        color: white;
+    }
+
+    /* Performance Utilities */
+    .perf-contain {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 500px;
     }
 }

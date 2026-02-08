@@ -1,3 +1,4 @@
+import { I18nProvider } from './i18n/I18nProvider';
 import Header from './components/landing/Header';
 import Hero from './components/landing/Hero';
 import ServiceCoverageBanner from './components/landing/ServiceCoverageBanner';
@@ -12,19 +13,35 @@ import FloatingContactButtons from './components/floating/FloatingContactButtons
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <ServiceCoverageBanner />
-      <Services />
-      <WhyChooseUs />
-      <AppointmentFormSection />
-      <LivePhotos />
-      <AreasServed />
-      <GoogleReviewsSection />
-      <Footer />
-      <FloatingContactButtons />
-    </div>
+    <I18nProvider>
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <div className="perf-contain">
+          <ServiceCoverageBanner />
+        </div>
+        <div className="perf-contain">
+          <Services />
+        </div>
+        <div className="perf-contain">
+          <WhyChooseUs />
+        </div>
+        <div className="perf-contain">
+          <AppointmentFormSection />
+        </div>
+        <div className="perf-contain">
+          <LivePhotos />
+        </div>
+        <div className="perf-contain">
+          <AreasServed />
+        </div>
+        <div className="perf-contain">
+          <GoogleReviewsSection />
+        </div>
+        <Footer />
+        <FloatingContactButtons />
+      </div>
+    </I18nProvider>
   );
 }
 

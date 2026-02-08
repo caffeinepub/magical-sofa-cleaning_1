@@ -1,42 +1,85 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Align Hero service line with Services offerings and keep \"sofa cleaning near me\" visible",
+  "title": "Landing page hero + marketing copy updates and compact 'Why Choose Magical Service?' block",
   "requirements": [
     {
-      "id": "REQ-101",
-      "summary": "Replace the Hero headline second line with explicit service names that match the Services section (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
+      "id": "REQ-125",
+      "summary": "Update landing page Hero main heading and subheading to exactly match the provided text without changing CTA destinations.",
       "acceptanceCriteria": [
-        "On the landing page Hero, the second line under the main headline no longer reads \"Carpet, Mattress & AC Services\".",
-        "The updated Hero service line explicitly names the services in a way that matches the Services section offerings (Carpet Cleaning, Mattress Cleaning, AC Water Jet Service).",
-        "No CTA destinations are changed (tel:+918000262644 and https://wa.me/918000262644 remain exactly the same)."
+        "Hero headline displays exactly: \"Best Sofa Cleaning Services in Ahmedabad\".",
+        "Hero sub-headline displays exactly: \"Professional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service\".",
+        "No CTA destinations in the Hero section are changed (tel:+918000262644 and https://wa.me/918000262644 remain unchanged)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/Hero.tsx",
+          "path": "frontend/src/i18n/translations.ts",
           "operation": "modify",
-          "description": "Update the Hero headline second line text to explicitly name: Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service; keep all CTA hrefs exactly unchanged and keep all user-facing text English-only."
+          "description": "Update the English (en) hero.title and hero.subtitle strings to exactly match the required heading/subheading text, keeping all CTA-related strings unchanged."
         }
       ]
     },
     {
-      "id": "REQ-102",
-      "summary": "Ensure the exact phrase \"sofa cleaning near me\" remains in visible on-page marketing copy after the Hero text change.",
+      "id": "REQ-126",
+      "summary": "Update the Hero supporting description text (English-only) to naturally include ₹90/ft, same-day availability, 210+ customers, 5-star reviews, and Ahmedabad/Gandhinagar coverage with explicit area mentions.",
       "acceptanceCriteria": [
-        "The exact phrase \"sofa cleaning near me\" appears in visible page content (not only in metadata).",
-        "The phrase is present after the Hero service-line update is applied.",
-        "No page sections are removed and no CTA destinations are changed."
+        "Hero description mentions ₹90/ft and same-day availability.",
+        "Hero description mentions 210+ customers and a 5-star reviews claim.",
+        "Hero description mentions service coverage across Ahmedabad & Gandhinagar and explicitly includes Nikol, Naroda, Satellite, and SG Highway.",
+        "All user-visible text added/updated for this requirement is English-only."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/i18n/translations.ts",
+          "operation": "modify",
+          "description": "Update the English (en) hero.description string to incorporate the provided intro content and required details (₹90/ft, same-day, 210+ customers, 5-star, Ahmedabad & Gandhinagar, Nikol/Naroda/Satellite/SG Highway) in readable English."
+        },
+        {
+          "path": "frontend/src/i18n/translations.ts",
+          "operation": "modify",
+          "description": "Ensure English (en) hero-related review/supporting copy shown in the Hero (e.g., chip text) remains consistent with the updated claims (210+ and 5-star), without altering any CTA destinations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-127",
+      "summary": "Add a compact, high-visibility \"Why Choose Magical Service?\" content block near the Hero with exactly the provided three bullet points, without removing the existing \"Why Choose Us\" section.",
+      "acceptanceCriteria": [
+        "A visible \"Why Choose Magical Service?\" label is present.",
+        "The three bullet points appear exactly as provided (matching punctuation and wording).",
+        "The new block does not remove or rename any existing sections (e.g., the existing \"Why Choose Us\" section remains present)."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/landing/Hero.tsx",
           "operation": "modify",
-          "description": "Verify and preserve the exact visible phrase \"sofa cleaning near me\" within the Hero marketing paragraph while adjusting surrounding copy only if needed for natural English; do not change any CTA destinations/links."
+          "description": "Add a compact block directly below the existing Hero description (or immediately below the Hero content) that renders the visible label \"Why Choose Magical Service?\" and the three bullet points exactly as provided in English text, without changing existing section IDs/order or CTA links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-128",
+      "summary": "Keep Services section and other prominent marketing copy consistent with the core offering set (Sofa/Carpet/Chair/Mattress Cleaning + AC Water Jet Service) and do not change prices or CTA destinations.",
+      "acceptanceCriteria": [
+        "No service outside the set (Sofa Cleaning, Carpet Cleaning, Office/Chair Cleaning, Mattress Cleaning, AC Water Jet Service) is introduced in visible marketing copy.",
+        "Existing service prices remain unchanged (e.g., Sofa ₹90/ft).",
+        "No existing CTA destinations are changed anywhere on the page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/i18n/translations.ts",
+          "operation": "modify",
+          "description": "Update the English (en) services.description (and any other prominent English marketing strings that enumerate offerings) to match the core list wording (Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service) and avoid introducing additional services; do not change any prices mentioned in translations."
         },
         {
           "path": "frontend/src/components/landing/Services.tsx",
           "operation": "modify",
-          "description": "Ensure the Services section intro copy still includes the exact visible phrase \"sofa cleaning near me\" in a natural, non-spammy sentence; do not remove sections or alter any contact/CTA links."
+          "description": "Adjust the Services UI so the visible offerings remain within the allowed set by ensuring the AC card displays only \"AC Water Jet Service\" as the offered AC service (and does not display additional AC sub-services like repair/installation/gas refilling), while keeping existing pricing values for the listed services unchanged."
+        },
+        {
+          "path": "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "operation": "modify",
+          "description": "Restrict the visible service dropdown options to only the allowed set (Sofa Cleaning, Carpet Cleaning, Office/Chair Cleaning, Mattress Cleaning, AC Water Jet Service) so no out-of-scope services appear in prominent user-facing selection text; keep all CTA destinations unchanged."
         }
       ]
     }

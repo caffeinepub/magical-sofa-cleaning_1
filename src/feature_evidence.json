@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-hero-headline-s-second-line-so-the-service-names-are-explicitly-aligned-with-the-services-section-offerings-replacing-the-generic-text-carpet-mattress-ac-services-with-wording-that-clearly-references-carpet-cleaning-mattress-cleaning-and-ac-water-jet-service-english-only",
-      "featureTitle": "Update the Hero headline’s second line so the service names are explicitly aligned with the Services section offerings, replacing the generic text \"Carpet, Mattress & AC Services\" with wording that clearly references Carpet Cleaning, Mattress Cleaning, and AC Water Jet Service (English-only).",
+      "featureId": "feature-update-the-landing-page-hero-section-main-heading-and-subheading-to-exactly-match-the-user-provided-text-heading-best-sofa-cleaning-services-in-ahmedabad-subheading-professional-sofa-carpet-chair-mattress-cleaning-ac-water-jet-service",
+      "featureTitle": "Update the landing page Hero section main heading and subheading to exactly match the user-provided text: Heading: \"Best Sofa Cleaning Services in Ahmedabad\"; Subheading: \"Professional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service\".",
       "files": [
-        "frontend/src/components/landing/Hero.tsx"
+        "frontend/src/i18n/translations.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,13 +15,31 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-101"
+        "REQ-125"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-the-exact-phrase-sofa-cleaning-near-me-appears-as-visible-user-facing-on-page-marketing-copy-english-only-in-a-natural-non-spammy-way-and-is-not-removed-during-the-service-line-update",
-      "featureTitle": "Ensure the exact phrase \"sofa cleaning near me\" appears as visible, user-facing on-page marketing copy (English-only), in a natural, non-spammy way, and is not removed during the service-line update.",
+      "featureId": "feature-update-the-hero-section-supporting-description-text-to-incorporate-the-user-provided-intro-content-in-a-natural-readable-way-english-only-including-90-ft-pricing-same-day-availability-210-customers-5-star-reviews-and-coverage-across-ahmedabad-gandhinagar-with-explicit-mentions-of-nikol-naroda-satellite-and-sg-highway",
+      "featureTitle": "Update the Hero section supporting description text to incorporate the user-provided intro content in a natural, readable way (English-only), including: ₹90/ft pricing, same-day availability, 210+ customers, 5-star reviews, and coverage across Ahmedabad & Gandhinagar with explicit mentions of Nikol, Naroda, Satellite, and SG Highway.",
+      "files": [
+        "frontend/src/i18n/translations.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-126"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-compact-clearly-readable-why-choose-magical-service-content-block-on-the-landing-page-in-a-high-visibility-location-preferably-within-the-hero-section-below-the-description-or-immediately-below-the-hero-section-listing-exactly-these-three-points-as-visible-english-text-deep-cleaning-sanitization-for-a-germ-free-home-quick-dry-technology-dry-in-just-2-hours-affordable-rates-with-guaranteed-professional-results",
+      "featureTitle": "Add a compact, clearly readable \"Why Choose Magical Service?\" content block on the landing page in a high-visibility location (preferably within the Hero section below the description, or immediately below the Hero section), listing exactly these three points as visible English text: \"Deep Cleaning & Sanitization for a germ-free home.\", \"Quick Dry Technology: Dry in just ~2 hours.\", \"Affordable Rates with guaranteed professional results.\"",
       "files": [
         "frontend/src/components/landing/Hero.tsx"
       ],
@@ -33,7 +51,27 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-102"
+        "REQ-127"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-services-section-intro-description-copy-and-any-other-prominent-marketing-copy-that-references-the-core-offering-list-remains-consistent-with-the-user-provided-services-list-and-subheading-wording-sofa-carpet-chair-mattress-cleaning-and-ac-water-jet-service-without-changing-service-pricing-or-cta-destinations",
+      "featureTitle": "Ensure the Services section intro/description copy (and any other prominent marketing copy that references the core offering list) remains consistent with the user-provided services list and subheading wording: Sofa, Carpet, Chair, Mattress Cleaning, and AC Water Jet Service, without changing service pricing or CTA destinations.",
+      "files": [
+        "frontend/src/components/landing/AppointmentFormSection.tsx",
+        "frontend/src/components/landing/Services.tsx",
+        "frontend/src/i18n/translations.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-128"
       ],
       "confidence": "high"
     }

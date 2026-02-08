@@ -1,18 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 89,
+  "projectStateVersion": 111,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
     "Services scope update: remove Home Cleaning; offer Sofa, Carpet, Chair, Mattress cleaning + AC Water Jet service.",
     "Explicit scope constraint: no AI features should be added (now or future).",
-    "User requested adding AI-based future features, which conflicts with the existing explicit scope constraint of no AI features.",
     "User-provided UI snippet introduces an on-page 'AI assistant' chat widget and a pay-by-QR section (Google Pay) toggled by chat keywords.",
     "User-provided snippet hides an older/larger QR image via CSS selectors and replaces it with a smaller QR inside the chat widget.",
     "Snippet references an externally hosted QR image URL (caffeine.xyz) for the payment QR.",
     "Areas Served UI change requested: group locations under separate Ahmedabad and Gandhinagar headings and make the list more compact.",
     "QR code display requirement updated: show QR in a smaller/compact size.",
-    "Add social link support: include an Instagram icon that links to the Magical Sofa Cleaning Instagram profile."
+    "Add social link support: include an Instagram icon that links to the Magical Sofa Cleaning Instagram profile.",
+    "User provided updated English marketing copy (main heading, sub-heading, intro paragraph, Why Choose bullets, and services list) to be used on-page; includes locality mentions (Satellite, SG Highway) and 210+ customers/5-star claim."
   ],
   "known_issues": [
     "Potential conflict: existing scope requires all user-facing text in English, but latest requirement is English + Gujarati mix.",
@@ -26,7 +26,7 @@
     "User indicates the hero/before-after image was changed; needs to be reverted to the previously used photo.",
     "Asset dependency: “live photos” (real service photos) are requested but not yet provided; needs image assets and confirmation of usage rights."
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-new-single-page-marketing-website-for-a-sofa-cleaning-service-based-on-the-provided-html-content-structure-hero-services-contact-ctas-footer-implemented-in-the-existing-react-tailwind-app",
@@ -828,6 +828,198 @@
         "REQ-102"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-site-s-global-color-theme-to-a-different-modern-color-palette-distinct-from-the-current-royal-blue-gold-look-and-apply-it-consistently-across-the-landing-page-header-hero-services-areas-served-live-photos-google-reviews-appointment-form-footer-and-floating-contact-buttons-while-keeping-readability-contrast-and-responsiveness",
+      "title": "Update the site’s global color theme to a different modern color palette (distinct from the current Royal Blue + Gold look), and apply it consistently across the landing page (Header, Hero, Services, Areas Served, Live Photos, Google Reviews, Appointment form, Footer, and Floating Contact Buttons) while keeping readability/contrast and responsiveness.",
+      "reqIds": [
+        "REQ-104"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-revert-the-website-s-color-styling-to-match-the-previously-deployed-version-the-colors-that-were-used-before-the-most-recent-color-styling-change-keeping-the-current-page-structure-content-sections-images-seo-metadata-and-all-cta-destinations-unchanged",
+      "title": "Revert the website’s color styling to match the previously deployed version (the colors that were used before the most recent color/styling change), keeping the current page structure, content, sections, images, SEO metadata, and all CTA destinations unchanged.",
+      "reqIds": [
+        "REQ-105"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-any-hard-coded-color-values-introduced-in-the-most-recent-update-including-oklch-literals-and-gradient-utility-classes-are-reverted-removed-so-the-site-consistently-uses-the-restored-palette-across-header-hero-services-areas-served-live-photos-google-reviews-appointment-section-footer-and-floating-contact-buttons",
+      "title": "Ensure any hard-coded color values introduced in the most recent update (including OKLCH literals and gradient utility classes) are reverted/removed so the site consistently uses the restored palette across Header, Hero, Services, Areas Served, Live Photos, Google Reviews, Appointment section, Footer, and Floating Contact Buttons.",
+      "reqIds": [
+        "REQ-106"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-areas-served-data-in-frontend-src-components-landing-areasserved-tsx-to-include-a-comprehensive-list-of-both-new-and-old-areas-of-ahmedabad-and-gandhinagar-including-smaller-localities-and-specifically-more-small-local-areas-around-nikol-and-naroda-while-keeping-the-current-grouped-layout-ahmedabad-vs-gandhinagar-and-preserving-the-existing-top-priority-ahmedabad-ordering-nikol-naroda-bapunagar-hanspura-odhav-kuber-nagar-vastral",
+      "title": "Update the Areas Served data in `frontend/src/components/landing/AreasServed.tsx` to include a comprehensive list of both new and old areas of Ahmedabad and Gandhinagar, including smaller localities and specifically more small/local areas around Nikol and Naroda, while keeping the current grouped layout (Ahmedabad vs Gandhinagar) and preserving the existing top priority Ahmedabad ordering: Nikol, Naroda, Bapunagar, Hanspura, Odhav, Kuber Nagar, Vastral.",
+      "reqIds": [
+        "REQ-107"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-strengthen-on-page-seo-metadata-in-frontend-index-html-to-reflect-the-expanded-area-coverage-by-adding-a-few-representative-additional-ahmedabad-gandhinagar-locality-keywords-without-keyword-stuffing-aligned-with-the-updated-areas-served-list-while-keeping-the-existing-title-description-intent-and-all-existing-cta-destinations-unchanged",
+      "title": "Strengthen on-page SEO metadata in `frontend/index.html` to reflect the expanded area coverage by adding a few representative additional Ahmedabad/Gandhinagar locality keywords (without keyword stuffing) aligned with the updated Areas Served list, while keeping the existing title/description intent and all existing CTA destinations unchanged.",
+      "reqIds": [
+        "REQ-108"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-localbusiness-json-ld-in-frontend-index-html-to-better-reflect-the-expanded-service-coverage-ahmedabad-gandhinagar-and-broader-locality-coverage-while-keeping-the-schema-valid-and-consistent-with-the-services-offered",
+      "title": "Update the LocalBusiness JSON-LD in `frontend/index.html` to better reflect the expanded service coverage (Ahmedabad + Gandhinagar and broader locality coverage) while keeping the schema valid and consistent with the services offered.",
+      "reqIds": [
+        "REQ-109"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-landing-page-performance-to-support-fast-loading-on-mobile-and-slow-networks-without-changing-any-existing-page-structure-visible-content-intent-images-or-cta-destinations-tel-918000262644-https-wa-me-918000262644-instagram-link-google-business-profile-link",
+      "title": "Improve landing page performance to support fast loading on mobile and slow networks without changing any existing page structure, visible content intent, images, or CTA destinations (tel:+918000262644, https://wa.me/918000262644, Instagram link, Google Business Profile link).",
+      "reqIds": [
+        "REQ-110"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-exact-local-seo-keyword-phrase-sofa-cleaning-ahmedabad-naturally-into-visible-on-page-marketing-copy-and-ensure-it-is-present-in-seo-metadata-where-appropriate-without-keyword-stuffing-and-without-changing-the-existing-meaning-of-the-content-or-any-cta-destinations",
+      "title": "Add the exact local SEO keyword phrase \"sofa cleaning Ahmedabad\" naturally into visible on-page marketing copy and ensure it is present in SEO metadata where appropriate, without keyword stuffing and without changing the existing meaning of the content or any CTA destinations.",
+      "reqIds": [
+        "REQ-111"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-landing-page-loading-performance-for-mobile-slow-networks-using-minimal-non-breaking-frontend-changes-that-do-not-alter-the-existing-page-structure-visible-content-intent-or-any-cta-destinations",
+      "title": "Improve landing page loading performance for mobile/slow networks using minimal, non-breaking frontend changes that do not alter the existing page structure, visible content intent, or any CTA destinations.",
+      "reqIds": [
+        "REQ-112"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-iconography-across-all-box-card-style-ui-components-so-icons-look-consistently-professional-and-modern-same-visual-style-sizing-stroke-weight-and-alignment-in-every-section-that-uses-card-box-layouts-at-minimum-services-cards-why-choose-us-cards-sofa-price-calculator-card-appointment-form-card-field-label-icons-areas-section-header-icon-google-reviews-section-chips-stars-icons-and-footer-contact-cta-icon-usage",
+      "title": "Update the iconography across all box/card-style UI components so icons look consistently professional and modern (same visual style, sizing, stroke weight, and alignment) in every section that uses card/box layouts (at minimum: Services cards, Why Choose Us cards, Sofa Price Calculator card, Appointment form card/field label icons, Areas section header/icon, Google Reviews section chips/stars/icons, and Footer contact/CTA icon usage).",
+      "reqIds": [
+        "REQ-114"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-existing-shared-icon-wrapper-component-frontend-src-components-common-iconbadge-tsx-where-applicable-to-standardize-icon-presentation-inside-card-box-headers-while-keeping-the-whatsapp-instagram-google-brand-icons-recognizable-and-unchanged-where-they-are-used-for-brand-identity",
+      "title": "Use the existing shared icon wrapper component (frontend/src/components/common/IconBadge.tsx) where applicable to standardize icon presentation inside card/box headers, while keeping the WhatsApp/Instagram/Google brand icons recognizable and unchanged where they are used for brand identity.",
+      "reqIds": [
+        "REQ-115"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clearly-visible-rating-claim-that-states-210-reviews-and-5-star-english-only-on-the-landing-page-placed-in-a-high-visibility-location-either-within-the-hero-section-near-the-existing-badges-chips-and-or-within-the-google-reviews-section",
+      "title": "Add a clearly visible rating claim that states “210+ Reviews” and “5-Star” (English-only) on the landing page, placed in a high-visibility location (either within the Hero section near the existing badges/chips, and/or within the Google Reviews section).",
+      "reqIds": [
+        "REQ-116"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-google-reviews-section-s-rating-summary-line-so-it-reflects-210-reviews-and-a-5-star-claim-in-the-visible-text-while-keeping-the-star-icon-display-and-section-layout-intact",
+      "title": "Update the Google Reviews section’s rating summary line so it reflects “210+ Reviews” and a 5-star claim in the visible text, while keeping the star icon display and section layout intact.",
+      "reqIds": [
+        "REQ-117"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-tri-language-ui-english-hindi-gujarati-so-visitors-can-read-the-website-in-their-preferred-language-including-a-visible-language-selector-and-full-translation-of-all-user-visible-text-across-the-landing-page-sections-header-hero-service-coverage-banner-services-why-choose-us-appointment-form-live-photos-areas-served-google-reviews-section-footer-and-any-other-visible-ui",
+      "title": "Implement a tri-language UI (English, Hindi, Gujarati) so visitors can read the website in their preferred language, including a visible language selector and full translation of all user-visible text across the landing page sections (Header, Hero, Service Coverage Banner, Services, Why Choose Us, Appointment form, Live Photos, Areas Served, Google Reviews section, Footer, and any other visible UI).",
+      "reqIds": [
+        "REQ-118"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-accessible-implementation-for-language-switching-that-supports-keyboard-navigation-and-screen-readers-and-update-the-document-language-attribute-to-match-the-selected-language-at-runtime",
+      "title": "Add an accessible implementation for language switching that supports keyboard navigation and screen readers, and update the document language attribute to match the selected language at runtime.",
+      "reqIds": [
+        "REQ-119"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-that-language-switching-does-not-break-existing-seo-performance-and-content-structure-keep-the-existing-page-sections-layout-and-all-existing-images-assets-unchanged-unless-a-text-only-translation-requires-a-different-string-length-handling-wrapping-responsive",
+      "title": "Ensure that language switching does not break existing SEO, performance, and content structure: keep the existing page sections, layout, and all existing images/assets unchanged unless a text-only translation requires a different string length handling (wrapping/responsive).",
+      "reqIds": [
+        "REQ-120"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-website-s-google-business-profile-outbound-link-destination-to-the-new-url-https-share-google-55lakjuhygqn4ikko-wherever-a-google-business-profile-reviews-link-is-presented-at-minimum-the-cta-button-in-the-google-reviews-section",
+      "title": "Update the website’s Google Business Profile outbound link destination to the new URL https://share.google/55laKjuHyGqn4ikkO wherever a Google Business/Profile/Reviews link is presented (at minimum: the CTA button in the Google Reviews section).",
+      "reqIds": [
+        "REQ-121"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clearly-labeled-google-business-profile-link-entry-in-the-footer-that-points-to-https-share-google-55lakjuhygqn4ikko-using-english-link-text-e-g-google-business-profile-or-view-us-on-google-and-style-it-consistently-with-the-existing-footer-links-without-changing-any-existing-call-whatsapp-instagram-links",
+      "title": "Add a clearly labeled Google Business Profile link entry in the footer that points to https://share.google/55laKjuHyGqn4ikkO, using English link text (e.g., “Google Business Profile” or “View us on Google”), and style it consistently with the existing footer links without changing any existing Call/WhatsApp/Instagram links.",
+      "reqIds": [
+        "REQ-122"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-google-reviews-section-rating-display-to-remove-the-visible-4-9-rating-text-and-replace-it-with-a-5-star-claim-in-english-while-keeping-the-5-star-icons-preserve-the-existing-210-reviews-claim",
+      "title": "Update the Google Reviews section rating display to remove the visible “4.9” rating text and replace it with a “5-Star” claim in English (while keeping the 5 star icons). Preserve the existing “210+ Reviews” claim.",
+      "reqIds": [
+        "REQ-123"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-localbusiness-json-ld-in-frontend-index-html-to-include-the-new-google-business-profile-url-https-share-google-55lakjuhygqn4ikko-as-an-external-reference-e-g-via-a-valid-schema-org-field-such-as-sameas-without-breaking-schema-validity-or-changing-existing-seo-title-description-intent",
+      "title": "Update the LocalBusiness JSON-LD in frontend/index.html to include the new Google Business Profile URL https://share.google/55laKjuHyGqn4ikkO as an external reference (e.g., via a valid schema.org field such as sameAs), without breaking schema validity or changing existing SEO title/description intent.",
+      "reqIds": [
+        "REQ-124"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-landing-page-hero-section-main-heading-and-subheading-to-exactly-match-the-user-provided-text-heading-best-sofa-cleaning-services-in-ahmedabad-subheading-professional-sofa-carpet-chair-mattress-cleaning-ac-water-jet-service",
+      "title": "Update the landing page Hero section main heading and subheading to exactly match the user-provided text: Heading: \"Best Sofa Cleaning Services in Ahmedabad\"; Subheading: \"Professional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service\".",
+      "reqIds": [
+        "REQ-125"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-section-supporting-description-text-to-incorporate-the-user-provided-intro-content-in-a-natural-readable-way-english-only-including-90-ft-pricing-same-day-availability-210-customers-5-star-reviews-and-coverage-across-ahmedabad-gandhinagar-with-explicit-mentions-of-nikol-naroda-satellite-and-sg-highway",
+      "title": "Update the Hero section supporting description text to incorporate the user-provided intro content in a natural, readable way (English-only), including: ₹90/ft pricing, same-day availability, 210+ customers, 5-star reviews, and coverage across Ahmedabad & Gandhinagar with explicit mentions of Nikol, Naroda, Satellite, and SG Highway.",
+      "reqIds": [
+        "REQ-126"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-compact-clearly-readable-why-choose-magical-service-content-block-on-the-landing-page-in-a-high-visibility-location-preferably-within-the-hero-section-below-the-description-or-immediately-below-the-hero-section-listing-exactly-these-three-points-as-visible-english-text-deep-cleaning-sanitization-for-a-germ-free-home-quick-dry-technology-dry-in-just-2-hours-affordable-rates-with-guaranteed-professional-results",
+      "title": "Add a compact, clearly readable \"Why Choose Magical Service?\" content block on the landing page in a high-visibility location (preferably within the Hero section below the description, or immediately below the Hero section), listing exactly these three points as visible English text: \"Deep Cleaning & Sanitization for a germ-free home.\", \"Quick Dry Technology: Dry in just ~2 hours.\", \"Affordable Rates with guaranteed professional results.\"",
+      "reqIds": [
+        "REQ-127"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-services-section-intro-description-copy-and-any-other-prominent-marketing-copy-that-references-the-core-offering-list-remains-consistent-with-the-user-provided-services-list-and-subheading-wording-sofa-carpet-chair-mattress-cleaning-and-ac-water-jet-service-without-changing-service-pricing-or-cta-destinations",
+      "title": "Ensure the Services section intro/description copy (and any other prominent marketing copy that references the core offering list) remains consistent with the user-provided services list and subheading wording: Sofa, Carpet, Chair, Mattress Cleaning, and AC Water Jet Service, without changing service pricing or CTA destinations.",
+      "reqIds": [
+        "REQ-128"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -1072,14 +1264,6 @@
       "status": "pending"
     },
     {
-      "id": "AR-43",
-      "summary": "Do not make any further changes to the project; keep the website exactly as it is currently implemented and deployed (no changes to UI, copy, sections, images, styling, SEO metadata, links, or functionality).",
-      "reqIds": [
-        "REQ-82"
-      ],
-      "status": "pending"
-    },
-    {
       "id": "AR-44",
       "summary": "Add an Appointment/Booking form that submits directly to the business WhatsApp number (opens WhatsApp chat with the form details pre-filled).",
       "reqIds": [],
@@ -1118,6 +1302,64 @@
     {
       "id": "AR-50",
       "summary": "Add the SEO phrase “sofa cleaning near me” into on-page marketing copy in a natural way (no keyword stuffing).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-51",
+      "summary": "Ensure the Hero section headline and second line match the user-provided service lines exactly, in English:\n- Line 1: \"Sofa Cleaning Services in Ahmedabad\"\n- Line 2: \"Carpet Cleaning, Mattress Cleaning, AC Water Jet Service\"",
+      "reqIds": [
+        "REQ-103"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-52",
+      "summary": "Update the site’s visual theme to a different modern color palette (user requested a different modern colour).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-53",
+      "summary": "Improve site performance (fast loading) and ensure the website is fully mobile-friendly/responsive (performance + mobile UX optimization without changing CTA destinations).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-55",
+      "summary": "Ensure the exact local SEO keyword phrase \"sofa cleaning Ahmedabad\" remains present in both visible on-page marketing copy and SEO metadata, without keyword stuffing and without changing the meaning of existing content.",
+      "reqIds": [
+        "REQ-113"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-56",
+      "summary": "Update iconography so all box/card UI elements use professional, modern icons (consistent style across sections).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-57",
+      "summary": "Add a visible “210+ Reviews / 5 Star” rating claim/badge on the website (e.g., near Google Business Profile section/hero), aligned with the existing Google Business Profile link and without fabricating reviews.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-58",
+      "summary": "Add tri-language support (Hindi + English + Gujarati) so customers can view/read the website in their preferred language (language switcher/selector).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-59",
+      "summary": "Update the Google Business Profile link to https://share.google/55laKjuHyGqn4ikkO and update the on-page rating display to remove the “4.9” rating text and show a “5 Star” claim instead (keep credibility/accuracy in mind).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-60",
+      "summary": "Update on-page marketing copy (English) to use the user-provided Main Heading/Sub-heading and the provided full intro content (same-day availability, ₹90/ft, 210+ customers with 5-star reviews, coverage mention incl. Nikol/Naroda/Satellite/SG Highway + Ahmedabad/Gandhinagar) and the updated “Why Choose” bullet points + Services list.",
       "reqIds": [],
       "status": "pending"
     }
