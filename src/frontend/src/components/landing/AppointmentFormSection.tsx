@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { generateWhatsAppBookingURL, type BookingDetails } from '@/lib/whatsappBooking';
 import InlineIcon from '@/components/common/InlineIcon';
 import { useI18n } from '@/i18n/useI18n';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface FormErrors {
   name?: string;
@@ -22,6 +23,7 @@ interface FormErrors {
 
 export default function AppointmentFormSection() {
   const { t } = useI18n();
+  const sectionRef = useScrollReveal<HTMLElement>();
   const [formData, setFormData] = useState<BookingDetails>({
     name: '',
     phone: '',
@@ -123,7 +125,7 @@ export default function AppointmentFormSection() {
   };
 
   return (
-    <section id="appointment" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20">
+    <section id="appointment" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20" ref={sectionRef}>
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
@@ -257,8 +259,7 @@ export default function AppointmentFormSection() {
 
                 {/* Notes */}
                 <div className="space-y-2">
-                  <Label htmlFor="notes" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                    <InlineIcon icon={MessageSquare} />
+                  <Label htmlFor="notes" className="text-sm font-semibold lg:text-base">
                     {t.appointment.notesLabel}
                   </Label>
                   <Textarea
@@ -274,15 +275,11 @@ export default function AppointmentFormSection() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#25D366] py-6 text-base font-bold text-white hover:bg-[#20BA5A] lg:text-lg"
+                  className="w-full gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] py-6 text-base font-bold text-white shadow-premium transition-all hover:scale-[1.02] hover:shadow-premium-lg disabled:opacity-50 disabled:hover:scale-100"
                 >
                   <SiWhatsapp className="h-5 w-5" />
                   {isSubmitting ? t.appointment.submitting : t.appointment.submitButton}
                 </Button>
-
-                <p className="text-center text-xs text-muted-foreground lg:text-sm">
-                  {t.appointment.disclaimer}
-                </p>
               </form>
             </CardContent>
           </Card>

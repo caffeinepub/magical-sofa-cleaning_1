@@ -2,9 +2,15 @@ import { Leaf, Cog, Award, UserCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import IconBadge from '@/components/common/IconBadge';
 import { useI18n } from '@/i18n/useI18n';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function WhyChooseUs() {
   const { t } = useI18n();
+  const sectionRef = useScrollReveal<HTMLElement>();
+  const cardsRef = useScrollReveal<HTMLDivElement>({
+    staggerSelector: '.feature-card',
+    staggerDelay: 120,
+  });
 
   const features = [
     {
@@ -30,7 +36,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20">
+    <section id="why-choose-us" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20" ref={sectionRef}>
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
@@ -41,11 +47,11 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5" ref={cardsRef}>
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden border-2 border-primary/40 bg-gradient-to-br from-primary/5 to-primary/10 transition-all hover:border-accent/60 hover:shadow-premium-lg"
+              className="feature-card group relative overflow-hidden border-2 border-primary/40 bg-gradient-to-br from-primary/5 to-primary/10 transition-all hover:border-accent/60 hover:shadow-premium-lg"
             >
               <CardHeader className="space-y-3 pb-4">
                 <div className="flex justify-center">

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 111,
+  "projectStateVersion": 117,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
@@ -1020,6 +1020,70 @@
         "REQ-128"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-implement-a-reusable-scroll-triggered-reveal-animation-utility-e-g-a-hook-component-that-animates-elements-into-view-as-the-user-scrolls-using-gsap",
+      "title": "Implement a reusable, scroll-triggered reveal animation utility (e.g., a hook/component) that animates elements into view as the user scrolls, using GSAP.",
+      "reqIds": [
+        "REQ-130"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-gsap-based-reveal-animations-across-the-landing-page-so-key-sections-and-card-grids-animate-into-view-on-scroll-while-keeping-all-existing-content-section-order-and-cta-destinations-unchanged",
+      "title": "Apply GSAP-based reveal animations across the landing page so key sections and card grids animate into view on scroll while keeping all existing content, section order, and CTA destinations unchanged.",
+      "reqIds": [
+        "REQ-131"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-scroll-reveal-animations-respect-accessibility-and-performance-constraints-including-disabling-or-significantly-reducing-motion-when-the-user-has-enabled-prefers-reduced-motion",
+      "title": "Ensure scroll/reveal animations respect accessibility and performance constraints, including disabling or significantly reducing motion when the user has enabled “prefers-reduced-motion”.",
+      "reqIds": [
+        "REQ-132"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-gsap-greensock-animation-platform-as-a-frontend-dependency-and-integrate-it-into-the-react-app-without-using-any-inline-script-tags-or-external-cdns",
+      "title": "Add GSAP (GreenSock Animation Platform) as a frontend dependency and integrate it into the React app without using any inline <script> tags or external CDNs.",
+      "reqIds": [
+        "REQ-133"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-existing-scroll-reveal-animation-utility-frontend-src-hooks-usescrollreveal-ts-to-use-gsap-driven-animations-for-revealing-elements-and-optional-staggered-children-when-they-enter-the-viewport-while-preserving-the-current-hook-api-and-one-time-reveal-behavior",
+      "title": "Update the existing scroll-reveal animation utility (frontend/src/hooks/useScrollReveal.ts) to use GSAP-driven animations for revealing elements (and optional staggered children) when they enter the viewport, while preserving the current hook API and one-time reveal behavior.",
+      "reqIds": [
+        "REQ-134"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-gsap-based-reveal-animations-respect-accessibility-and-performance-constraints-by-disabling-or-significantly-reducing-motion-when-the-user-has-enabled-prefers-reduced-motion-without-breaking-layout-or-visibility",
+      "title": "Ensure all GSAP-based reveal animations respect accessibility and performance constraints by disabling or significantly reducing motion when the user has enabled prefers-reduced-motion, without breaking layout or visibility.",
+      "reqIds": [
+        "REQ-135"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-service-coverage-banner-user-facing-copy-to-include-this-exact-sentence-in-visible-on-page-text-english-matching-punctuation-and-capitalization-service-coverage-areas-in-ahmedabad-and-gandhi-nagar-professional-residential-cleaning-services-including-flats-bungalows-offices-and-hospitals-use-this-sentence-as-the-service-coverage-banner-caption-text-below-the-banner-image-so-visitors-can-read-it-without-relying-on-image-alt-text",
+      "title": "Update the Service Coverage banner user-facing copy to include this exact sentence in visible on-page text (English, matching punctuation and capitalization): \"Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals\". Use this sentence as the Service Coverage banner caption text (below the banner image) so visitors can read it without relying on image alt text.",
+      "reqIds": [
+        "REQ-136"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-delete-one-photo-from-the-live-photos-section-by-removing-the-last-photo-entry-currently-defined-in-the-livephotos-array-in-frontend-src-components-landing-livephotos-tsx-the-item-whose-src-is-assets-generated-live-ac-water-jet-1-dim-1600x1200-jpg",
+      "title": "Delete one photo from the Live Photos section by removing the last photo entry currently defined in the `livePhotos` array in `frontend/src/components/landing/LivePhotos.tsx` (the item whose `src` is `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg`).",
+      "reqIds": [
+        "REQ-137"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -1362,6 +1426,32 @@
       "summary": "Update on-page marketing copy (English) to use the user-provided Main Heading/Sub-heading and the provided full intro content (same-day availability, ₹90/ft, 210+ customers with 5-star reviews, coverage mention incl. Nikol/Naroda/Satellite/SG Highway + Ahmedabad/Gandhinagar) and the updated “Why Choose” bullet points + Services list.",
       "reqIds": [],
       "status": "pending"
+    },
+    {
+      "id": "AR-61",
+      "summary": "Add scroll-based animations / reveal effects to the landing page (e.g., section/card reveal on scroll), using GSAP (GreenSock Animation Platform).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-62",
+      "summary": "Add GSAP (GreenSock Animation Platform) as a frontend dependency and integrate it into the React app without using any inline <script> tags or external CDNs.",
+      "reqIds": [
+        "REQ-129"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-63",
+      "summary": "Update on-page service coverage copy to include: \"Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-64",
+      "summary": "Delete/remove a photo from the website (user request: \"Delete photo\"; exact target photo needs identification).",
+      "reqIds": [],
+      "status": "blocked"
     }
   ],
   "gameProjectType": "none",

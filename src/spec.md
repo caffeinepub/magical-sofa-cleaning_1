@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the landing page hero and key marketing copy to match the provided heading, subheading, intro content, and add a compact “Why Choose Magical Service?” block.
+**Goal:** Update the Service Coverage banner caption text and remove one photo from the Live Photos section.
 
 **Planned changes:**
-- Update the Hero main heading to exactly: "Best Sofa Cleaning Services in Ahmedabad" and subheading to exactly: "Professional Sofa, Carpet, Chair, Mattress Cleaning & AC Water Jet Service", without changing existing CTA destinations.
-- Update the Hero supporting description (English-only) to naturally include ₹90/ft pricing, same-day availability, 210+ customers, 5-star reviews, and service coverage across Ahmedabad & Gandhinagar with explicit mentions of Nikol, Naroda, Satellite, and SG Highway.
-- Add a compact, high-visibility “Why Choose Magical Service?” content block in/near the Hero with exactly the three provided bullet points, while keeping the existing “Why Choose Us” section intact.
-- Ensure the Services section intro/description (and other prominent marketing copy referencing the core offering list) stays consistent with: Sofa, Carpet, Chair, Mattress Cleaning, and AC Water Jet Service, without changing pricing or any CTA destinations.
+- Update the English translation string `serviceCoverage.caption` to exactly: "Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals".
+- Keep the Service Coverage banner rendering the caption from `t.serviceCoverage.caption` below the banner image so the updated sentence is visible on-page.
+- Remove the last `livePhotos` array entry in `frontend/src/components/landing/LivePhotos.tsx` whose `src` is `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg`.
 
-**User-visible outcome:** Visitors see the updated hero heading/subheading and improved intro copy reflecting pricing, availability, social proof, and coverage areas, plus a new compact “Why Choose Magical Service?” block, with all CTAs unchanged.
+**User-visible outcome:** Visitors see the updated Service Coverage caption text under the banner image, and the Live Photos grid displays one fewer photo (with the AC water jet image no longer shown).

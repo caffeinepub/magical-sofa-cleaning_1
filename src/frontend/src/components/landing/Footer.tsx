@@ -1,10 +1,13 @@
 import { Phone, MapPin, Clock } from 'lucide-react';
 import { SiWhatsapp, SiInstagram, SiGoogle } from 'react-icons/si';
 import InlineIcon from '@/components/common/InlineIcon';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Footer() {
+  const footerRef = useScrollReveal<HTMLElement>();
+
   return (
-    <footer className="border-t-2 border-primary/30 bg-gradient-to-b from-muted/30 to-background">
+    <footer className="border-t-2 border-primary/30 bg-gradient-to-b from-muted/30 to-background" ref={footerRef}>
       <div className="container px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -83,80 +86,75 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Our Services</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Sofa Cleaning</li>
-              <li>Carpet Cleaning</li>
-              <li>Mattress Cleaning</li>
-              <li>Chair Cleaning</li>
-              <li>AC Water Jet Service</li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-primary">Contact Us</h3>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <InlineIcon icon={Phone} className="mt-0.5 flex-shrink-0 text-primary" />
-                <a href="tel:+918000262644" className="text-muted-foreground transition-colors hover:text-primary">
-                  +91 80002 62644
+              <li>
+                <a
+                  href="tel:+918000262644"
+                  className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <InlineIcon icon={Phone} />
+                  <span>+91 80002 62644</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <InlineIcon icon={MapPin} className="mt-0.5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">
-                  Serving Ahmedabad & Gandhinagar
-                </span>
+              <li className="flex items-start gap-2 text-muted-foreground">
+                <InlineIcon icon={MapPin} />
+                <span>Nikol, Ahmedabad, Gujarat</span>
               </li>
-              <li className="flex items-start gap-2">
-                <InlineIcon icon={Clock} className="mt-0.5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">
-                  Mon - Sun: 8:00 AM - 8:00 PM
-                </span>
+              <li className="flex items-start gap-2 text-muted-foreground">
+                <InlineIcon icon={Clock} />
+                <span>Mon - Sun: 8:00 AM - 8:00 PM</span>
               </li>
             </ul>
           </div>
-        </div>
 
-        {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 border-t border-border pt-8 sm:flex-row">
-          <a
-            href="tel:+918000262644"
-            className="premium-box flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-6 py-3 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg sm:w-auto md:px-7 md:text-base"
-          >
-            <Phone className="h-4 w-4 stroke-[2.5]" />
-            <span>Call Now</span>
-          </a>
-          <a
-            href="https://wa.me/918000262644"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="premium-box flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] px-6 py-3 text-sm font-bold text-white shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg sm:w-auto md:px-7 md:text-base"
-          >
-            <SiWhatsapp className="h-4 w-4" />
-            <span>Book via WhatsApp</span>
-          </a>
+          {/* CTA */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-primary">Get Started</h3>
+            <p className="text-sm text-muted-foreground">
+              Book your appointment today and experience professional cleaning services!
+            </p>
+            <div className="space-y-3">
+              <a
+                href="tel:+918000262644"
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-5 py-3 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg"
+              >
+                <Phone className="h-4 w-4 stroke-[2.5]" />
+                <span>Call Now</span>
+              </a>
+              <a
+                href="https://wa.me/918000262644"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] px-5 py-3 text-sm font-bold text-white shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg"
+              >
+                <SiWhatsapp className="h-4 w-4" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 border-t border-border pt-6 text-center text-xs text-muted-foreground md:text-sm">
-          <p>© 2026. Built with love using <a href="https://caffeine.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">caffeine.ai</a>.</p>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-4">
-            <a href="#home" className="transition-colors hover:text-primary">Home</a>
-            <span>•</span>
-            <a href="#services" className="transition-colors hover:text-primary">Services</a>
-            <span>•</span>
-            <a href="#why-choose-us" className="transition-colors hover:text-primary">Why Choose Us</a>
-            <span>•</span>
-            <a href="#appointment" className="transition-colors hover:text-primary">Book Now</a>
-            <span>•</span>
-            <a href="#areas" className="transition-colors hover:text-primary">Areas</a>
-            <span>•</span>
-            <a href="#reviews" className="transition-colors hover:text-primary">Reviews</a>
-          </div>
+        <div className="mt-12 border-t-2 border-border pt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} MAGICAL SERVICE. All rights reserved.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Built with ❤️ using{' '}
+            <a
+              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(
+                typeof window !== 'undefined' ? window.location.hostname : 'unknown-app'
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary transition-colors hover:text-accent"
+            >
+              caffeine.ai
+            </a>
+          </p>
         </div>
       </div>
     </footer>

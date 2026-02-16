@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import IconBadge from '@/components/common/IconBadge';
 import SofaPriceCalculator from './SofaPriceCalculator';
 import { useI18n } from '@/i18n/useI18n';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface ServiceTheme {
   cardBorder: string;
@@ -77,6 +78,11 @@ const serviceThemes: Record<string, ServiceTheme> = {
 
 export default function Services() {
   const { t } = useI18n();
+  const sectionRef = useScrollReveal<HTMLElement>();
+  const cardsRef = useScrollReveal<HTMLDivElement>({
+    staggerSelector: '.service-card',
+    staggerDelay: 150,
+  });
 
   const services = [
     {
@@ -122,7 +128,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="bg-gradient-to-b from-background to-primary/5 py-12 md:py-16 lg:py-20">
+    <section id="services" className="bg-gradient-to-b from-background to-primary/5 py-12 md:py-16 lg:py-20" ref={sectionRef}>
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
@@ -133,13 +139,13 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5" ref={cardsRef}>
           {services.map((service, index) => {
             const theme = serviceThemes[service.themeKey];
             return (
               <Card
                 key={index}
-                className={`group relative overflow-hidden border-2 transition-all hover:shadow-premium-lg ${
+                className={`service-card group relative overflow-hidden border-2 transition-all hover:shadow-premium-lg ${
                   service.featured 
                     ? `${theme.cardBorder} ${theme.cardBg} shadow-premium` 
                     : `${theme.cardBorder} hover:border-opacity-60`

@@ -1,9 +1,16 @@
 import { Star, ExternalLink } from 'lucide-react';
 import { SiGoogle } from 'react-icons/si';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function GoogleReviewsSection() {
+  const sectionRef = useScrollReveal<HTMLElement>();
+  const reviewsRef = useScrollReveal<HTMLDivElement>({
+    staggerSelector: '.review-card',
+    staggerDelay: 150,
+  });
+
   return (
-    <section id="reviews" className="bg-gradient-to-b from-background to-muted/30 py-12 md:py-16 lg:py-20">
+    <section id="reviews" className="bg-gradient-to-b from-background to-muted/30 py-12 md:py-16 lg:py-20" ref={sectionRef}>
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
@@ -38,8 +45,8 @@ export default function GoogleReviewsSection() {
             </div>
 
             {/* Sample Reviews */}
-            <div className="space-y-4">
-              <div className="rounded-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 p-4">
+            <div className="space-y-4" ref={reviewsRef}>
+              <div className="review-card rounded-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 p-4">
                 <div className="mb-2 flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -54,7 +61,7 @@ export default function GoogleReviewsSection() {
                 <p className="text-xs font-semibold text-muted-foreground">- Rajesh P., Nikol</p>
               </div>
 
-              <div className="rounded-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 p-4">
+              <div className="review-card rounded-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 p-4">
                 <div className="mb-2 flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -69,7 +76,7 @@ export default function GoogleReviewsSection() {
                 <p className="text-xs font-semibold text-muted-foreground">- Priya S., Satellite</p>
               </div>
 
-              <div className="rounded-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 p-4">
+              <div className="review-card rounded-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 p-4">
                 <div className="mb-2 flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star

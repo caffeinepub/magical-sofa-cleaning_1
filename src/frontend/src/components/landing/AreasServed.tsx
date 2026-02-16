@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react';
 import IconBadge from '@/components/common/IconBadge';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const ahmedabadAreas: string[] = [
   // Priority areas (specified first in exact order)
@@ -157,8 +158,18 @@ const gandhinagarAreas: string[] = [
 ];
 
 export default function AreasServed() {
+  const sectionRef = useScrollReveal<HTMLElement>();
+  const ahmedabadRef = useScrollReveal<HTMLDivElement>({
+    staggerSelector: '.area-item',
+    staggerDelay: 20,
+  });
+  const gandhinagarRef = useScrollReveal<HTMLDivElement>({
+    staggerSelector: '.area-item',
+    staggerDelay: 20,
+  });
+
   return (
-    <section id="areas" className="bg-gradient-to-b from-muted/20 to-background py-12 md:py-16 lg:py-20">
+    <section id="areas" className="bg-gradient-to-b from-muted/20 to-background py-12 md:py-16 lg:py-20" ref={sectionRef}>
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-3 inline-flex">
@@ -178,11 +189,11 @@ export default function AreasServed() {
             <h3 className="mb-5 text-center text-xl font-bold text-primary sm:text-2xl">
               Ahmedabad
             </h3>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3" ref={ahmedabadRef}>
               {ahmedabadAreas.map((area, index) => (
                 <div
                   key={index}
-                  className="group flex items-center justify-center rounded-xl border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 p-3 text-center shadow-xs transition-all hover:border-accent/50 hover:bg-gradient-to-br hover:from-card hover:to-accent/10 hover:shadow-premium-gold lg:p-3.5"
+                  className="area-item group flex items-center justify-center rounded-xl border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 p-3 text-center shadow-xs transition-all hover:border-accent/50 hover:bg-gradient-to-br hover:from-card hover:to-accent/10 hover:shadow-premium-gold lg:p-3.5"
                 >
                   <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
                     {area}
@@ -197,11 +208,11 @@ export default function AreasServed() {
             <h3 className="mb-5 text-center text-xl font-bold text-accent sm:text-2xl">
               Gandhinagar
             </h3>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3" ref={gandhinagarRef}>
               {gandhinagarAreas.map((area, index) => (
                 <div
                   key={index}
-                  className="group flex items-center justify-center rounded-xl border-2 border-accent/40 bg-gradient-to-br from-card to-accent/5 p-3 text-center shadow-xs transition-all hover:border-accent/60 hover:bg-gradient-to-br hover:from-card hover:to-accent/15 hover:shadow-premium-gold lg:p-3.5"
+                  className="area-item group flex items-center justify-center rounded-xl border-2 border-accent/40 bg-gradient-to-br from-card to-accent/5 p-3 text-center shadow-xs transition-all hover:border-accent/60 hover:bg-gradient-to-br hover:from-card hover:to-accent/15 hover:shadow-premium-gold lg:p-3.5"
                 >
                   <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
                     {area}

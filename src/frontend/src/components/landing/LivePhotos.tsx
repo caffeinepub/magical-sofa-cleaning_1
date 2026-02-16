@@ -1,9 +1,15 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useI18n } from '@/i18n/useI18n';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function LivePhotos() {
   const { t } = useI18n();
+  const sectionRef = useScrollReveal<HTMLElement>();
+  const photosRef = useScrollReveal<HTMLDivElement>({
+    staggerSelector: '.photo-card',
+    staggerDelay: 100,
+  });
 
   const livePhotos = [
     {
@@ -36,15 +42,10 @@ export default function LivePhotos() {
       alt: 'Professional office chair cleaning service - before and after results in Ahmedabad',
       label: t.livePhotos.officeChairCleaning,
     },
-    {
-      src: '/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg',
-      alt: 'AC water jet cleaning service in Ahmedabad - professional AC maintenance',
-      label: null,
-    },
   ];
 
   return (
-    <section id="gallery" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20">
+    <section id="gallery" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20" ref={sectionRef}>
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
@@ -55,11 +56,11 @@ export default function LivePhotos() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5" ref={photosRef}>
           {livePhotos.map((photo, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden premium-box premium-box-hover"
+              className="photo-card group relative overflow-hidden premium-box premium-box-hover"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
