@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { Locale, translations, Translations } from './translations';
 
 interface I18nContextType {
@@ -58,4 +58,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   };
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+}
+
+export function useI18n() {
+  const context = useContext(I18nContext);
+  if (context === undefined) {
+    throw new Error('useI18n must be used within an I18nProvider');
+  }
+  return context;
 }

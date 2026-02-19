@@ -6,6 +6,7 @@ import Services from './components/landing/Services';
 import WhyChooseUs from './components/landing/WhyChooseUs';
 import AppointmentFormSection from './components/landing/AppointmentFormSection';
 import AreasServed from './components/landing/AreasServed';
+import FAQSection from './components/landing/FAQSection';
 import GoogleReviewsSection from './components/landing/GoogleReviewsSection';
 import LivePhotos from './components/landing/LivePhotos';
 import Footer from './components/landing/Footer';
@@ -34,6 +35,9 @@ function App() {
         </div>
         <div className="perf-contain">
           <AreasServed />
+        </div>
+        <div className="perf-contain">
+          <FAQSection />
         </div>
         <div className="perf-contain">
           <GoogleReviewsSection />

@@ -2,9 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-service-coverage-banner-user-facing-copy-to-include-this-exact-sentence-in-visible-on-page-text-english-matching-punctuation-and-capitalization-service-coverage-areas-in-ahmedabad-and-gandhi-nagar-professional-residential-cleaning-services-including-flats-bungalows-offices-and-hospitals-use-this-sentence-as-the-service-coverage-banner-caption-text-below-the-banner-image-so-visitors-can-read-it-without-relying-on-image-alt-text",
-      "featureTitle": "Update the Service Coverage banner user-facing copy to include this exact sentence in visible on-page text (English, matching punctuation and capitalization): \"Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals\". Use this sentence as the Service Coverage banner caption text (below the banner image) so visitors can read it without relying on image alt text.",
+      "featureId": "feature-add-a-new-faq-frequently-asked-questions-section-on-the-landing-page-that-is-ai-friendly-and-seo-optimized-answering-common-customer-questions-about-the-cleaning-services-e-g-pricing-service-areas-booking-process-cleaning-methods-drying-time-safety-the-faq-section-must-use-english-text-or-support-the-existing-tri-language-system-english-hindi-gujarati-and-be-structured-with-proper-semantic-html-e-g-details-summary-or-accordion-style-for-accessibility-and-search-engine-crawling",
+      "featureTitle": "Add a new FAQ (Frequently Asked Questions) section on the landing page that is AI-friendly and SEO-optimized, answering common customer questions about the cleaning services (e.g., pricing, service areas, booking process, cleaning methods, drying time, safety). The FAQ section must use English text (or support the existing tri-language system: English, Hindi, Gujarati) and be structured with proper semantic HTML (e.g., <details>/<summary> or accordion-style) for accessibility and search engine crawling.",
       "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/landing/FAQSection.tsx",
         "frontend/src/i18n/translations.ts"
       ],
       "components": [
@@ -15,15 +17,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-136"
+        "REQ-138"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-delete-one-photo-from-the-live-photos-section-by-removing-the-last-photo-entry-currently-defined-in-the-livephotos-array-in-frontend-src-components-landing-livephotos-tsx-the-item-whose-src-is-assets-generated-live-ac-water-jet-1-dim-1600x1200-jpg",
-      "featureTitle": "Delete one photo from the Live Photos section by removing the last photo entry currently defined in the `livePhotos` array in `frontend/src/components/landing/LivePhotos.tsx` (the item whose `src` is `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg`).",
+      "featureId": "feature-add-the-exact-seo-keyword-phrase-best-sofa-cleaning-ahmedabad-naturally-into-visible-on-page-marketing-copy-e-g-hero-section-services-intro-or-faq-section-intro-in-a-way-that-reads-naturally-and-does-not-involve-keyword-stuffing-ensure-this-phrase-is-also-present-in-the-seo-metadata-frontend-index-html-title-description-keywords-where-appropriate-without-changing-the-existing-meaning-of-the-content-or-any-cta-destinations",
+      "featureTitle": "Add the exact SEO keyword phrase 'best sofa cleaning Ahmedabad' naturally into visible on-page marketing copy (e.g., Hero section, Services intro, or FAQ section intro) in a way that reads naturally and does not involve keyword stuffing. Ensure this phrase is also present in the SEO metadata (frontend/index.html title/description/keywords) where appropriate, without changing the existing meaning of the content or any CTA destinations.",
       "files": [
-        "frontend/src/components/landing/LivePhotos.tsx"
+        "frontend/index.html"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -33,7 +35,81 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-137"
+        "REQ-139"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-strengthen-on-page-seo-by-naturally-incorporating-the-following-ahmedabad-locality-keywords-into-visible-marketing-copy-across-the-landing-page-e-g-hero-description-services-intro-areas-served-section-intro-faq-section-or-service-coverage-banner-caption-nikol-naroda-bapunagar-vastral-kuber-nagar-nana-chiloda-use-these-locality-names-in-a-way-that-emphasizes-broad-service-coverage-across-ahmedabad-without-keyword-stuffing-and-ensure-the-copy-remains-readable-and-professional",
+      "featureTitle": "Strengthen on-page SEO by naturally incorporating the following Ahmedabad locality keywords into visible marketing copy across the landing page (e.g., Hero description, Services intro, Areas Served section intro, FAQ section, or Service Coverage banner caption): Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda. Use these locality names in a way that emphasizes broad service coverage across Ahmedabad without keyword stuffing, and ensure the copy remains readable and professional.",
+      "files": [
+        "frontend/src/components/landing/FAQSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-140"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-seo-metadata-in-frontend-index-html-to-include-the-locality-keywords-nikol-naroda-bapunagar-vastral-kuber-nagar-nana-chiloda-and-the-primary-seo-keyword-phrase-best-sofa-cleaning-ahmedabad-in-the-meta-keywords-description-and-or-title-where-appropriate-without-keyword-stuffing-ensure-the-metadata-remains-aligned-with-the-updated-on-page-copy-and-continues-to-target-the-ahmedabad-gandhinagar-cleaning-market",
+      "featureTitle": "Update the SEO metadata in frontend/index.html to include the locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) and the primary SEO keyword phrase 'best sofa cleaning Ahmedabad' in the meta keywords, description, and/or title where appropriate, without keyword stuffing. Ensure the metadata remains aligned with the updated on-page copy and continues to target the Ahmedabad & Gandhinagar cleaning market.",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-141"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-localbusiness-json-ld-structured-data-in-frontend-index-html-to-include-or-emphasize-service-coverage-across-ahmedabad-and-gandhinagar-with-explicit-mention-of-key-localities-nikol-naroda-bapunagar-vastral-kuber-nagar-nana-chiloda-in-the-areaserved-or-description-field-and-ensure-the-best-sofa-cleaning-ahmedabad-keyword-phrase-is-naturally-reflected-in-the-business-description-where-appropriate-keep-the-schema-valid-and-consistent-with-schema-org-localbusiness-requirements",
+      "featureTitle": "Update the LocalBusiness JSON-LD structured data in frontend/index.html to include or emphasize service coverage across Ahmedabad and Gandhinagar with explicit mention of key localities (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) in the 'areaServed' or 'description' field, and ensure the 'best sofa cleaning Ahmedabad' keyword phrase is naturally reflected in the business description where appropriate. Keep the schema valid and consistent with schema.org LocalBusiness requirements.",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-142"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-faq-section-is-placed-in-a-logical-high-visibility-location-on-the-landing-page-e-g-after-the-services-section-and-before-the-google-reviews-section-or-after-the-why-choose-us-section-and-is-linked-from-the-site-navigation-header-nav-links-and-footer-quick-links-with-the-anchor-id-faq-or-similar-without-removing-or-changing-any-existing-navigation-items-or-cta-destinations",
+      "featureTitle": "Ensure the FAQ section is placed in a logical high-visibility location on the landing page (e.g., after the Services section and before the Google Reviews section, or after the Why Choose Us section) and is linked from the site navigation (Header nav links) and Footer Quick Links with the anchor id '#faq' or similar, without removing or changing any existing navigation items or CTA destinations.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/landing/Header.tsx",
+        "frontend/src/i18n/translations.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-143"
       ],
       "confidence": "high"
     }

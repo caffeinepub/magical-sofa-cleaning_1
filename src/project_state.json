@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 117,
+  "projectStateVersion": 119,
   "summary": "Build a new marketing website for a sofa cleaning service (Magical Service / Magical Sofa Cleaning) targeting Ahmedabad & Gandhinagar, with English + Gujarati mixed user-facing content.",
   "architectural_notes": [
     "Content language requirement changed to English + Gujarati mix (bilingual/mixed copy) across the site.",
@@ -1084,6 +1084,54 @@
         "REQ-137"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-a-new-faq-frequently-asked-questions-section-on-the-landing-page-that-is-ai-friendly-and-seo-optimized-answering-common-customer-questions-about-the-cleaning-services-e-g-pricing-service-areas-booking-process-cleaning-methods-drying-time-safety-the-faq-section-must-use-english-text-or-support-the-existing-tri-language-system-english-hindi-gujarati-and-be-structured-with-proper-semantic-html-e-g-details-summary-or-accordion-style-for-accessibility-and-search-engine-crawling",
+      "title": "Add a new FAQ (Frequently Asked Questions) section on the landing page that is AI-friendly and SEO-optimized, answering common customer questions about the cleaning services (e.g., pricing, service areas, booking process, cleaning methods, drying time, safety). The FAQ section must use English text (or support the existing tri-language system: English, Hindi, Gujarati) and be structured with proper semantic HTML (e.g., <details>/<summary> or accordion-style) for accessibility and search engine crawling.",
+      "reqIds": [
+        "REQ-138"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-exact-seo-keyword-phrase-best-sofa-cleaning-ahmedabad-naturally-into-visible-on-page-marketing-copy-e-g-hero-section-services-intro-or-faq-section-intro-in-a-way-that-reads-naturally-and-does-not-involve-keyword-stuffing-ensure-this-phrase-is-also-present-in-the-seo-metadata-frontend-index-html-title-description-keywords-where-appropriate-without-changing-the-existing-meaning-of-the-content-or-any-cta-destinations",
+      "title": "Add the exact SEO keyword phrase 'best sofa cleaning Ahmedabad' naturally into visible on-page marketing copy (e.g., Hero section, Services intro, or FAQ section intro) in a way that reads naturally and does not involve keyword stuffing. Ensure this phrase is also present in the SEO metadata (frontend/index.html title/description/keywords) where appropriate, without changing the existing meaning of the content or any CTA destinations.",
+      "reqIds": [
+        "REQ-139"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-strengthen-on-page-seo-by-naturally-incorporating-the-following-ahmedabad-locality-keywords-into-visible-marketing-copy-across-the-landing-page-e-g-hero-description-services-intro-areas-served-section-intro-faq-section-or-service-coverage-banner-caption-nikol-naroda-bapunagar-vastral-kuber-nagar-nana-chiloda-use-these-locality-names-in-a-way-that-emphasizes-broad-service-coverage-across-ahmedabad-without-keyword-stuffing-and-ensure-the-copy-remains-readable-and-professional",
+      "title": "Strengthen on-page SEO by naturally incorporating the following Ahmedabad locality keywords into visible marketing copy across the landing page (e.g., Hero description, Services intro, Areas Served section intro, FAQ section, or Service Coverage banner caption): Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda. Use these locality names in a way that emphasizes broad service coverage across Ahmedabad without keyword stuffing, and ensure the copy remains readable and professional.",
+      "reqIds": [
+        "REQ-140"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-seo-metadata-in-frontend-index-html-to-include-the-locality-keywords-nikol-naroda-bapunagar-vastral-kuber-nagar-nana-chiloda-and-the-primary-seo-keyword-phrase-best-sofa-cleaning-ahmedabad-in-the-meta-keywords-description-and-or-title-where-appropriate-without-keyword-stuffing-ensure-the-metadata-remains-aligned-with-the-updated-on-page-copy-and-continues-to-target-the-ahmedabad-gandhinagar-cleaning-market",
+      "title": "Update the SEO metadata in frontend/index.html to include the locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) and the primary SEO keyword phrase 'best sofa cleaning Ahmedabad' in the meta keywords, description, and/or title where appropriate, without keyword stuffing. Ensure the metadata remains aligned with the updated on-page copy and continues to target the Ahmedabad & Gandhinagar cleaning market.",
+      "reqIds": [
+        "REQ-141"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-localbusiness-json-ld-structured-data-in-frontend-index-html-to-include-or-emphasize-service-coverage-across-ahmedabad-and-gandhinagar-with-explicit-mention-of-key-localities-nikol-naroda-bapunagar-vastral-kuber-nagar-nana-chiloda-in-the-areaserved-or-description-field-and-ensure-the-best-sofa-cleaning-ahmedabad-keyword-phrase-is-naturally-reflected-in-the-business-description-where-appropriate-keep-the-schema-valid-and-consistent-with-schema-org-localbusiness-requirements",
+      "title": "Update the LocalBusiness JSON-LD structured data in frontend/index.html to include or emphasize service coverage across Ahmedabad and Gandhinagar with explicit mention of key localities (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) in the 'areaServed' or 'description' field, and ensure the 'best sofa cleaning Ahmedabad' keyword phrase is naturally reflected in the business description where appropriate. Keep the schema valid and consistent with schema.org LocalBusiness requirements.",
+      "reqIds": [
+        "REQ-142"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-faq-section-is-placed-in-a-logical-high-visibility-location-on-the-landing-page-e-g-after-the-services-section-and-before-the-google-reviews-section-or-after-the-why-choose-us-section-and-is-linked-from-the-site-navigation-header-nav-links-and-footer-quick-links-with-the-anchor-id-faq-or-similar-without-removing-or-changing-any-existing-navigation-items-or-cta-destinations",
+      "title": "Ensure the FAQ section is placed in a logical high-visibility location on the landing page (e.g., after the Services section and before the Google Reviews section, or after the Why Choose Us section) and is linked from the site navigation (Header nav links) and Footer Quick Links with the anchor id '#faq' or similar, without removing or changing any existing navigation items or CTA destinations.",
+      "reqIds": [
+        "REQ-143"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -1452,6 +1500,18 @@
       "summary": "Delete/remove a photo from the website (user request: \"Delete photo\"; exact target photo needs identification).",
       "reqIds": [],
       "status": "blocked"
+    },
+    {
+      "id": "AR-65",
+      "summary": "Add an AI-friendly FAQ section to the landing page (English or tri-language) covering commonly asked questions about the cleaning services.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-66",
+      "summary": "Strengthen on-page SEO for the keyword phrase \"best sofa cleaning Ahmedabad\" and incorporate Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda into visible marketing copy and metadata (without keyword stuffing).",
+      "reqIds": [],
+      "status": "pending"
     }
   ],
   "gameProjectType": "none",

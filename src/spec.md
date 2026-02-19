@@ -1,11 +1,16 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Service Coverage banner caption text and remove one photo from the Live Photos section.
+**Goal:** Add an AI-friendly FAQ section and strengthen SEO for Ahmedabad localities and the keyword "best sofa cleaning Ahmedabad" across the landing page and metadata.
 
 **Planned changes:**
-- Update the English translation string `serviceCoverage.caption` to exactly: "Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals".
-- Keep the Service Coverage banner rendering the caption from `t.serviceCoverage.caption` below the banner image so the updated sentence is visible on-page.
-- Remove the last `livePhotos` array entry in `frontend/src/components/landing/LivePhotos.tsx` whose `src` is `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg`.
+- Add a new FAQ section with 8-10 common questions about cleaning services (pricing, service areas, booking, methods, drying time, safety) using semantic HTML (accordion or details/summary) with scroll-reveal animation
+- Place the FAQ section after Services/Why Choose Us and add navigation links in Header and Footer with anchor id '#faq'
+- Naturally incorporate "best sofa cleaning Ahmedabad" into visible on-page copy (Hero, Services intro, or FAQ intro) and SEO metadata (title, description, keywords)
+- Naturally incorporate Ahmedabad locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) into visible marketing copy across the landing page
+- Update SEO metadata in frontend/index.html to include locality keywords and primary keyword phrase without keyword stuffing
+- Update LocalBusiness JSON-LD structured data to include explicit locality coverage in 'areaServed' or 'description' field and reflect primary keyword phrase naturally
+- Maintain tri-language support (English, Hindi, Gujarati) for FAQ content
+- Preserve existing premium Royal Blue + Gold theme, responsive design, and all CTA destinations
 
-**User-visible outcome:** Visitors see the updated Service Coverage caption text under the banner image, and the Live Photos grid displays one fewer photo (with the AC water jet image no longer shown).
+**User-visible outcome:** Users will see a new FAQ section answering common questions about the cleaning services, with improved navigation access. The landing page will naturally emphasize service coverage across key Ahmedabad localities and feature SEO-optimized content for local search visibility, all while maintaining the existing premium design and functionality.

@@ -1,46 +1,106 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-16T19:55:36.993Z",
+  "generatedAt": "2026-02-19T18:10:16.237Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 6,
+    "implemented": 6,
     "items": [
       {
-        "id": "REQ-136",
-        "summary": "Update the Service Coverage banner user-facing copy to include this exact sentence in visible on-page text (English, matching punctuation and capitalization): \"Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals\". Use this sentence as the Service Coverage banner caption text (below the banner image) so visitors can read it without relying on image alt text.",
+        "id": "REQ-138",
+        "summary": "Add a new FAQ (Frequently Asked Questions) section on the landing page that is AI-friendly and SEO-optimized, answering common customer questions about the cleaning services (e.g., pricing, service areas, booking process, cleaning methods, drying time, safety). The FAQ section must use English text (or support the existing tri-language system: English, Hindi, Gujarati) and be structured with proper semantic HTML (e.g., <details>/<summary> or accordion-style) for accessibility and search engine crawling.",
         "status": "implemented",
         "plannedFiles": [
+          "frontend/src/components/landing/FAQSection.tsx",
           "frontend/src/i18n/translations.ts",
-          "frontend/src/components/landing/ServiceCoverageBanner.tsx"
+          "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/i18n/translations.ts"
+          "frontend/src/components/landing/FAQSection.tsx",
+          "frontend/src/i18n/translations.ts",
+          "frontend/src/App.tsx"
         ]
       },
       {
-        "id": "REQ-137",
-        "summary": "Delete one photo from the Live Photos section by removing the last photo entry currently defined in the `livePhotos` array in `frontend/src/components/landing/LivePhotos.tsx` (the item whose `src` is `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg`).",
+        "id": "REQ-139",
+        "summary": "Add the exact SEO keyword phrase 'best sofa cleaning Ahmedabad' naturally into visible on-page marketing copy (e.g., Hero section, Services intro, or FAQ section intro) in a way that reads naturally and does not involve keyword stuffing. Ensure this phrase is also present in the SEO metadata (frontend/index.html title/description/keywords) where appropriate, without changing the existing meaning of the content or any CTA destinations.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/landing/LivePhotos.tsx"
+          "frontend/src/components/landing/Hero.tsx",
+          "frontend/index.html"
         ],
         "matchedFiles": [
-          "frontend/src/components/landing/LivePhotos.tsx"
+          "frontend/index.html"
+        ]
+      },
+      {
+        "id": "REQ-140",
+        "summary": "Strengthen on-page SEO by naturally incorporating the following Ahmedabad locality keywords into visible marketing copy across the landing page (e.g., Hero description, Services intro, Areas Served section intro, FAQ section, or Service Coverage banner caption): Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda. Use these locality names in a way that emphasizes broad service coverage across Ahmedabad without keyword stuffing, and ensure the copy remains readable and professional.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/AreasServed.tsx",
+          "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+          "frontend/src/components/landing/FAQSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/FAQSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-141",
+        "summary": "Update the SEO metadata in frontend/index.html to include the locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) and the primary SEO keyword phrase 'best sofa cleaning Ahmedabad' in the meta keywords, description, and/or title where appropriate, without keyword stuffing. Ensure the metadata remains aligned with the updated on-page copy and continues to target the Ahmedabad & Gandhinagar cleaning market.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
+        ]
+      },
+      {
+        "id": "REQ-142",
+        "summary": "Update the LocalBusiness JSON-LD structured data in frontend/index.html to include or emphasize service coverage across Ahmedabad and Gandhinagar with explicit mention of key localities (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) in the 'areaServed' or 'description' field, and ensure the 'best sofa cleaning Ahmedabad' keyword phrase is naturally reflected in the business description where appropriate. Keep the schema valid and consistent with schema.org LocalBusiness requirements.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
+        ]
+      },
+      {
+        "id": "REQ-143",
+        "summary": "Ensure the FAQ section is placed in a logical high-visibility location on the landing page (e.g., after the Services section and before the Google Reviews section, or after the Why Choose Us section) and is linked from the site navigation (Header nav links) and Footer Quick Links with the anchor id '#faq' or similar, without removing or changing any existing navigation items or CTA destinations.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/landing/Header.tsx",
+          "frontend/src/components/landing/Footer.tsx",
+          "frontend/src/i18n/translations.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/landing/Header.tsx",
+          "frontend/src/i18n/translations.ts"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
+    "caffeine.lock.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/landing/LivePhotos.tsx",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/landing/FAQSection.tsx",
+    "frontend/src/components/landing/Header.tsx",
+    "frontend/src/i18n/I18nProvider.tsx",
     "frontend/src/i18n/translations.ts",
     "project_state.json",
     "scratch/component-selection.json",

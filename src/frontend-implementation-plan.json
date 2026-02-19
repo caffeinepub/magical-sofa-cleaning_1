@@ -1,42 +1,146 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Magical Cleaning: Update service coverage caption copy and remove one live photo",
+  "title": "Add AI-Friendly FAQ Section and Full SEO for Ahmedabad Localities",
   "requirements": [
     {
-      "id": "REQ-136",
-      "summary": "Update the Service Coverage banner caption (visible text) to the exact requested English sentence via i18n, without changing layout or CTA destinations.",
+      "id": "REQ-138",
+      "summary": "Add AI-friendly FAQ section with semantic HTML and tri-language support on landing page",
       "acceptanceCriteria": [
-        "In `frontend/src/i18n/translations.ts`, the English locale string `serviceCoverage.caption` is set to exactly: \"Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals\".",
-        "`frontend/src/components/landing/ServiceCoverageBanner.tsx` continues to render the caption from `t.serviceCoverage.caption` below the banner image, and the new sentence is visible on the page.",
-        "No CTA destinations or section order/layout are changed as part of this copy update."
+        "FAQ section is present on the landing page with at least 8-10 common questions and answers",
+        "FAQ content is structured with semantic HTML (e.g., accordion or details/summary elements) for accessibility and SEO",
+        "FAQ section supports the existing tri-language system (English, Hindi, Gujarati) if applicable, or uses English-only text",
+        "FAQ section is styled consistently with the existing premium Royal Blue + Gold theme and responsive across mobile/desktop",
+        "FAQ section includes scroll-reveal animation using the existing GSAP-based reveal hook"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/i18n/translations.ts",
-          "operation": "modify",
-          "description": "Update the English translation value for `serviceCoverage.caption` to exactly: \"Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals\" (matching punctuation/capitalization). Ensure no other locale strings or unrelated copy is modified."
+          "path": "frontend/src/components/landing/FAQSection.tsx",
+          "operation": "create",
+          "description": "Create a new FAQ section component with semantic HTML accordion/details structure. Include at least 8-10 common questions covering pricing, service areas, booking process, cleaning methods, drying time, and safety. Use the existing scroll-reveal hook for animations. Style consistently with the premium Royal Blue + Gold theme using existing Tailwind utilities and OKLCH variables. Ensure responsive design across mobile and desktop."
         },
         {
-          "path": "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+          "path": "frontend/src/i18n/translations.ts",
           "operation": "modify",
-          "description": "Confirm the Service Coverage caption remains rendered as visible on-page text below the banner image using `t.serviceCoverage.caption`, without changing section order/layout or any CTA destinations."
+          "description": "Add FAQ section translations to the Translations interface and implement tri-language content (English, Hindi, Gujarati) for all FAQ questions and answers. Include keys for section title, each question text, and each answer text. Ensure translations cover common customer questions about pricing, service areas (including Ahmedabad localities), booking process, cleaning methods, drying time, and safety."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and integrate the new FAQSection component into the landing page layout. Position it after the Services section or Why Choose Us section and before the Google Reviews section for high visibility. Assign the anchor id 'faq' to enable in-page navigation."
         }
       ]
     },
     {
-      "id": "REQ-137",
-      "summary": "Remove the last Live Photos gallery entry that references the specified generated image so the grid displays one fewer photo and the deleted image is no longer referenced in code.",
+      "id": "REQ-139",
+      "summary": "Add 'best sofa cleaning Ahmedabad' keyword naturally to on-page copy and SEO metadata",
       "acceptanceCriteria": [
-        "`frontend/src/components/landing/LivePhotos.tsx` no longer includes the photo object with `src: '/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg'` in the `livePhotos` array.",
-        "The Live Photos grid renders with one fewer photo card than before.",
-        "There are no remaining references to `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg` in frontend code (so the deleted photo is not rendered anywhere)."
+        "The exact phrase 'best sofa cleaning Ahmedabad' appears at least once in visible on-page marketing copy in a natural, readable way",
+        "The phrase 'best sofa cleaning Ahmedabad' is included in SEO metadata (title, description, or keywords) in frontend/index.html without keyword stuffing",
+        "Existing content meaning, page structure, and all CTA destinations remain unchanged"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/LivePhotos.tsx",
+          "path": "frontend/src/components/landing/Hero.tsx",
           "operation": "modify",
-          "description": "Remove the last object in the `livePhotos` array whose `src` is `/assets/generated/live-ac-water-jet-1.dim_1600x1200.jpg`. Ensure the remaining array order and rendering logic stay the same, resulting in one fewer rendered photo card and no remaining code references to that image path."
+          "description": "Naturally incorporate the exact phrase 'best sofa cleaning Ahmedabad' into the hero description or subtitle text in a way that reads professionally and enhances the existing marketing message. Ensure the phrase fits contextually without keyword stuffing. Maintain all existing CTA destinations and page structure. Update tri-language translations if needed."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the SEO metadata (title tag, meta description, and/or meta keywords) to include the exact phrase 'best sofa cleaning Ahmedabad' in a natural way that aligns with the service offering. Avoid keyword stuffing and ensure the metadata remains readable and professional. Keep existing structured data and preload tags unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-140",
+      "summary": "Incorporate Ahmedabad locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) naturally into visible marketing copy",
+      "acceptanceCriteria": [
+        "All six locality names (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) appear in visible on-page marketing copy in a natural, readable way",
+        "Locality keywords are used to emphasize service coverage without keyword stuffing",
+        "Existing page structure, sections, and all CTA destinations remain unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/AreasServed.tsx",
+          "operation": "modify",
+          "description": "Update the Areas Served section to naturally incorporate all six locality names (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) into the visible marketing copy or intro text. Emphasize broad service coverage across these Ahmedabad localities in a professional, readable way without keyword stuffing. Maintain the existing scroll-reveal animations and tri-language support."
+        },
+        {
+          "path": "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+          "operation": "modify",
+          "description": "Update the service coverage banner caption or intro text to naturally include representative Ahmedabad locality names (e.g., 'Serving Nikol, Naroda, Bapunagar, and surrounding areas') in a way that emphasizes comprehensive coverage. Ensure the copy remains professional and readable. Maintain existing styling and tri-language support."
+        },
+        {
+          "path": "frontend/src/components/landing/FAQSection.tsx",
+          "operation": "modify",
+          "description": "Incorporate the locality names (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) into one or more FAQ answers, particularly in questions about service areas or coverage. Use the names naturally to demonstrate broad Ahmedabad coverage without keyword stuffing. Ensure tri-language translations are updated accordingly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-141",
+      "summary": "Update SEO metadata in index.html to include locality keywords and primary SEO keyword phrase",
+      "acceptanceCriteria": [
+        "SEO metadata (title, description, keywords) in frontend/index.html includes the primary phrase 'best sofa cleaning Ahmedabad' and representative locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda)",
+        "Metadata updates do not involve keyword stuffing and remain aligned with the services offered",
+        "Existing SEO intent and LocalBusiness JSON-LD schema remain valid and consistent"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the meta keywords, meta description, and/or title tag to include the primary keyword phrase 'best sofa cleaning Ahmedabad' and representative locality keywords (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda). Ensure the metadata remains natural, professional, and aligned with the services offered without keyword stuffing. Keep existing LocalBusiness JSON-LD schema intact and valid. Maintain all preload tags and existing structured data."
+        }
+      ]
+    },
+    {
+      "id": "REQ-142",
+      "summary": "Update LocalBusiness JSON-LD to include locality coverage and reflect primary SEO keyword phrase",
+      "acceptanceCriteria": [
+        "LocalBusiness JSON-LD includes explicit locality coverage (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda) in the 'areaServed' or 'description' field",
+        "The primary keyword phrase 'best sofa cleaning Ahmedabad' is naturally reflected in the business description where appropriate",
+        "JSON-LD schema remains valid according to schema.org LocalBusiness requirements",
+        "Existing schema fields (name, url, telephone, sameAs, etc.) remain unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the LocalBusiness JSON-LD structured data to include or expand the 'areaServed' field with explicit locality coverage (Nikol, Naroda, Bapunagar, Vastral, Kuber Nagar, Nana Chiloda). Naturally incorporate the phrase 'best sofa cleaning Ahmedabad' into the business description field where appropriate. Ensure the schema remains valid according to schema.org LocalBusiness requirements. Keep all existing schema fields (name, url, telephone, sameAs, etc.) unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-143",
+      "summary": "Position FAQ section in high-visibility location and link from Header and Footer navigation",
+      "acceptanceCriteria": [
+        "FAQ section is placed in a logical, high-visibility location on the landing page",
+        "FAQ section has a unique anchor id (e.g., '#faq') for in-page navigation",
+        "Header navigation includes a link to the FAQ section",
+        "Footer Quick Links includes a link to the FAQ section",
+        "Existing navigation items, CTA destinations, and footer links remain unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Position the FAQSection component in a logical, high-visibility location on the landing page (after Services or Why Choose Us, before Google Reviews). Ensure the FAQ section has a unique anchor id 'faq' for in-page navigation. Maintain all existing sections and their order."
+        },
+        {
+          "path": "frontend/src/components/landing/Header.tsx",
+          "operation": "modify",
+          "description": "Add a navigation link to the FAQ section using the anchor '#faq' in the header nav links array. Ensure the link is localized with tri-language support (English: 'FAQ', Hindi and Gujarati equivalents). Position the link logically within the existing navigation items without removing or changing any existing links or CTA destinations."
+        },
+        {
+          "path": "frontend/src/components/landing/Footer.tsx",
+          "operation": "modify",
+          "description": "Add a link to the FAQ section using the anchor '#faq' in the Footer Quick Links section. Ensure the link is localized with tri-language support. Position the link logically within the existing quick links without removing or changing any existing footer links, social links, or contact details."
+        },
+        {
+          "path": "frontend/src/i18n/translations.ts",
+          "operation": "modify",
+          "description": "Add translation keys for the FAQ navigation link text in the header and footer sections. Include English, Hindi, and Gujarati translations for 'FAQ' or 'Frequently Asked Questions' to support the tri-language system."
         }
       ]
     }
