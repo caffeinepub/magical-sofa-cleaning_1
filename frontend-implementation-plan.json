@@ -1,0 +1,130 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Price Calculator Range Update, Vibrating Icons, Section Header & Color Refresh",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Update SofaPriceCalculator to use a scrollable range input from 5-30 feet at 90 Rs/foot with live price updates",
+      "acceptanceCriteria": [
+        "The calculator shows a scrollable/range input from 5 to 30 feet",
+        "Price is calculated as selected feet × 90 Rs",
+        "Price updates in real time as the user changes the foot value",
+        "Minimum selectable value is 5 feet, maximum is 30 feet"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/SofaPriceCalculator.tsx",
+          "operation": "modify",
+          "description": "Replace the current area/quantity dropdown selection logic with a range input element (min=5, max=30, step=1) for selecting feet. Update the price calculation logic to multiply the selected feet value by 90 Rs. Ensure the calculated price updates immediately as the user moves the slider. Remove any previous pricing tiers or quantity-based calculations that conflict with the new 90 Rs/foot flat rate. Preserve all existing WhatsApp booking URL generation logic and service type selection."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add 'Best Sofa Cleaning Ahmedabad' heading at the top of the page in attractive white text with contrasting background",
+      "acceptanceCriteria": [
+        "The text 'Best Sofa Cleaning Ahmedabad' appears at the top of the page",
+        "Text is styled in white and is clearly readable",
+        "The heading is visually distinct and prominent"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/Hero.tsx",
+          "operation": "modify",
+          "description": "Add a prominent heading element displaying 'Best Sofa Cleaning Ahmedabad' at the very top of the Hero section, positioned above or within the existing banner image overlay. Style the text in large white font with strong visual hierarchy. Apply a subtle contrasting background (e.g., semi-transparent dark overlay, gradient backing, or outlined text) to ensure the white text remains clearly readable against the banner image. Position the heading so it is the first element visitors see when they land on the page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add continuous vibrate and shining/glowing animations to Call and WhatsApp floating contact buttons",
+      "acceptanceCriteria": [
+        "The Call floating button continuously vibrates (shake/wiggle animation)",
+        "The WhatsApp floating button continuously vibrates (shake/wiggle animation)",
+        "Both buttons have a glowing/shining/shimmer animation that cycles indefinitely",
+        "Animations are smooth and do not interfere with button click functionality"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/floating/FloatingContactButtons.tsx",
+          "operation": "modify",
+          "description": "Apply continuous vibrate and shining/glowing animations to both the Call and WhatsApp button elements. For the vibrate effect, apply a CSS keyframe animation class that creates a subtle shake or wiggle motion cycling indefinitely. For the shining effect, apply a pulsing glow or shimmer animation (e.g., using box-shadow or opacity transitions) that also cycles continuously. Ensure both animations run smoothly without interfering with button click functionality or accessibility."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define new CSS keyframe animations for the vibrate (shake/wiggle) and shining/glowing effects if they do not already exist. The vibrate animation should use transform translateX/translateY to create a subtle shake. The shining animation should use box-shadow, opacity, or a shimmer gradient to create a pulsing glow effect. Both animations should have infinite iteration and appropriate timing functions for smooth, continuous looping."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Refresh page and section backgrounds with varied attractive light modern colors while keeping text and card backgrounds clean white",
+      "acceptanceCriteria": [
+        "Each major section (Hero, Services, Calculator, Reviews, FAQ, Footer, etc.) has a distinct but harmonious light background color",
+        "No two adjacent sections share the exact same background color",
+        "Card and text areas remain white or near-white for readability",
+        "The overall aesthetic appears modern, bright, and attractive",
+        "No dark or saturated heavy colors are used as section backgrounds"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/Hero.tsx",
+          "operation": "modify",
+          "description": "Update the Hero section background or overlay to use a light, attractive modern color such as soft mint, warm ivory, light peach, pale lavender, or gentle sky tone. Ensure the background color complements the banner image and the white text heading added in REQ-2. Maintain readability of all text and visual hierarchy."
+        },
+        {
+          "path": "frontend/src/components/landing/Services.tsx",
+          "operation": "modify",
+          "description": "Apply a light, modern background color to the Services section container that is different from the adjacent Hero and following sections. Choose from soft mint, warm ivory, light peach, pale lavender, or gentle sky tones. Keep all service cards with clean white backgrounds for readability. Ensure the SofaPriceCalculator component retains its white card background."
+        },
+        {
+          "path": "frontend/src/components/landing/GoogleReviewsSection.tsx",
+          "operation": "modify",
+          "description": "Apply a light, attractive background color to the reviews section container, selecting a tone that contrasts with adjacent sections while maintaining the modern, bright aesthetic. Keep individual review cards white or near-white for readability."
+        },
+        {
+          "path": "frontend/src/components/landing/FAQSection.tsx",
+          "operation": "modify",
+          "description": "Update the FAQ section background to use a light modern color (e.g., soft mint, warm ivory, light peach, pale lavender, or gentle sky tone) that differs from adjacent sections. Ensure accordion items and text areas remain clean white for readability."
+        },
+        {
+          "path": "frontend/src/components/landing/WhyChooseUs.tsx",
+          "operation": "modify",
+          "description": "Apply a light, modern background color to the WhyChooseUs section container, ensuring it is distinct from adjacent sections. Keep feature cards and stats display areas white or near-white for readability."
+        },
+        {
+          "path": "frontend/src/components/landing/LivePhotos.tsx",
+          "operation": "modify",
+          "description": "Update the LivePhotos section background to use a light, attractive modern color that alternates from adjacent sections. Maintain photo card backgrounds as white or near-white for clean presentation."
+        },
+        {
+          "path": "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+          "operation": "modify",
+          "description": "Apply a light, modern background color to the ServiceCoverageBanner section that is distinct from neighboring sections, maintaining the bright and airy aesthetic."
+        },
+        {
+          "path": "frontend/src/components/landing/AreasServed.tsx",
+          "operation": "modify",
+          "description": "Update the AreasServed section background to use a light modern color that alternates from adjacent sections. Keep location tag backgrounds white or near-white for readability."
+        },
+        {
+          "path": "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "operation": "modify",
+          "description": "Apply a light, attractive background color to the appointment form section container, ensuring it differs from adjacent sections. Keep the form card and input fields with clean white backgrounds for usability."
+        },
+        {
+          "path": "frontend/src/components/landing/Footer.tsx",
+          "operation": "modify",
+          "description": "Update the Footer background to use a light, modern color that provides visual closure while maintaining the bright, airy aesthetic. Ensure all text remains clearly readable with sufficient contrast."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS custom properties or utility classes for the new light modern background colors (soft mint, warm ivory, light peach, pale lavender, gentle sky tones) if they do not already exist. These colors should be used consistently across sections while maintaining alternation and visual distinction."
+        }
+      ]
+    }
+  ]
+}

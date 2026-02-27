@@ -1,0 +1,104 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T08:36:46.648Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Update the SofaPriceCalculator component so that the area/size input is a scrollable range selector from 5 to 30 feet (in 1-foot increments), priced at 90 Rs per foot. The calculated price should update live as the user scrolls/selects the foot value. Remove or replace any previous pricing logic for this range with the new 90 Rs/foot rate.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/SofaPriceCalculator.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/SofaPriceCalculator.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Add a prominent heading 'Best Sofa Cleaning Ahmedabad' at the very top of the page (above or inside the Hero section), styled in attractive white text with a subtle contrasting background or overlay, making it immediately visible to visitors.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/Hero.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/Hero.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Update the FloatingContactButtons component so that both the Call and WhatsApp icons have a continuous vibrate + shining/glowing animation. The vibrate effect should be a subtle shake/wiggle keyframe animation, and the shining effect should be a pulsing glow or shimmer that cycles continuously to draw attention.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/floating/FloatingContactButtons.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/floating/FloatingContactButtons.tsx",
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Refresh the overall page background and section backgrounds to use varied attractive light modern colors — such as soft mint, warm ivory, light peach, pale lavender, or gentle sky tones — alternating across sections so each section feels visually distinct yet cohesive. The primary text and card backgrounds should remain clean white. Avoid dark or heavy colors; keep the palette bright, airy, and modern.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/landing/Hero.tsx",
+          "frontend/src/components/landing/Services.tsx",
+          "frontend/src/components/landing/GoogleReviewsSection.tsx",
+          "frontend/src/components/landing/FAQSection.tsx",
+          "frontend/src/components/landing/WhyChooseUs.tsx",
+          "frontend/src/components/landing/LivePhotos.tsx",
+          "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+          "frontend/src/components/landing/AreasServed.tsx",
+          "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "frontend/src/components/landing/Footer.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/landing/Hero.tsx",
+          "frontend/src/components/landing/Services.tsx",
+          "frontend/src/components/landing/GoogleReviewsSection.tsx",
+          "frontend/src/components/landing/FAQSection.tsx",
+          "frontend/src/components/landing/WhyChooseUs.tsx",
+          "frontend/src/components/landing/LivePhotos.tsx",
+          "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+          "frontend/src/components/landing/AreasServed.tsx",
+          "frontend/src/components/landing/AppointmentFormSection.tsx",
+          "frontend/src/components/landing/Footer.tsx",
+          "frontend/src/index.css"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/floating/FloatingContactButtons.tsx",
+    "frontend/src/components/landing/AppointmentFormSection.tsx",
+    "frontend/src/components/landing/AreasServed.tsx",
+    "frontend/src/components/landing/FAQSection.tsx",
+    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/landing/GoogleReviewsSection.tsx",
+    "frontend/src/components/landing/Hero.tsx",
+    "frontend/src/components/landing/LivePhotos.tsx",
+    "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+    "frontend/src/components/landing/Services.tsx",
+    "frontend/src/components/landing/SofaPriceCalculator.tsx",
+    "frontend/src/components/landing/WhyChooseUs.tsx",
+    "frontend/src/index.css",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

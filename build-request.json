@@ -1,0 +1,100 @@
+{
+  "kind": "build_request",
+  "title": "Price Calculator Range Update, Vibrating Icons, Section Header & Color Refresh",
+  "projectName": "Magical Service",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the SofaPriceCalculator component so that the area/size input is a scrollable range selector from 5 to 30 feet (in 1-foot increments), priced at 90 Rs per foot. The calculated price should update live as the user scrolls/selects the foot value. Remove or replace any previous pricing logic for this range with the new 90 Rs/foot rate.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Price calculator je scroll varu htu foot na 90 rs varu te Kari aapo 5 thi 30 foot sudhi"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The calculator shows a scrollable/range input from 5 to 30 feet",
+        "Price is calculated as selected feet × 90 Rs",
+        "Price updates in real time as the user changes the foot value",
+        "Minimum selectable value is 5 feet, maximum is 30 feet"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a prominent heading 'Best Sofa Cleaning Ahmedabad' at the very top of the page (above or inside the Hero section), styled in attractive white text with a subtle contrasting background or overlay, making it immediately visible to visitors.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Top ma best sofa cleaning Ahmedabad add kro"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The text 'Best Sofa Cleaning Ahmedabad' appears at the top of the page",
+        "Text is styled in white and is clearly readable",
+        "The heading is visually distinct and prominent"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Update the FloatingContactButtons component so that both the Call and WhatsApp icons have a continuous vibrate + shining/glowing animation. The vibrate effect should be a subtle shake/wiggle keyframe animation, and the shining effect should be a pulsing glow or shimmer that cycles continuously to draw attention.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "call WhatsApp nu icon vibrate and shining aape tevu"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Call floating button continuously vibrates (shake/wiggle animation)",
+        "The WhatsApp floating button continuously vibrates (shake/wiggle animation)",
+        "Both buttons have a glowing/shining/shimmer animation that cycles indefinitely",
+        "Animations are smooth and do not interfere with button click functionality"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Refresh the overall page background and section backgrounds to use varied attractive light modern colors — such as soft mint, warm ivory, light peach, pale lavender, or gentle sky tones — alternating across sections so each section feels visually distinct yet cohesive. The primary text and card backgrounds should remain clean white. Avoid dark or heavy colors; keep the palette bright, airy, and modern.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "baground ma alag alag aacho light color add kro jova ma mordan dekhai evi rite",
+          "Aacho white Ane thodu alag alag aacho colour aapo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each major section (Hero, Services, Calculator, Reviews, FAQ, Footer, etc.) has a distinct but harmonious light background color",
+        "No two adjacent sections share the exact same background color",
+        "Card and text areas remain white or near-white for readability",
+        "The overall aesthetic appears modern, bright, and attractive",
+        "No dark or saturated heavy colors are used as section backgrounds"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files in frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "Preserve all existing WhatsApp booking URL generation logic",
+    "All user-facing text must be in English"
+  ],
+  "nonGoals": [
+    "Adding new backend logic or data persistence",
+    "Changing the services listed in the calculator beyond updating the foot range and price rate",
+    "Redesigning the logo or brand identity",
+    "Adding new pages or routes"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

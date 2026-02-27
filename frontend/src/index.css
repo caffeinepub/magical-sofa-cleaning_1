@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Royal Blue + Gold Premium Palette - OKLCH */
+    --background: oklch(0.98 0.005 240);
+    --foreground: oklch(0.15 0.02 240);
+
+    --card: oklch(1.0 0.0 0);
+    --card-foreground: oklch(0.15 0.02 240);
+
+    --popover: oklch(1.0 0.0 0);
+    --popover-foreground: oklch(0.15 0.02 240);
+
+    /* Royal Blue Primary */
+    --primary: oklch(0.42 0.18 255);
+    --primary-foreground: oklch(0.98 0.005 240);
+
+    /* Gold Secondary */
+    --secondary: oklch(0.78 0.14 75);
+    --secondary-foreground: oklch(0.15 0.02 240);
+
+    --muted: oklch(0.93 0.01 240);
+    --muted-foreground: oklch(0.50 0.03 240);
+
+    --accent: oklch(0.88 0.08 75);
+    --accent-foreground: oklch(0.15 0.02 240);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0.005 240);
+
+    --border: oklch(0.88 0.02 240);
+    --input: oklch(0.88 0.02 240);
+    --ring: oklch(0.42 0.18 255);
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --royal-blue: oklch(0.42 0.18 255);
+    --royal-blue-light: oklch(0.60 0.15 255);
+    --royal-blue-dark: oklch(0.30 0.18 255);
+    --gold: oklch(0.78 0.14 75);
+    --gold-light: oklch(0.88 0.10 75);
+    --gold-dark: oklch(0.62 0.16 75);
+
+    /* Section background colors - light modern palette */
+    --section-mint: oklch(0.96 0.04 165);
+    --section-peach: oklch(0.96 0.04 45);
+    --section-lavender: oklch(0.95 0.04 290);
+    --section-sky: oklch(0.95 0.04 220);
+    --section-ivory: oklch(0.97 0.03 85);
+    --section-rose: oklch(0.96 0.03 10);
+    --section-sage: oklch(0.95 0.04 145);
+  }
+
+  .dark {
+    --background: oklch(0.10 0.02 240);
+    --foreground: oklch(0.95 0.01 240);
+
+    --card: oklch(0.14 0.02 240);
+    --card-foreground: oklch(0.95 0.01 240);
+
+    --popover: oklch(0.14 0.02 240);
+    --popover-foreground: oklch(0.95 0.01 240);
+
+    --primary: oklch(0.60 0.15 255);
+    --primary-foreground: oklch(0.10 0.02 240);
+
+    --secondary: oklch(0.70 0.12 75);
+    --secondary-foreground: oklch(0.10 0.02 240);
+
+    --muted: oklch(0.20 0.02 240);
+    --muted-foreground: oklch(0.65 0.03 240);
+
+    --accent: oklch(0.25 0.05 75);
+    --accent-foreground: oklch(0.95 0.01 240);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0.005 240);
+
+    --border: oklch(0.25 0.02 240);
+    --input: oklch(0.25 0.02 240);
+    --ring: oklch(0.60 0.15 255);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Section background utilities */
+  .bg-section-mint { background-color: var(--section-mint); }
+  .bg-section-peach { background-color: var(--section-peach); }
+  .bg-section-lavender { background-color: var(--section-lavender); }
+  .bg-section-sky { background-color: var(--section-sky); }
+  .bg-section-ivory { background-color: var(--section-ivory); }
+  .bg-section-rose { background-color: var(--section-rose); }
+  .bg-section-sage { background-color: var(--section-sage); }
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+/* Vibrate / shake animation */
+@keyframes vibrate {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  10%  { transform: translate(-2px, -1px) rotate(-1deg); }
+  20%  { transform: translate(2px, 1px) rotate(1deg); }
+  30%  { transform: translate(-2px, 1px) rotate(0deg); }
+  40%  { transform: translate(2px, -1px) rotate(1deg); }
+  50%  { transform: translate(-1px, 2px) rotate(-1deg); }
+  60%  { transform: translate(1px, -2px) rotate(0deg); }
+  70%  { transform: translate(-2px, 1px) rotate(-1deg); }
+  80%  { transform: translate(2px, 1px) rotate(1deg); }
+  90%  { transform: translate(-1px, -1px) rotate(0deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Glow / shine pulse animation */
+@keyframes glow-pulse {
+  0%   { box-shadow: 0 0 6px 2px rgba(34, 197, 94, 0.5), 0 4px 15px rgba(34, 197, 94, 0.3); }
+  50%  { box-shadow: 0 0 20px 8px rgba(34, 197, 94, 0.8), 0 4px 30px rgba(34, 197, 94, 0.6); }
+  100% { box-shadow: 0 0 6px 2px rgba(34, 197, 94, 0.5), 0 4px 15px rgba(34, 197, 94, 0.3); }
+}
+
+@keyframes glow-pulse-blue {
+  0%   { box-shadow: 0 0 6px 2px rgba(59, 130, 246, 0.5), 0 4px 15px rgba(59, 130, 246, 0.3); }
+  50%  { box-shadow: 0 0 20px 8px rgba(59, 130, 246, 0.8), 0 4px 30px rgba(59, 130, 246, 0.6); }
+  100% { box-shadow: 0 0 6px 2px rgba(59, 130, 246, 0.5), 0 4px 15px rgba(59, 130, 246, 0.3); }
+}
+
+/* Shimmer sweep animation */
+@keyframes shimmer-sweep {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Combined vibrate + pause cycle (vibrate for 0.5s, pause for 2s) */
+@keyframes vibrate-cycle {
+  0%    { transform: translate(0, 0) rotate(0deg); }
+  2%    { transform: translate(-2px, -1px) rotate(-1deg); }
+  4%    { transform: translate(2px, 1px) rotate(1deg); }
+  6%    { transform: translate(-2px, 1px) rotate(0deg); }
+  8%    { transform: translate(2px, -1px) rotate(1deg); }
+  10%   { transform: translate(-1px, 2px) rotate(-1deg); }
+  12%   { transform: translate(1px, -2px) rotate(0deg); }
+  14%   { transform: translate(-2px, 1px) rotate(-1deg); }
+  16%   { transform: translate(2px, 1px) rotate(1deg); }
+  18%   { transform: translate(-1px, -1px) rotate(0deg); }
+  20%   { transform: translate(0, 0) rotate(0deg); }
+  100%  { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Icon vibrate */
+@keyframes icon-vibrate {
+  0%, 100% { transform: rotate(0deg); }
+  20%       { transform: rotate(-10deg); }
+  40%       { transform: rotate(10deg); }
+  60%       { transform: rotate(-8deg); }
+  80%       { transform: rotate(8deg); }
+}
+
+/* Scroll reveal */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   ANIMATION UTILITY CLASSES
+   ============================================================ */
+
+.btn-animate {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-animate:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+.btn-animate:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.icon-vibrate {
+  animation: icon-vibrate 1.5s ease-in-out infinite;
+}
+
+.icon-shine {
+  position: relative;
+  overflow: hidden;
+}
+.icon-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmer-sweep 2s linear infinite;
+}
+
+/* Floating button animations */
+.float-vibrate {
+  animation: vibrate-cycle 3s ease-in-out infinite;
+}
+
+.float-glow-green {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.float-glow-blue {
+  animation: glow-pulse-blue 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.reveal-visible {
+  animation: reveal-up 0.6s ease forwards;
+}
+
+/* ============================================================
+   PREMIUM SHADOWS
+   ============================================================ */
+.shadow-premium {
+  box-shadow:
+    0 4px 6px -1px rgba(30, 58, 138, 0.12),
+    0 2px 4px -1px rgba(30, 58, 138, 0.08),
+    0 0 0 1px rgba(30, 58, 138, 0.04);
+}
+.shadow-premium-lg {
+  box-shadow:
+    0 10px 25px -3px rgba(30, 58, 138, 0.18),
+    0 4px 10px -2px rgba(30, 58, 138, 0.12),
+    0 0 0 1px rgba(30, 58, 138, 0.06);
+}
+.shadow-gold {
+  box-shadow:
+    0 4px 6px -1px rgba(180, 130, 20, 0.20),
+    0 2px 4px -1px rgba(180, 130, 20, 0.12);
+}
+
+/* ============================================================
+   GRADIENT TEXT
+   ============================================================ */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.42 0.18 255), oklch(0.78 0.14 75));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   SHIMMER CARD EFFECT
+   ============================================================ */
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer-sweep 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ============================================================
+   RANGE SLIDER CUSTOM STYLES
+   ============================================================ */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, oklch(0.42 0.18 255), oklch(0.78 0.14 75));
+  outline: none;
+  cursor: pointer;
+}
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: oklch(0.42 0.18 255);
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.4);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.6);
+}
+.range-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: oklch(0.42 0.18 255);
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.4);
+  cursor: pointer;
+}

@@ -1,0 +1,88 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-sofapricecalculator-component-so-that-the-area-size-input-is-a-scrollable-range-selector-from-5-to-30-feet-in-1-foot-increments-priced-at-90-rs-per-foot-the-calculated-price-should-update-live-as-the-user-scrolls-selects-the-foot-value-remove-or-replace-any-previous-pricing-logic-for-this-range-with-the-new-90-rs-foot-rate",
+      "featureTitle": "Update the SofaPriceCalculator component so that the area/size input is a scrollable range selector from 5 to 30 feet (in 1-foot increments), priced at 90 Rs per foot. The calculated price should update live as the user scrolls/selects the foot value. Remove or replace any previous pricing logic for this range with the new 90 Rs/foot rate.",
+      "files": [
+        "frontend/src/components/landing/SofaPriceCalculator.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-prominent-heading-best-sofa-cleaning-ahmedabad-at-the-very-top-of-the-page-above-or-inside-the-hero-section-styled-in-attractive-white-text-with-a-subtle-contrasting-background-or-overlay-making-it-immediately-visible-to-visitors",
+      "featureTitle": "Add a prominent heading 'Best Sofa Cleaning Ahmedabad' at the very top of the page (above or inside the Hero section), styled in attractive white text with a subtle contrasting background or overlay, making it immediately visible to visitors.",
+      "files": [
+        "frontend/src/components/landing/Hero.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-floatingcontactbuttons-component-so-that-both-the-call-and-whatsapp-icons-have-a-continuous-vibrate-shining-glowing-animation-the-vibrate-effect-should-be-a-subtle-shake-wiggle-keyframe-animation-and-the-shining-effect-should-be-a-pulsing-glow-or-shimmer-that-cycles-continuously-to-draw-attention",
+      "featureTitle": "Update the FloatingContactButtons component so that both the Call and WhatsApp icons have a continuous vibrate + shining/glowing animation. The vibrate effect should be a subtle shake/wiggle keyframe animation, and the shining effect should be a pulsing glow or shimmer that cycles continuously to draw attention.",
+      "files": [
+        "frontend/src/components/floating/FloatingContactButtons.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-refresh-the-overall-page-background-and-section-backgrounds-to-use-varied-attractive-light-modern-colors-such-as-soft-mint-warm-ivory-light-peach-pale-lavender-or-gentle-sky-tones-alternating-across-sections-so-each-section-feels-visually-distinct-yet-cohesive-the-primary-text-and-card-backgrounds-should-remain-clean-white-avoid-dark-or-heavy-colors-keep-the-palette-bright-airy-and-modern",
+      "featureTitle": "Refresh the overall page background and section backgrounds to use varied attractive light modern colors — such as soft mint, warm ivory, light peach, pale lavender, or gentle sky tones — alternating across sections so each section feels visually distinct yet cohesive. The primary text and card backgrounds should remain clean white. Avoid dark or heavy colors; keep the palette bright, airy, and modern.",
+      "files": [
+        "frontend/src/components/landing/AppointmentFormSection.tsx",
+        "frontend/src/components/landing/AreasServed.tsx",
+        "frontend/src/components/landing/FAQSection.tsx",
+        "frontend/src/components/landing/Footer.tsx",
+        "frontend/src/components/landing/GoogleReviewsSection.tsx",
+        "frontend/src/components/landing/Hero.tsx",
+        "frontend/src/components/landing/LivePhotos.tsx",
+        "frontend/src/components/landing/ServiceCoverageBanner.tsx",
+        "frontend/src/components/landing/Services.tsx",
+        "frontend/src/components/landing/WhyChooseUs.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
