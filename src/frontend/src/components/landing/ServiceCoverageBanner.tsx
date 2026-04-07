@@ -1,41 +1,76 @@
-import { MapPin } from 'lucide-react';
-import { useI18n } from '@/i18n/useI18n';
+import { CheckCircle, MapPin } from "lucide-react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import { useI18n } from "../../i18n/I18nProvider";
+
+const AREAS = [
+  "Satellite",
+  "Bopal",
+  "Prahlad Nagar",
+  "Vastrapur",
+  "Navrangpura",
+  "Maninagar",
+  "Gota",
+  "Chandkheda",
+  "Motera",
+  "Thaltej",
+  "SG Highway",
+  "Gandhinagar",
+  "Nikol",
+  "Vastral",
+  "Naranpura",
+];
 
 export default function ServiceCoverageBanner() {
   const { t } = useI18n();
+  const sectionRef = useScrollReveal<HTMLElement>();
 
   return (
-    <section className="bg-gradient-to-b from-background to-muted/30 py-8 md:py-12">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-5xl">
-          {/* Header */}
-          <div className="mb-6 text-center">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
-              <MapPin className="h-4 w-4 stroke-[2.5]" />
-              <span className="text-sm font-medium">{t.serviceCoverage.chipText}</span>
-            </div>
-            <h2 className="text-2xl font-bold text-foreground md:text-3xl">
-              {t.serviceCoverage.heading}
-            </h2>
-          </div>
-
-          {/* Banner Image */}
-          <div className="relative overflow-hidden rounded-xl border border-border/50 bg-card shadow-lg">
+    <section
+      ref={sectionRef}
+      className="py-14 sm:py-18"
+      style={{ background: "var(--section-sage)" }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* Image */}
+          <div className="rounded-2xl overflow-hidden shadow-premium-lg">
             <img
               src="/assets/generated/service-coverage-writing.dim_1400x500.jpg"
-              alt="Service coverage areas in Ahmedabad and Gandhi Nagar - Professional residential cleaning services including flats, bungalows, offices, and hospitals"
-              className="h-auto w-full object-contain"
-              width="1400"
-              height="500"
-              loading="lazy"
-              decoding="async"
+              alt="Service Coverage Ahmedabad"
+              className="w-full h-auto object-cover"
             />
           </div>
 
-          {/* Optional Caption */}
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            {t.serviceCoverage.caption}
-          </p>
+          {/* Content */}
+          <div>
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4">
+              <MapPin className="w-4 h-4 text-primary" />
+              <span className="text-primary text-sm font-semibold font-body">
+                {t.serviceCoverage.chipText}
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 font-display">
+              {t.coverage.title}
+            </h2>
+            <p className="text-muted-foreground mb-6 font-body">
+              {t.coverage.desc}
+            </p>
+
+            {/* Area chips */}
+            <div className="flex flex-wrap gap-2">
+              {AREAS.map((area) => (
+                <div
+                  key={area}
+                  className="flex items-center gap-1.5 bg-white border border-border rounded-full px-3 py-1.5 shadow-sm"
+                >
+                  <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+                  <span className="text-xs font-medium text-foreground font-body">
+                    {area}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

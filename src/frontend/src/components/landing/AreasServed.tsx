@@ -1,240 +1,134 @@
-import { MapPin } from 'lucide-react';
-import IconBadge from '@/components/common/IconBadge';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { MapPin, MessageCircle, Star } from "lucide-react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import { useI18n } from "../../i18n/I18nProvider";
 
-const ahmedabadAreas: string[] = [
-  // Priority areas (specified first in exact order)
-  'Nikol',
-  'Naroda',
-  'Bapunagar',
-  'Hanspura',
-  'Odhav',
-  'Kuber Nagar',
-  'Vastral',
-  
-  // Nikol-Naroda nearby smaller areas
-  'Nikol Gam',
-  'Nava Naroda',
-  'Saijpur Bogha',
-  'Khodiar Nagar',
-  'Vallabh Nagar',
-  'Nana Chiloda',
-  
-  // Other major Ahmedabad areas (East)
-  'Kathwada',
-  'Rakhial',
-  'Maninagar',
-  'Isanpur',
-  'Hatkeshwar',
-  'Ghodasar',
-  'Vatva',
-  'Narol',
-  'Lambha',
-  'Jashoda Nagar',
-  'Amraiwadi',
-  'Thakkarbapa Nagar',
-  'Krishnanagar',
-  
-  // Central & North areas
-  'Meghaninagar',
-  'Saraspur',
-  'Shaherkotda',
-  'Kalupur',
-  'Raipur',
-  'Khadia',
-  'Khokhara',
-  'Danilimda',
-  'Behrampura',
-  'Jamalpur',
-  'Dudheshwar',
-  'Asarwa',
-  'Shahibaug',
-  'Sabarmati',
-  'Ranip',
-  'New Ranip',
-  'Chandkheda',
-  'Motera',
-  'Hansol',
-  'Gota',
-  'Chandlodiya',
-  'Ghatlodia',
-  
-  // West areas
-  'Memnagar',
-  'Naranpura',
-  'Gurukul',
-  'Navrangpura',
-  'Usmanpura',
-  'Ashram Road',
-  'Paldi',
-  'Ambawadi',
-  'Vasna',
-  'Juhapura',
-  'Sarkhej',
-  'Vejalpur',
-  
-  // Satellite & SG Highway corridor
-  'Satellite',
-  'Vastrapur',
-  'Bodakdev',
-  'Drive-In',
-  'Thaltej',
-  'SG Highway',
-  'Science City',
-  'Sola',
-  'Chanakyapuri',
-  'SP Ring Road',
-  'Ghuma',
-  'Bopal',
-  'South Bopal',
-  'Shela',
-  'Shilaj',
-  'Jagatpur',
-  'Vaishnodevi Circle',
-  
-  // Additional areas
-  'Prahladnagar',
-  'Jodhpur',
-  'Jivraj Park',
-  'CG Road',
-  'Ellis Bridge',
-  'Nehru Bridge',
-  'Relief Road',
-  'Shahpur',
-  'Dariapur',
+const PRIORITY_AREAS = [
+  "Nikol",
+  "Naroda",
+  "Bapunagar",
+  "Hanspura",
+  "Odhav",
+  "Kathwada",
+  "Nana Chiloda",
+  "Krishna Nagar",
+  "Kuber Nagar",
 ];
 
-const gandhinagarAreas: string[] = [
-  // Sectors
-  'Sector 1',
-  'Sector 2',
-  'Sector 3',
-  'Sector 4',
-  'Sector 5',
-  'Sector 6',
-  'Sector 7',
-  'Sector 8',
-  'Sector 9',
-  'Sector 10',
-  'Sector 11',
-  'Sector 12',
-  'Sector 13',
-  'Sector 14',
-  'Sector 15',
-  'Sector 16',
-  'Sector 17',
-  'Sector 18',
-  'Sector 19',
-  'Sector 20',
-  'Sector 21',
-  'Sector 22',
-  'Sector 23',
-  'Sector 24',
-  'Sector 25',
-  'Sector 26',
-  'Sector 27',
-  'Sector 28',
-  'Sector 29',
-  'Sector 30',
-  
-  // Major localities
-  'Adalaj',
-  'Kudasan',
-  'Randesan',
-  'Sargasan',
-  'Raysan',
-  'Zundal',
-  'Koba',
-  'GIFT City',
-  'Infocity',
-  'Chiloda',
-  'Bhat',
-  'Pethapur',
-  'Vavol',
-  'Kalol',
-  'Chhatral',
-  'Mansa',
-  'Dehgam',
+const OTHER_AREAS = [
+  "Vastral",
+  "Amraiwadi",
+  "Vatva",
+  "Maninagar",
+  "Isanpur",
+  "Bopal",
+  "Satellite",
+  "Prahlad Nagar",
+  "Vejalpur",
+  "Jodhpur",
+  "Thaltej",
+  "Chandkheda",
+  "Motera",
+  "Sabarmati",
+  "Ranip",
+  "Gota",
+  "Sola",
+  "Memnagar",
+  "Navrangpura",
+  "Paldi",
+  "Gandhinagar",
+  "Sector 21",
+  "Sector 23",
 ];
 
 export default function AreasServed() {
+  const { t } = useI18n();
   const sectionRef = useScrollReveal<HTMLElement>();
-  const ahmedabadRef = useScrollReveal<HTMLDivElement>({
-    staggerSelector: '.area-item',
-    staggerDelay: 20,
-  });
-  const gandhinagarRef = useScrollReveal<HTMLDivElement>({
-    staggerSelector: '.area-item',
-    staggerDelay: 20,
-  });
 
   return (
-    <section id="areas" className="bg-gradient-to-b from-muted/20 to-background py-12 md:py-16 lg:py-20" ref={sectionRef}>
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-3 inline-flex">
-            <IconBadge icon={MapPin} size="sm" variant="accent" />
+    <section
+      id="areas"
+      ref={sectionRef}
+      className="py-16 sm:py-20"
+      style={{ background: "var(--section-rose)" }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4">
+            <MapPin className="w-4 h-4 text-primary" />
+            <span className="text-primary text-sm font-semibold font-body">
+              {t.areasServed.badge}
+            </span>
           </div>
-          <h2 className="mb-3 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
-            Areas We Serve in Ahmedabad
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 font-display">
+            {t.areasServed.title}
           </h2>
-          <p className="mb-8 text-sm text-muted-foreground md:text-base lg:text-lg">
-            Professional sofa cleaning services in Ahmedabad, carpet, mattress, chair cleaning and AC services across all major areas in Ahmedabad & Gandhinagar
+          <p className="text-muted-foreground max-w-xl mx-auto font-body">
+            {t.areasServed.subtitle}
           </p>
         </div>
 
-        <div className="mx-auto max-w-7xl space-y-10">
-          {/* Ahmedabad Areas */}
-          <div>
-            <h3 className="mb-5 text-center text-xl font-bold text-primary sm:text-2xl">
-              Ahmedabad
-            </h3>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3" ref={ahmedabadRef}>
-              {ahmedabadAreas.map((area, index) => (
-                <div
-                  key={index}
-                  className="area-item group flex items-center justify-center rounded-xl border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 p-3 text-center shadow-xs transition-all hover:border-accent/50 hover:bg-gradient-to-br hover:from-card hover:to-accent/10 hover:shadow-premium-gold lg:p-3.5"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Priority Areas */}
+          <div className="bg-white rounded-2xl border border-border p-6 shadow-premium">
+            <div className="flex items-center gap-2 mb-4">
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+              <h3 className="font-bold text-foreground font-body">
+                {t.areasServed.priority}
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {PRIORITY_AREAS.map((area) => (
+                <span
+                  key={area}
+                  className="inline-flex items-center gap-1 bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 text-xs font-medium font-body"
                 >
-                  <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
-                    {area}
-                  </span>
-                </div>
+                  <MapPin className="w-3 h-3" />
+                  {area}
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Gandhinagar Areas */}
-          <div>
-            <h3 className="mb-5 text-center text-xl font-bold text-accent sm:text-2xl">
-              Gandhinagar
-            </h3>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-3" ref={gandhinagarRef}>
-              {gandhinagarAreas.map((area, index) => (
-                <div
-                  key={index}
-                  className="area-item group flex items-center justify-center rounded-xl border-2 border-accent/40 bg-gradient-to-br from-card to-accent/5 p-3 text-center shadow-xs transition-all hover:border-accent/60 hover:bg-gradient-to-br hover:from-card hover:to-accent/15 hover:shadow-premium-gold lg:p-3.5"
+          {/* Other Areas */}
+          <div className="bg-white rounded-2xl border border-border p-6 shadow-premium">
+            <div className="flex items-center gap-2 mb-4">
+              <MapPin className="w-4 h-4 text-primary" />
+              <h3 className="font-bold text-foreground font-body">
+                {t.areasServed.other}
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {OTHER_AREAS.map((area) => (
+                <span
+                  key={area}
+                  className="inline-flex items-center gap-1 bg-muted text-muted-foreground border border-border rounded-full px-3 py-1 text-xs font-medium font-body"
                 >
-                  <span className="text-xs font-semibold text-foreground transition-colors group-hover:text-accent sm:text-sm">
-                    {area}
-                  </span>
-                </div>
+                  {area}
+                </span>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <p className="mb-4 text-sm text-muted-foreground md:text-base">
-              Don't see your area? We serve all of Ahmedabad & Gandhinagar!
-            </p>
-            <a
-              href="tel:+918000262644"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-6 py-3 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg md:px-7 md:py-3.5 md:text-base"
-            >
-              <MapPin className="h-4 w-4 stroke-[2.5]" />
-              <span>Call to Confirm Service in Your Area</span>
-            </a>
-          </div>
+        {/* WhatsApp CTA */}
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4 text-sm font-body">
+            {t.areasServed.notListed}
+          </p>
+          <a
+            href="https://wa.me/918000262644"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg font-body"
+            style={{
+              background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)",
+              boxShadow: "0 4px 20px rgba(37, 211, 102, 0.4)",
+            }}
+          >
+            <MessageCircle className="w-5 h-5" />
+            {t.areasServed.askUs}
+          </a>
         </div>
       </div>
     </section>

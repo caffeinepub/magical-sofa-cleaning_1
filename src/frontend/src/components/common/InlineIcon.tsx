@@ -1,5 +1,5 @@
-import { LucideIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 interface InlineIconProps {
   icon: LucideIcon;
@@ -7,12 +7,5 @@ interface InlineIconProps {
 }
 
 export default function InlineIcon({ icon: Icon, className }: InlineIconProps) {
-  return (
-    <Icon 
-      className={cn(
-        'inline-icon',
-        className
-      )} 
-    />
-  );
+  return <Icon className={cn("inline-icon icon-vibrate", className)} />;
 }

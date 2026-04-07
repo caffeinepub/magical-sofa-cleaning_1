@@ -1,5 +1,11 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { Locale, translations, Translations } from './translations';
+import {
+  type ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { type Locale, type Translations, translations } from "./translations";
 
 interface I18nContextType {
   locale: Locale;
@@ -7,23 +13,25 @@ interface I18nContextType {
   t: Translations;
 }
 
-export const I18nContext = createContext<I18nContextType | undefined>(undefined);
+export const I18nContext = createContext<I18nContextType | undefined>(
+  undefined,
+);
 
-const LOCALE_STORAGE_KEY = 'magical-service-locale';
+const LOCALE_STORAGE_KEY = "magical-service-locale";
 
 function getInitialLocale(): Locale {
-  if (typeof window === 'undefined') return 'en';
-  
+  if (typeof window === "undefined") return "en";
+
   try {
     const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
-    if (stored && (stored === 'en' || stored === 'hi' || stored === 'gu')) {
+    if (stored && (stored === "en" || stored === "hi" || stored === "gu")) {
       return stored as Locale;
     }
   } catch (error) {
-    console.error('Failed to read locale from localStorage:', error);
+    console.error("Failed to read locale from localStorage:", error);
   }
-  
-  return 'en';
+
+  return "en";
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
@@ -31,22 +39,22 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
-    
+
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, newLocale);
     } catch (error) {
-      console.error('Failed to save locale to localStorage:', error);
+      console.error("Failed to save locale to localStorage:", error);
     }
-    
+
     // Update document language attribute
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       document.documentElement.lang = newLocale;
     }
   };
 
   // Set initial document language
   useEffect(() => {
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       document.documentElement.lang = locale;
     }
   }, [locale]);
@@ -63,7 +71,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 export function useI18n() {
   const context = useContext(I18nContext);
   if (context === undefined) {
-    throw new Error('useI18n must be used within an I18nProvider');
+    throw new Error("useI18n must be used within an I18nProvider");
   }
   return context;
 }

@@ -17,8 +17,8 @@ export interface BookingDetails {
  */
 export function formatBookingMessage(details: BookingDetails): string {
   const lines = [
-    '🧹 *New Appointment Request*',
-    '',
+    "🧹 *New Appointment Request*",
+    "",
     `👤 *Name:* ${details.name}`,
     `📱 *Phone:* ${details.phone}`,
     `🛋️ *Service:* ${details.service}`,
@@ -27,11 +27,11 @@ export function formatBookingMessage(details: BookingDetails): string {
     `⏰ *Preferred Time:* ${details.time}`,
   ];
 
-  if (details.notes && details.notes.trim()) {
-    lines.push('', `📝 *Additional Notes:*`, details.notes.trim());
+  if (details.notes?.trim()) {
+    lines.push("", "📝 *Additional Notes:*", details.notes.trim());
   }
 
-  return lines.join('\n');
+  return lines.join("\n");
 }
 
 /**

@@ -1,156 +1,218 @@
-import { Phone, MapPin, Clock } from 'lucide-react';
-import { SiWhatsapp, SiInstagram, SiGoogle } from 'react-icons/si';
-import InlineIcon from '@/components/common/InlineIcon';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { Clock, Heart, MapPin, MessageCircle, Phone, Star } from "lucide-react";
+import { SiInstagram } from "react-icons/si";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export default function Footer() {
+  const { t } = useI18n();
   const footerRef = useScrollReveal<HTMLElement>();
+  const year = new Date().getFullYear();
+  const appId = encodeURIComponent(
+    typeof window !== "undefined"
+      ? window.location.hostname
+      : "magical-services-ahmedabad",
+  );
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const quickLinks = [
+    { label: t.footer.home, id: "home" },
+    { label: t.footer.services, id: "services" },
+    { label: t.footer.whyChooseUs, id: "why-us" },
+    { label: t.footer.bookAppointment, id: "appointment" },
+    { label: t.footer.areasServed, id: "areas" },
+    { label: t.footer.reviewsLink, id: "reviews" },
+    { label: t.footer.faqLink, id: "faq" },
+  ];
+
+  const servicesList = [
+    t.footer.sofaCleaning,
+    t.footer.carpetCleaning,
+    t.footer.mattressCleaning,
+    t.footer.chairCleaning,
+    t.footer.acService,
+  ];
 
   return (
-    <footer className="border-t-2 border-primary/30 bg-gradient-to-b from-muted/30 to-background" ref={footerRef}>
-      <div className="container px-4 py-12 md:px-6 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">MAGICAL SERVICE</h3>
-            <p className="text-sm text-muted-foreground">
-              Professional cleaning services in Ahmedabad & Gandhinagar. Expert sofa, carpet, mattress, chair cleaning and AC water jet services.
+    <footer
+      ref={footerRef}
+      className="pt-14 pb-6"
+      style={{ background: "var(--section-lavender)" }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/assets/generated/magical-service-logo-uploaded-v3.dim_512x512.png"
+                alt="Magical Services Logo"
+                className="w-12 h-12 rounded-full object-cover border-2 border-primary/30 shadow-sm"
+              />
+              <div>
+                <div className="font-bold text-foreground font-body text-base leading-tight">
+                  {t.footer.companyName}
+                </div>
+                <div className="text-xs text-muted-foreground font-body">
+                  Best Sofa Cleaning Ahmedabad
+                </div>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground font-body leading-relaxed mb-4">
+              {t.footer.tagline}
             </p>
+            {/* Rating */}
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                  />
+                ))}
+              </div>
+              <span className="text-sm font-semibold text-foreground font-body">
+                265+ Reviews
+              </span>
+            </div>
+            {/* Social */}
             <div className="flex gap-3">
-              <a
-                href="https://wa.me/918000262644"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[oklch(0.65_0.19_145)] text-white transition-all hover:scale-110 hover:bg-[oklch(0.60_0.19_145)]"
-                aria-label="WhatsApp"
-              >
-                <SiWhatsapp className="h-5 w-5" />
-              </a>
               <a
                 href="https://www.instagram.com/magical_sofa_cleaning?igsh=MW42bHIweG9oZDV0bQ=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[oklch(0.60_0.18_330)] via-[oklch(0.58_0.19_350)] to-[oklch(0.56_0.20_20)] text-white transition-all hover:scale-110 hover:opacity-90"
+                className="w-9 h-9 rounded-xl bg-white border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors shadow-sm"
                 aria-label="Instagram"
               >
-                <SiInstagram className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#home" className="text-muted-foreground transition-colors hover:text-primary">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-muted-foreground transition-colors hover:text-primary">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#why-choose-us" className="text-muted-foreground transition-colors hover:text-primary">
-                  Why Choose Us
-                </a>
-              </li>
-              <li>
-                <a href="#appointment" className="text-muted-foreground transition-colors hover:text-primary">
-                  Book Appointment
-                </a>
-              </li>
-              <li>
-                <a href="#areas" className="text-muted-foreground transition-colors hover:text-primary">
-                  Areas Served
-                </a>
-              </li>
-              <li>
-                <a href="#reviews" className="text-muted-foreground transition-colors hover:text-primary">
-                  Reviews
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://share.google/55laKjuHyGqn4ikkO" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
-                >
-                  <SiGoogle className="h-3.5 w-3.5" />
-                  <span>Google Business Profile</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Contact Us</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="tel:+918000262644"
-                  className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
-                >
-                  <InlineIcon icon={Phone} />
-                  <span>+91 80002 62644</span>
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <InlineIcon icon={MapPin} />
-                <span>Nikol, Ahmedabad, Gujarat</span>
-              </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <InlineIcon icon={Clock} />
-                <span>Mon - Sun: 8:00 AM - 8:00 PM</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Get Started</h3>
-            <p className="text-sm text-muted-foreground">
-              Book your appointment today and experience professional cleaning services!
-            </p>
-            <div className="space-y-3">
-              <a
-                href="tel:+918000262644"
-                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-5 py-3 text-sm font-bold text-primary-foreground shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg"
-              >
-                <Phone className="h-4 w-4 stroke-[2.5]" />
-                <span>Call Now</span>
+                <SiInstagram className="w-4 h-4" />
               </a>
               <a
                 href="https://wa.me/918000262644"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] px-5 py-3 text-sm font-bold text-white shadow-premium transition-all hover:scale-105 hover:shadow-premium-lg"
+                className="w-9 h-9 rounded-xl bg-white border border-border flex items-center justify-center text-muted-foreground hover:text-green-600 hover:border-green-400 transition-colors shadow-sm"
+                aria-label="WhatsApp"
               >
-                <SiWhatsapp className="h-4 w-4" />
-                <span>WhatsApp</span>
+                <MessageCircle className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-bold text-foreground font-body mb-4 text-sm uppercase tracking-wide">
+              {t.footer.ourServices}
+            </h4>
+            <ul className="space-y-2">
+              {servicesList.map((service) => (
+                <li key={service}>
+                  <button
+                    type="button"
+                    onClick={() => scrollTo("services")}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors font-body text-left"
+                  >
+                    {service}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-bold text-foreground font-body mb-4 text-sm uppercase tracking-wide">
+              {t.footer.quickLinks}
+            </h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    type="button"
+                    onClick={() => scrollTo(link.id)}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors font-body text-left"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-bold text-foreground font-body mb-4 text-sm uppercase tracking-wide">
+              {t.footer.contactUs}
+            </h4>
+            <div className="space-y-3">
+              <a
+                href="tel:+918000262644"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-body"
+                aria-label="Call us"
+              >
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                +91 80002 62644
+              </a>
+              <a
+                href="https://wa.me/918000262644"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-green-600 transition-colors font-body"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                WhatsApp Us
+              </a>
+              <div className="flex items-start gap-2 text-sm text-muted-foreground font-body">
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>{t.footer.servingAreas}</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-muted-foreground font-body">
+                <Clock className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>{t.footer.workingHours}</span>
+              </div>
+            </div>
+            <div className="mt-4 flex flex-col gap-2">
+              <a
+                href="tel:+918000262644"
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-4 py-2.5 text-xs font-bold text-white shadow-premium transition-all hover:scale-105 btn-animate font-body"
+              >
+                <Phone className="h-3.5 w-3.5" />
+                {t.footer.callNow}
+              </a>
+              <a
+                href="https://wa.me/918000262644"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold text-white shadow-premium transition-all hover:scale-105 btn-animate font-body"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
+                }}
+              >
+                <MessageCircle className="h-3.5 w-3.5" />
+                {t.footer.whatsAppUs}
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 border-t-2 border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MAGICAL SERVICE. All rights reserved.
+        {/* Bottom bar */}
+        <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted-foreground font-body text-center sm:text-left">
+            © {year} {t.footer.companyName}. {t.footer.rights}
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Built with ❤️ using{' '}
+          <p className="text-xs text-muted-foreground font-body flex items-center gap-1">
+            {t.footer.builtWith}{" "}
+            <Heart className="inline h-3 w-3 fill-rose-500 text-rose-500 mx-0.5" />{" "}
+            using{" "}
             <a
-              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(
-                typeof window !== 'undefined' ? window.location.hostname : 'unknown-app'
-              )}`}
+              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-primary transition-colors hover:text-accent"
+              className="text-primary hover:underline font-semibold"
             >
               caffeine.ai
             </a>

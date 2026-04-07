@@ -1,49 +1,43 @@
-import { LucideIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 interface IconBadgeProps {
   icon: LucideIcon;
-  size?: 'sm' | 'md' | 'lg';
-  variant?: 'default' | 'primary' | 'secondary' | 'accent' | 'muted';
+  size?: "sm" | "md" | "lg";
+  variant?: "default" | "primary" | "secondary" | "accent" | "muted";
   className?: string;
 }
 
-export default function IconBadge({ 
-  icon: Icon, 
-  size = 'md', 
-  variant = 'default',
-  className 
+const sizeClasses = {
+  sm: "h-10 w-10 p-2",
+  md: "h-14 w-14 p-3",
+  lg: "h-16 w-16 p-3.5",
+};
+
+const variantClasses = {
+  default: "premium-icon-badge",
+  primary: "premium-icon-badge",
+  secondary: "premium-icon-badge-gold",
+  accent: "premium-icon-badge-gold",
+  muted: "border-muted-foreground/30 bg-muted/50",
+};
+
+export default function IconBadge({
+  icon: Icon,
+  size = "md",
+  variant = "default",
+  className,
 }: IconBadgeProps) {
-  const sizeClasses = {
-    sm: 'h-12 w-12',
-    md: 'h-16 w-16',
-    lg: 'h-20 w-20'
-  };
-
-  const iconSizeClasses = {
-    sm: 'h-6 w-6',
-    md: 'h-8 w-8',
-    lg: 'h-10 w-10'
-  };
-
-  const variantClasses = {
-    default: 'premium-icon-badge text-primary-foreground',
-    primary: 'premium-icon-badge text-primary-foreground',
-    secondary: 'bg-gradient-to-br from-secondary to-secondary/80 text-secondary-foreground border-2 border-secondary/30 shadow-premium-gold',
-    accent: 'premium-icon-badge-gold text-accent-foreground',
-    muted: 'bg-muted text-muted-foreground border-2 border-border'
-  };
-
   return (
-    <div 
+    <div
       className={cn(
-        'flex items-center justify-center rounded-2xl transition-all',
         sizeClasses[size],
         variantClasses[variant],
-        className
+        "icon-vibrate icon-shine",
+        className,
       )}
     >
-      <Icon className={cn('stroke-[2.5]', iconSizeClasses[size])} />
+      <Icon className="h-full w-full stroke-[2.5]" />
     </div>
   );
 }

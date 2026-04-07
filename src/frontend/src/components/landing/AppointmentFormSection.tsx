@@ -1,288 +1,252 @@
-import { useState } from 'react';
-import { Calendar, Clock, MapPin, User, Phone, MessageSquare } from 'lucide-react';
-import { SiWhatsapp } from 'react-icons/si';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Button } from '@/components/ui/button';
-import { generateWhatsAppBookingURL, type BookingDetails } from '@/lib/whatsappBooking';
-import InlineIcon from '@/components/common/InlineIcon';
-import { useI18n } from '@/i18n/useI18n';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import {
+  Calendar,
+  CheckCircle,
+  Clock,
+  MapPin,
+  MessageCircle,
+  Phone,
+  User,
+} from "lucide-react";
+import { useState } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import { useI18n } from "../../i18n/I18nProvider";
+import { generateWhatsAppBookingURL } from "../../lib/whatsappBooking";
 
-interface FormErrors {
-  name?: string;
-  phone?: string;
-  service?: string;
-  area?: string;
-  date?: string;
-  time?: string;
-}
+const SERVICES_LIST = [
+  "Sofa Cleaning",
+  "Chair Cleaning",
+  "Carpet Cleaning",
+  "Mattress Cleaning",
+  "AC Service",
+];
 
 export default function AppointmentFormSection() {
   const { t } = useI18n();
   const sectionRef = useScrollReveal<HTMLElement>();
-  const [formData, setFormData] = useState<BookingDetails>({
-    name: '',
-    phone: '',
-    service: '',
-    area: '',
-    date: '',
-    time: '',
-    notes: '',
+
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    service: SERVICES_LIST[0],
+    area: "",
+    date: "",
+    time: "",
+    notes: "",
   });
 
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const serviceOptions = [
-    { value: 'Sofa Cleaning', label: t.serviceOptions.sofaCleaning },
-    { value: 'Carpet Cleaning', label: t.serviceOptions.carpetCleaning },
-    { value: 'Office Chair Cleaning', label: t.serviceOptions.chairCleaning },
-    { value: 'Mattress Cleaning', label: t.serviceOptions.mattressCleaning },
-    { value: 'AC Water Jet Service', label: t.serviceOptions.acWaterJet },
-  ];
-
-  const timeSlots = [
-    { value: '8:00 AM - 10:00 AM', label: t.timeSlots.morning1 },
-    { value: '10:00 AM - 12:00 PM', label: t.timeSlots.morning2 },
-    { value: '12:00 PM - 2:00 PM', label: t.timeSlots.afternoon1 },
-    { value: '2:00 PM - 4:00 PM', label: t.timeSlots.afternoon2 },
-    { value: '4:00 PM - 6:00 PM', label: t.timeSlots.evening1 },
-    { value: '6:00 PM - 8:00 PM', label: t.timeSlots.evening2 },
-  ];
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = t.appointment.errorNameRequired;
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = t.appointment.errorPhoneRequired;
-    } else if (!/^[6-9]\d{9}$/.test(formData.phone.replace(/\s+/g, ''))) {
-      newErrors.phone = t.appointment.errorPhoneInvalid;
-    }
-
-    if (!formData.service) {
-      newErrors.service = t.appointment.errorServiceRequired;
-    }
-
-    if (!formData.area.trim()) {
-      newErrors.area = t.appointment.errorAreaRequired;
-    }
-
-    if (!formData.date) {
-      newErrors.date = t.appointment.errorDateRequired;
-    }
-
-    if (!formData.time) {
-      newErrors.time = t.appointment.errorTimeRequired;
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Generate WhatsApp URL and open in new tab
-    const whatsappURL = generateWhatsAppBookingURL(formData);
-    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-
-    // Reset form after a short delay
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        phone: '',
-        service: '',
-        area: '',
-        date: '',
-        time: '',
-        notes: '',
-      });
-      setErrors({});
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
-  const handleInputChange = (field: keyof BookingDetails, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-    // Clear error for this field when user starts typing
-    if (errors[field as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }));
-    }
+    const url = generateWhatsAppBookingURL({
+      name: form.name,
+      phone: form.phone,
+      service: form.service,
+      area: form.area,
+      date: form.date,
+      time: form.time,
+      notes: form.notes,
+    });
+    window.open(url, "_blank");
   };
 
   return (
-    <section id="appointment" className="bg-gradient-to-b from-primary/5 to-background py-12 md:py-16 lg:py-20" ref={sectionRef}>
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl lg:text-5xl">
-            {t.appointment.heading}
-          </h2>
-          <p className="text-balance text-sm text-muted-foreground md:text-base lg:text-lg">
-            {t.appointment.description}
-          </p>
-        </div>
+    <section
+      id="appointment"
+      ref={sectionRef}
+      className="py-16 sm:py-20"
+      style={{ background: "var(--section-mint)" }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4">
+              <Calendar className="w-4 h-4 text-primary" />
+              <span className="text-primary text-sm font-semibold font-body">
+                {t.appointment.badge}
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 font-display">
+              {t.appointment.title}
+            </h2>
+            <p className="text-muted-foreground font-body">
+              {t.appointment.subtitle}
+            </p>
+          </div>
 
-        <div className="mx-auto mt-8 max-w-2xl">
-          <Card className="premium-box">
-            <CardHeader className="space-y-2 pb-6">
-              <CardTitle className="text-xl font-bold text-primary lg:text-2xl">{t.appointment.cardTitle}</CardTitle>
-              <CardDescription className="text-sm lg:text-base">
-                {t.appointment.cardDescription}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name */}
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                    <InlineIcon icon={User} />
-                    {t.appointment.nameLabel} *
-                  </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder={t.appointment.namePlaceholder}
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    className={errors.name ? 'border-destructive' : ''}
-                  />
-                  {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
-                </div>
-
-                {/* Phone */}
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                    <InlineIcon icon={Phone} />
-                    {t.appointment.phoneLabel} *
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder={t.appointment.phonePlaceholder}
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className={errors.phone ? 'border-destructive' : ''}
-                  />
-                  {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
-                </div>
-
-                {/* Service */}
-                <div className="space-y-2">
-                  <Label htmlFor="service" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                    <InlineIcon icon={MessageSquare} />
-                    {t.appointment.serviceLabel} *
-                  </Label>
-                  <Select value={formData.service} onValueChange={(value) => handleInputChange('service', value)}>
-                    <SelectTrigger id="service" className={errors.service ? 'border-destructive' : ''}>
-                      <SelectValue placeholder={t.appointment.servicePlaceholder} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {serviceOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  {errors.service && <p className="text-xs text-destructive">{errors.service}</p>}
-                </div>
-
-                {/* Area */}
-                <div className="space-y-2">
-                  <Label htmlFor="area" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                    <InlineIcon icon={MapPin} />
-                    {t.appointment.areaLabel} *
-                  </Label>
-                  <Input
-                    id="area"
-                    type="text"
-                    placeholder={t.appointment.areaPlaceholder}
-                    value={formData.area}
-                    onChange={(e) => handleInputChange('area', e.target.value)}
-                    className={errors.area ? 'border-destructive' : ''}
-                  />
-                  {errors.area && <p className="text-xs text-destructive">{errors.area}</p>}
-                </div>
-
-                {/* Date & Time */}
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="date" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                      <InlineIcon icon={Calendar} />
-                      {t.appointment.dateLabel} *
-                    </Label>
-                    <Input
-                      id="date"
-                      type="date"
-                      value={formData.date}
-                      onChange={(e) => handleInputChange('date', e.target.value)}
-                      className={errors.date ? 'border-destructive' : ''}
-                      min={new Date().toISOString().split('T')[0]}
-                    />
-                    {errors.date && <p className="text-xs text-destructive">{errors.date}</p>}
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="time" className="flex items-center gap-2 text-sm font-semibold lg:text-base">
-                      <InlineIcon icon={Clock} />
-                      {t.appointment.timeLabel} *
-                    </Label>
-                    <Select value={formData.time} onValueChange={(value) => handleInputChange('time', value)}>
-                      <SelectTrigger id="time" className={errors.time ? 'border-destructive' : ''}>
-                        <SelectValue placeholder={t.appointment.timePlaceholder} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {timeSlots.map((slot) => (
-                          <SelectItem key={slot.value} value={slot.value}>
-                            {slot.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    {errors.time && <p className="text-xs text-destructive">{errors.time}</p>}
-                  </div>
-                </div>
-
-                {/* Notes */}
-                <div className="space-y-2">
-                  <Label htmlFor="notes" className="text-sm font-semibold lg:text-base">
-                    {t.appointment.notesLabel}
-                  </Label>
-                  <Textarea
-                    id="notes"
-                    placeholder={t.appointment.notesPlaceholder}
-                    value={formData.notes}
-                    onChange={(e) => handleInputChange('notes', e.target.value)}
-                    rows={3}
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.65_0.19_145)] to-[oklch(0.55_0.22_145)] py-6 text-base font-bold text-white shadow-premium transition-all hover:scale-[1.02] hover:shadow-premium-lg disabled:opacity-50 disabled:hover:scale-100"
+          {/* Form Card */}
+          <div className="bg-white rounded-2xl border border-border shadow-premium-lg p-6 sm:p-8">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Name */}
+              <div>
+                <label
+                  htmlFor="appt-name"
+                  className="block text-sm font-semibold text-foreground mb-1.5 font-body"
                 >
-                  <SiWhatsapp className="h-5 w-5" />
-                  {isSubmitting ? t.appointment.submitting : t.appointment.submitButton}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                  <User className="w-4 h-4 inline mr-1.5 text-primary" />
+                  {t.appointment.nameLabel}
+                </label>
+                <input
+                  id="appt-name"
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  placeholder={t.appointment.namePlaceholder}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label
+                  htmlFor="appt-phone"
+                  className="block text-sm font-semibold text-foreground mb-1.5 font-body"
+                >
+                  <Phone className="w-4 h-4 inline mr-1.5 text-primary" />
+                  {t.appointment.phoneLabel}
+                </label>
+                <input
+                  id="appt-phone"
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  placeholder={t.appointment.phonePlaceholder}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm"
+                />
+              </div>
+
+              {/* Service */}
+              <div>
+                <label
+                  htmlFor="appt-service"
+                  className="block text-sm font-semibold text-foreground mb-1.5 font-body"
+                >
+                  {t.appointment.serviceLabel}
+                </label>
+                <select
+                  id="appt-service"
+                  name="service"
+                  value={form.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm"
+                >
+                  {SERVICES_LIST.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Area */}
+              <div>
+                <label
+                  htmlFor="appt-area"
+                  className="block text-sm font-semibold text-foreground mb-1.5 font-body"
+                >
+                  <MapPin className="w-4 h-4 inline mr-1.5 text-primary" />
+                  {t.appointment.areaLabel}
+                </label>
+                <input
+                  id="appt-area"
+                  type="text"
+                  name="area"
+                  value={form.area}
+                  onChange={handleChange}
+                  placeholder={t.appointment.areaPlaceholder}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm"
+                />
+              </div>
+
+              {/* Date & Time */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="appt-date"
+                    className="block text-sm font-semibold text-foreground mb-1.5 font-body"
+                  >
+                    <Calendar className="w-4 h-4 inline mr-1.5 text-primary" />
+                    {t.appointment.dateLabel}
+                  </label>
+                  <input
+                    id="appt-date"
+                    type="date"
+                    name="date"
+                    value={form.date}
+                    onChange={handleChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="appt-time"
+                    className="block text-sm font-semibold text-foreground mb-1.5 font-body"
+                  >
+                    <Clock className="w-4 h-4 inline mr-1.5 text-primary" />
+                    {t.appointment.timeLabel}
+                  </label>
+                  <input
+                    id="appt-time"
+                    type="time"
+                    name="time"
+                    value={form.time}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Notes */}
+              <div>
+                <label
+                  htmlFor="appt-notes"
+                  className="block text-sm font-semibold text-foreground mb-1.5 font-body"
+                >
+                  {t.appointment.notesLabel}
+                </label>
+                <textarea
+                  id="appt-notes"
+                  name="notes"
+                  value={form.notes}
+                  onChange={handleChange}
+                  rows={3}
+                  placeholder={t.appointment.notesPlaceholder}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all font-body text-sm resize-none"
+                />
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-white text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg font-body"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #25D366 0%, #128C7E 100%)",
+                  boxShadow: "0 4px 20px rgba(37, 211, 102, 0.4)",
+                }}
+              >
+                <MessageCircle className="w-5 h-5" />
+                {t.appointment.submitButton}
+              </button>
+
+              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-body">
+                <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                {t.appointment.disclaimer}
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>

@@ -6,88 +6,98 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-        xs: 'calc(var(--radius) - 6px)',
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
+    },
+    extend: {
       colors: {
-        background: 'oklch(var(--background))',
-        foreground: 'oklch(var(--foreground))',
-        card: {
-          DEFAULT: 'oklch(var(--card))',
-          foreground: 'oklch(var(--card-foreground))'
-        },
-        popover: {
-          DEFAULT: 'oklch(var(--popover))',
-          foreground: 'oklch(var(--popover-foreground))'
-        },
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          DEFAULT: 'oklch(var(--primary))',
-          foreground: 'oklch(var(--primary-foreground))'
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
         },
         secondary: {
-          DEFAULT: 'oklch(var(--secondary))',
-          foreground: 'oklch(var(--secondary-foreground))'
-        },
-        muted: {
-          DEFAULT: 'oklch(var(--muted))',
-          foreground: 'oklch(var(--muted-foreground))'
-        },
-        accent: {
-          DEFAULT: 'oklch(var(--accent))',
-          foreground: 'oklch(var(--accent-foreground))'
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
         },
         destructive: {
-          DEFAULT: 'oklch(var(--destructive))',
-          foreground: 'oklch(var(--destructive-foreground))'
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
-        border: 'oklch(var(--border))',
-        input: 'oklch(var(--input))',
-        ring: 'oklch(var(--ring))',
-        chart: {
-          '1': 'oklch(var(--chart-1))',
-          '2': 'oklch(var(--chart-2))',
-          '3': 'oklch(var(--chart-3))',
-          '4': 'oklch(var(--chart-4))',
-          '5': 'oklch(var(--chart-5))'
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
         },
-        service: {
-          sofa: {
-            DEFAULT: 'oklch(var(--service-sofa))',
-            foreground: 'oklch(var(--service-sofa-foreground))'
-          },
-          carpet: {
-            DEFAULT: 'oklch(var(--service-carpet))',
-            foreground: 'oklch(var(--service-carpet-foreground))'
-          },
-          chair: {
-            DEFAULT: 'oklch(var(--service-chair))',
-            foreground: 'oklch(var(--service-chair-foreground))'
-          },
-          mattress: {
-            DEFAULT: 'oklch(var(--service-mattress))',
-            foreground: 'oklch(var(--service-mattress-foreground))'
-          },
-          ac: {
-            DEFAULT: 'oklch(var(--service-ac))',
-            foreground: 'oklch(var(--service-ac-foreground))'
-          }
-        }
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
+        },
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
+        },
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+        gold: "var(--gold)",
+        silver: "var(--silver)",
+        diamond: "var(--diamond)",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'xs': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-        'premium': '0 10px 20px -4px oklch(var(--primary) / 0.15), 0 4px 8px -2px oklch(var(--primary) / 0.08)',
-        'premium-lg': '0 24px 32px -8px oklch(var(--primary) / 0.20), 0 12px 16px -4px oklch(var(--primary) / 0.12)',
-        'premium-gold': '0 10px 20px -4px oklch(var(--accent) / 0.15), 0 4px 8px -2px oklch(var(--accent) / 0.08)',
+        'premium': '0 4px 20px -2px rgba(0, 0, 0, 0.12), 0 2px 8px -2px rgba(0, 0, 0, 0.08)',
+        'premium-lg': '0 10px 40px -4px rgba(0, 0, 0, 0.18), 0 4px 16px -4px rgba(0, 0, 0, 0.10)',
+        'premium-gold': '0 4px 20px -2px rgba(200, 160, 0, 0.20), 0 2px 8px -2px rgba(200, 160, 0, 0.12)',
+      },
+      fontFamily: {
+        sans: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+      },
+      letterSpacing: {
+        tighter: '-0.02em',
+        tight: '-0.01em',
+        normal: '0',
+        wide: '0.01em',
+        wider: '0.02em',
+        widest: '0.04em',
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/container-queries"),
-  ],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }
